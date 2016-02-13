@@ -1,6 +1,6 @@
 function getDecendingOrder(){
     var arr = Array.from(arguments);
-    var splited = arr.toString().split('').sort(function(a,z){
+    var splited = arr.toString().split('').reverse(function(a,z){
         return z-a;
     }) ;
     
