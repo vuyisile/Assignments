@@ -1,9 +1,4 @@
-<html>
-
-<head>
-    <title>greet function</title>
-    <script>
-        function Person(name, otherName) {
+function Person(name, otherName) {
             this.name = name;
             this.otherName = otherName;
 
@@ -22,11 +17,3 @@
         console.log(greetPerson1.greet())
         console.log(greetPerson2.greet())
         console.log(greetPerson3.greet())
-        
-    </script>
-</head>
-
-<body>
-</body>
-
-</html>
