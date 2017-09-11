@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta name="viewport" content="width=1, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title> pluralize</title>
+<script>
+    function pluralize(num,noun) {
+        var plural;
+        for (var i = 0;i< noun.length;i++){
+            var len = noun.length-1;
+            var x = noun[len]
+            var y = noun[len-1]
+            if(noun.match(/e/g)&&num > 1){
+                plural = num +" "+ noun; 
+            }
+            else if (num === 1) {
+                plural = num +" "+ noun;
+            }else if (num > 1){
+                plural = num +" "+ noun+"s";
+            }
+        }      
+       
+        console.log(plural) ;
+    }
+    this.pluralize(3,"people");
+</script>
+
+</head>
+
+<body>
+    <div>
+    </div>
+</body>
+
+</html>
