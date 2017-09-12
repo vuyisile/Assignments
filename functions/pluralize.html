@@ -11,7 +11,7 @@
             var len = noun.length-1;
             var x = noun[len]
             var y = noun[len-1]
-            if(noun.match(/e/g)&&num > 1){
+            if(num > 1 && noun.match(/ee|le/g)){
                 plural = num +" "+ noun; 
             }
             else if (num === 1) {
@@ -23,7 +23,7 @@
        
         console.log(plural) ;
     }
-    this.pluralize(3,"people");
+    this.pluralize(3,"call");
 </script>
 
 </head>
