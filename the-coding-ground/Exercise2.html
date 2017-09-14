@@ -2,31 +2,43 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Compute the average marks and grade</title>
+    <title>Compute the average marks and the Grade</title>
 </head>
 
 <body>
     <script>
-         array = [
-                ["Themba", 60],
-                ["Zandi", 77],
-                ["Lerato", 88],
-                ["Tshepo", 95],
-                ["Thomas", 45],
-            ]
+        array = [
+            ["Themba", 60],
+            ["Zandi", 77],
+            ["Lerato", 88],
+            ["Tshepo", 95],
+            ["Thomas", 45],
+        ]
         function computeMarkAndGrade(array) {
-           
+
             var sumOfMarks = 0;
             var i = 0;
-            while (i < array.length){
+            var grade = "";
+            while (i < array.length) {
                 sumOfMarks += array[i][1];
-                var average = sumOfMarks/array.length; 
+                var average = sumOfMarks / array.length;
                 i++;
             }
-            return average;
-        }
-        console.log( computeMarkAndGrade(array));
+            if (average < 60) {
+                grade = `the Average is ${average} and the Grade is F`;
+            } else if (average < 70) {
+                grade = `the Average is ${average} and the Grade is E`;
+            } else if (average < 80) {
+                grade = `the Average is ${average} and the Grade is C`;
+            } else if (average < 90) {
+                grade = `the Average is ${average} and the Grade is B`;
+            } else if (average < 100) {
+                grade = `the Average is ${average} and the Grade is A`;
+            }
+            return grade;
 
+        }
+        console.log(computeMarkAndGrade(array));
     </script>
 
 </body>
