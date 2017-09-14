@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Compute the average marks and the Grade</title>
+
+    <script>
+        var input = [
+            ["Themba", 60],
+            ["Zandi", 77],
+            ["Lerato", 88],
+            ["Tshepo", 95],
+            ["Thomas", 45],
+        ]
+        function calculateAverage(input) {
+
+            var sumOfMarks = 0;
+            var i = 0;
+            var grade = "";
+            while (i < input.length) {
+                sumOfMarks += input[i][1];
+                var average = sumOfMarks / input.length;
+                i++;
+            }
+            return average;
+        }
+
+        var average = calculateAverage(input);
+
+        function generateGrade(average) {
+
+            if (average < 60) {
+                grade = `D`;
+            } else if (average < 70) {
+                grade = `E`;
+            } else if (average < 80) {
+                grade = `C`;
+            } else if (average < 90) {
+                grade = `B`;
+            } else if (average <= 100 && !average > 100) {
+                grade = ` A`;
+            }
+            return grade;
+
+        }
+
+
+        console.log(`average is ${calculateAverage(input)} and grade is ${generateGrade(average)}`);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
