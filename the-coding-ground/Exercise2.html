@@ -7,15 +7,25 @@
 
 <body>
     <script>
+         array = [
+                ["Themba", 60],
+                ["Zandi", 77],
+                ["Lerato", 88],
+                ["Tshepo", 95],
+                ["Thomas", 45],
+            ]
         function computeMarkAndGrade(array) {
-            array = {
-                Themba: 60,
-                Zandi: 77,
-                Lerato: 88,
-                Tshepo: 95,
-                Thomas: 45,
+           
+            var sumOfMarks = 0;
+            var i = 0;
+            while (i < array.length){
+                sumOfMarks += array[i][1];
+                var average = sumOfMarks/array.length; 
+                i++;
             }
+            return average;
         }
+        console.log( computeMarkAndGrade(array));
 
     </script>
 
