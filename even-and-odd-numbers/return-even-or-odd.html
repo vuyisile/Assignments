@@ -5,14 +5,22 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>a function that returns a relavent message for even numbers or odd numbers</title>
 <script>
-   function returnMessageForOddAndEven(){
-       var maxNum = 50;
-       var initialNum = 1;
-       while (initialNum < maxNum){
-        initialNum++
-       }
-       return intialNum;
-   }
+    var maxNum =50;
+   function returnMessageForOddAndEven(maxNum){
+        
+        var even= "even number",odd= "odd number";
+        var i = 1;
+        var output = "";
+        while(i<=maxNum){
+
+            output += (i%2===0  ? `${i} is ${even}`:(i%3===0 ? `${i} is ${odd}`:i)) + "\n";
+            i++;
+        }
+
+        return output;
+        
+    }
+   console.log (returnMessageForOddAndEven(maxNum));
 </script>
 
 </head>
