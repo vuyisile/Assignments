@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title></title>
 <script>
-    function changeToFahrenhiet(celcius){
-        var fahrenheit = (celcius-32)*5/9;
-        var output = `${celcius} °C is ${fahrenheit} °F`;
+    function convertToFahrenheit(celcius){
+        var fahrenheitConst = (celcius-32)*5/9;
+        var output = `${celcius} °C is ${fahrenheitConst} °F`;
         return output;
     }
-    function changeToCelcius(fahrenheit){
-        var celcius = (9*fahrenheit)/5+32;
-        var output = `${fahrenheit}°F is ${celcius} °C`;
+    function convertToCelcius(fahrenheit){
+        var celciusConst = (9*fahrenheit)/5+32;
+        var output = `${fahrenheit}°F is ${celciusConst} °C`;
         return output;
     }
 
-console.log(changeToFahrenhiet(4));
-console.log(changeToCelcius(5));
+console.log(convertToFahrenheit(4));
+console.log(convertToCelcius(5));
 </script>
 
 </head>
