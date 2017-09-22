@@ -5,7 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Dog Age</title>
 <script>
-   function calculateDogAge(){
+   function calculateDogAge(ageInHuman){
+       var dogAge= ageInHuman * 7;
+       var output= `Your doggie is ${dogAge} years old in dog years!`;
+
+       return output;
      }
 
    console.log()
