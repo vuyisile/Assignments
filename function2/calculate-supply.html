@@ -3,11 +3,20 @@
 <head>
 <meta name="viewport" content="width=1, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Dog Age</title>
+<title>life time supply</title>
 <script>
-  function calculateSupply(){
-      
+  function calculateSupply(age,amountPerDay){
+      var year = 365;
+      var maxAge = 75;
+      var remaining= maxAge-age;
+      var output =`You will need ${(amountPerDay*remaining)*year} to last you until the ripe old age of ${maxAge}`;
+
+      return output;
   } 
+
+  console.log(calculateSupply(35,12.05))
+  console.log(calculateSupply(65,08.45))
+  console.log(calculateSupply(17,20))
 </script>
 
 </head>
