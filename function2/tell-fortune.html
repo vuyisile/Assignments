@@ -3,9 +3,16 @@
 <head>
 <meta name="viewport" content="width=1, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>a function that returns a relavent message for even numbers or odd numbers</title>
+<title>Tell Fortune</title>
 <script>
-    
+   function tellFortune(pName,location,job,num){
+       var fortune = `You will be a ${job} in ${location}, and married to ${pName} with ${num} kids.`
+       return fortune;  
+   }
+
+   console.log(tellFortune("Vuyisile","Paris","Lawyer",2))
+   console.log(tellFortune("Kgomotso","Canada","Software Dev",4))
+   console.log(tellFortune("Florah","CapeTown","Accountant",5))
 </script>
 
 </head>
