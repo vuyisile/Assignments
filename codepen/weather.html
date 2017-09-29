@@ -1,0 +1,24 @@
+
+
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <title>Page Title</title>
+ <link src ="https://api.weather.com/v3/TileServer/series/productSet?apiKey=089ed4e892fb0dfdf34eb81e6f2521aa">
+ <script>
+     function getWeather(){
+        var result =[];
+        var values = window.location.search.split("=");
+        result = values
+        document.getElementById("val").innerHTML= result;
+        console.log(result)
+     }
+
+ </script>
+ </head>
+ <body>
+     <button onclick="getWeather()">display</button>
+    <p id = "val"></p>
+ </body>
+ </html> 
