@@ -4,11 +4,13 @@
     <title></title>
     <script>
         function sortNumbers() {
-            var input = [1, 2, 4, 5, 6, 10];
+            var input = [10, 4, 5, 6,2,8];
             var result = [];
             for (var i =0;i<input.length;i++){
                 for (var n =0;n<input.length;n++){
-                    if(n > i){
+                    if(n < i){
+                        result += input[i]+"\n"
+                    }else if(i < n ){
                         result += input[n]+"\n"
                     }
                 }
