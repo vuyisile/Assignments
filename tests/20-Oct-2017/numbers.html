@@ -3,20 +3,25 @@
 <head>
     <title>Numbers</title>
     <script>
-      
         function numbers(arr) {
             arr = Array.from(arguments);
             var result = [];
-            for (var i in arr){
-                if(typeof(arr[i]) === "string" || isNaN(arr[i])){
-                result += false;
+            for (var i in arr) {
+                if (typeof (arr[i]) === "string" || isNaN(arr[i])) {
+                    result += false;
+                    if (result.match("false" && "true")) {
+                        return false;
+                    }
+
+                }
+                else if (typeof (arr[i]) === "number") {
+                    result += true;
                     
+                    
+                    
+                }
             }
-             else if(typeof(arr[i]) === "number"){
-                result += true;
-             }
-            }
-            
+
             return result;
         }
         console.log(numbers(1, 4, 3, 2, 5)); // true
@@ -24,7 +29,6 @@
         console.log(numbers(1, "a", 3));// false
 
         console.log(numbers(1, 2, NaN));// false
-        
     </script>
 </head>
 
