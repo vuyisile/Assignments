@@ -16,7 +16,9 @@
                 }
                 else if (typeof (arr[i]) === "number") {
                     result += true;
-                    
+                    if (result.match("true" && !"false")) {
+                        return true;
+                    }
                     
                     
                 }

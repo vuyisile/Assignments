@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>greet function</title>
+    <script>
+        function checkForDuplicates(arr) {
+        
+
+           arr = Array.from(arguments);
+            var res = [];
+           
+            for (var i in arr) {
+        
+                var index1 = arr.indexOf(arr[i]);
+                var index2 = arr.indexOf(arr[i +1]);
+                if (arr[i-1] != arr[i]) {
+                    return false;
+                }
+                return true;
+            }
+            
+            
+        }
+        console.log(checkForDuplicates(1, 2, 3)) // returns false
+        console.log(checkForDuplicates(1, 2,2, 2))
+    </script>
+</head>
+
+<body>
+</body>

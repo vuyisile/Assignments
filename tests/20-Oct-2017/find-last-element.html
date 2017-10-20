@@ -5,8 +5,14 @@
     <script>
         function findLastElement(arr) {
             arr = Array.from(arguments);
-            var last = arr.length - 1;
-         return arr[last];
+            var len1 = arr.length -1;
+            if(arr.length === 1){
+                var len2 = arr[len1].length -1;
+                return arr[len1][len2];
+            }
+            else{
+                return arr[len1]
+            }
 
         }
         console.log(findLastElement(1, 2, 3, 4));
