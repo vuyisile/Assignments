@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>get from wiki</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="EditURI" type="application/rsd+xml" href="//www.mediawiki.org/w/api.php?action=rsd" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="wikiStyles.css">
+    <script>
+        function getRequestedInput() {
+            var input = document.getElementById("input").value;
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&limit=15&search= " + input,
+                    success: function (data) {
+                        console.log(data)
+                        $("#requested").html(`
+                <h1 class="col-md-12">What you looking for:</h1>
+            <center><h4>${data[1][0]}</h4></center> <br> ${data[2][0]} <br> For more infomation: ${data[3][0]}<br>`)
+                        $("#rel-head").html(`<h1>Related topics:</h1>`);
+                        $("#related").html(function () {
+                            var i = 1;
+                            var related = "";
+                            while (i < data[1].length) {
+                                related += `<h5>${data[1][i]}:</h5> ${data[2][i]} <br> `;
+                                i++;
+                            }
+                            return related;
+                        })
+
+                    },
+                    dataType: "jsonp"
+                })
+            })
+
+        };
+
+        
+    </script>
+
+</head>
+
+<body class="">
+    <div class="row">
+        <center>
+            <section class="col-md-12 sec-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input id="input" type="text" placeholder="Wiki searcher"><button onClick="getRequestedInput()">search</button></input>
+                    </div>
+                    <div class="col-md-12">
+<a href='https://en.wikipedia.org/wiki/Special:Random'><button> Get Free Random wikipedia Articles </button></a>
+                    </div>
+                </div>
+            </section>
+        </center><br>
+    </div>
+    <div class="row" id="req">
+        <section class="col-md-12 sec-2">
+            <div class="row">
+                <div class="col-md-12" id="requested"></div>
+            </div>
+        </section>
+    </div>
+    <div class="row" id="rel">
+        <section class="col-md-12 sec-2">
+            <div class="row">
+                <div class="col-md-12" id="rel-head"></div>
+                <div class="col-md-12" id="related"></div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <!-- <section class="col-md-12">
+                    <div class="col-md-12">
+                        <h1>Links:</h1>
+                    </div>
+                    <div class="col-md-12" id="links"></div>
+                </section>-->
+    </div>
+</body>
+
+</html>

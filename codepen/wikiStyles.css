@@ -1,0 +1,32 @@
+.container{}
+.container-fluid{}
+
+.sec-1 {
+    font-size: 10px;
+    background:rebeccapurple;
+    opacity: 0.6;
+    
+  }
+
+.sec-2 {
+    font-size: 10px;
+    background:#B3A6C1;
+    opacity: 0.7;
+    color:#781A1B;
+    font-size:15px;
+    align-self: stretch;
+    
+  }
+  body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color:#555;
+    background: url("https://img.labnol.org/di/wikipedia-books.jpg") no-repeat fixed center;
+    
+  }
+  #req,#rel{
+      margin-bottom: 50px;
+      padding:10px;
+  }
+  a{color:rebeccapurple;}

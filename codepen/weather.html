@@ -1,24 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Page Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <script>
+        function getWeather() {
+            var long;
+            var lati;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    long = position.coords.longitude;
+                    lati = position.coords.latitude;
+
+                    $(document).ready(function () {
+                        console.log("ready!");
+                        $.ajax({
+                            type: "GET",
+                            url: "https://fcc-weather-api.glitch.me/api/current?lat=" + lati + "&lon=" + long,
+                            success: function (data) {
+
+                                var infor = data;
+                                var temp = infor.main.temp;
+                                var maxTemp = infor.main.temp_max;
+                                var minTemp = infor.main.temp_min;
+                                var celsius = temp, maxTemp, minTemp;
+                                $("#data").html("Location/City: " + infor.name + "<br>"
+                                    + "<br>Description: " + infor.weather[0].description + "<br>"
+                                    + "<br>Pressure: " + infor.main.pressure + "<br>"
+                                    + "<br>Humidity: " + infor.main.humidity + "%" + "<br>"
+                                    + "<br>Wind speeds: " + infor.wind.speed + "Knots"
+                                    + "<br>" + "<br>Temperature: " + temp + "°C" + "<br>"
+                                    + "<br>Temp Max: " + maxTemp + "°C" + "<br>"
+                                    + "<br>Temp Min: " + minTemp + "°C");
+
+                                //$("#Icon").html("<img src='" + infor.weather[0].icon + "'" + "pic_mountain.jpg' alt='Mountain View' style='width:304px;height:228px;'>");
 
 
 
- <!DOCTYPE html>
- <html>
- <head>
- <title>Page Title</title>
- <link src ="https://api.weather.com/v3/TileServer/series/productSet?apiKey=089ed4e892fb0dfdf34eb81e6f2521aa">
- <script>
-     function getWeather(){
-        var result =[];
-        var values = window.location.search.split("=");
-        result = values
-        document.getElementById("val").innerHTML= result;
-        console.log(result)
-     }
+                                console.log("success");
+                                console.log(infor);
+                            },
+                            error: function (error) {
+                                alert("server was not found");
+                            },
+                            dataType: "jsonp"
+                        });
 
- </script>
- </head>
- <body>
-     <button onclick="getWeather()">display</button>
-    <p id = "val"></p>
- </body>
- </html> 
+
+                    });
+                })
+            }
+
+        }
+/*function convertToFahrenheit(celsius) {
+    var fahrenheit =  (temp-32)*5/9;
+    console.log( `${fahrenheit}°F`);
+}*/
+    </script>
+</head>
+
+<body onLoad="getWeather()" class="bg-primary">
+    <center>
+        <div>
+            <section class="sec-1">
+                <h1 class="container-fluid fa">Weather-forecast</h1>
+            </section>
+        </div>
+        <!--<button onclick='convertToFahrenheit()'>To Fahrenheit</button>-->
+        <div>
+            <section class="sec-2">
+                <p id="data"></p>
+            </section>
+        </div>
+    </center>
+</body>
+
+</html>

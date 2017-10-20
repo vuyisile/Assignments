@@ -1,0 +1,7 @@
+ // function display(name) {
+                    //     if (data.stream === null) {
+                    //         $("#streamers").append(`<h4>twitch.tv user: <a target =' _blank' href=https://go.twitch.tv/${name}> ${name}</a></h4> <br> Status: Offline`)
+                    //     } else {
+                    //         $("#streamers").append(`<h4>twitch.tv user: <a href=https://go.twitch.tv/${name}>${name}</a><h4> <br> Status: Online <br> <p>Currently Streaming: ${data.stream.game} <br> Viewers:${data.stream.viewers}</p>`)
+                    //     }
+                    // }
