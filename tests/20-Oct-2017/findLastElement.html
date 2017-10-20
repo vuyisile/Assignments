@@ -1,13 +1,21 @@
 <html>
-    
-    <head>
-        <title>find last element</title>
-        <script>
-          
-        </script>
-    </head>
-    
-    <body>
-    </body>
-    
-    </html>
+
+<head>
+    <title>find last element</title>
+    <script>
+        function findLastElement(arr) {
+            arr = Array.from(arguments);
+            var last = arr.length - 1;
+         return arr[last];
+
+        }
+        console.log(findLastElement(1, 2, 3, 4));
+        console.log(findLastElement([1, 2, 3, 4]));
+        console.log(findLastElement("xyz"));
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
