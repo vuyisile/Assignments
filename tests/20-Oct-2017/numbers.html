@@ -1,27 +1,30 @@
 <html>
 
 <head>
-    <title>numbers</title>
+    <title>Numbers</title>
     <script>
+      
         function numbers(arr) {
             arr = Array.from(arguments);
-            var result;
-            var i =0;
-            while(i < arr.length){
-                if (arr.match(/[a-z]/g)) {
-                    result += false;
-                }
-                else{
-                    result += true;
-                }
-                i++;
+            var result = [];
+            for (var i in arr){
+                if(typeof(arr[i]) === "string" || isNaN(arr[i])){
+                result += false;
+                    
             }
+             else if(typeof(arr[i]) === "number"){
+                result += true;
+             }
+            }
+            
             return result;
         }
+        console.log(numbers(1, 4, 3, 2, 5)); // true
 
-            console.log(numbers(1, 4, 3, 2, 5));
-            console.log(numbers(1, "a", 3));
-            console.log(numbers(1, 3, NaN));
+        console.log(numbers(1, "a", 3));// false
+
+        console.log(numbers(1, 2, NaN));// false
+        
     </script>
 </head>
 
