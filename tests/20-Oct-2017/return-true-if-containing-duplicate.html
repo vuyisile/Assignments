@@ -9,9 +9,10 @@
                 return a - z;
             });
             var results = [];
-            for (var i = 0; i < sorted.length; i++) {
+            for (var i in sorted) {
                 for (var n = 1; n < sorted.length; n++) {
-                    if (sorted[n] === sorted[i++]) {
+                    var iPlus1= i++;
+                    if (sorted[n] === sorted[iPlus1]) {
                         results.push(sorted[n] === sorted[i]);
                         return true;
                     }
