@@ -3,15 +3,26 @@
 <head>
     <title>greet function</title>
     <script>
-        function Person(name) { 
-            return this.name = name; 
-        }
-        Person.prototype.greet = function(otherName) {  
-            Person("Mac")
-            return "Hi " + otherName + ", my name is " + name; 
+        function Person(name, otherName) {
+            this.name = name;
+            this.otherName = otherName;
+
         }
 
-        console.log(Person.prototype.greet("Mark"))
+
+        Person.prototype.greet = function () {
+
+            return "Hi " + this.otherName + ", my name is " + this.name;
+        }
+
+        var greetPerson1 = new Person("John", "Frank");
+        var greetPerson2 = new Person("Frank", "Mark");
+        var greetPerson3 = new Person("Kim", "George");
+
+        console.log(greetPerson1.greet())
+        console.log(greetPerson2.greet())
+        console.log(greetPerson3.greet())
+        
     </script>
 </head>
 
