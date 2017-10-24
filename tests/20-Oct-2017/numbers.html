@@ -8,21 +8,14 @@
             var result = [];
             for (var i in arr) {
                 if (typeof (arr[i]) === "string" || isNaN(arr[i])) {
-                    result += false;
-                    if (result.match("false" && "true")) {
-                        return false;
-                    }
-
+                         return false;
+            
                 }
-                else if (typeof (arr[i]) === "number") {
-                    result += true;
-                   
                     
-                    
-                }
+                
             }
 
-            return result;
+            return true;
         }
         console.log(numbers(1, 4, 3, 2, 5)); // true
 
