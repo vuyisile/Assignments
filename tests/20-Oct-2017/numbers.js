@@ -1,13 +1,8 @@
-<html>
-
-<head>
-    <title>Numbers</title>
-    <script>
-        function numbers(arr) {
+function numbers(arr) {
             arr = Array.from(arguments);
             var result = [];
             for (var i in arr) {
-                if (typeof (arr[i]) === "string" ) {
+                if (typeof (arr[i]) === "string") {
                          return false;
             
                 }
@@ -22,10 +17,3 @@
         console.log(numbers(1, "a", 3));// false
 
         console.log(numbers(1, 2, NaN));// true
-    </script>
-</head>
-
-<body>
-</body>
-
-</html>
