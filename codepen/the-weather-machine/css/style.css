@@ -1,0 +1,52 @@
+.container{}
+.container-fluid{}
+.fa{}
+p{align-content: center;
+    margin-top: 100px}
+.sec-2{text-align: left;
+        width:100%;
+        background-color: #ccc;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: Whitesmoke;
+ }
+.sec-1{text-align: center;
+  width:100%;
+            background-color: #370D0D;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #ccc;}
+.bg-color{background-color : #555}
+#icon{text-align:center;
+  font-size:90px;
+   border:1px solid;
+  border-radius:3%;
+  background-color:#555;
+opacity:0.8
+}
+p{margin-top:40px;
+  padding-top:20px;
+  padding-bottom:30px;
+  font-size:30px;
+  border:1px solid;
+  border-radius:3%;
+  background-color:#555;
+opacity:0.6}
+    
+#img{ background:no-repeat;
+  
+background-image: url("https://ak6.picdn.net/shutterstock/videos/6694376/thumb/1.jpg");
+   background-size: 100% 700px;
+    -webkit-filter: grayscale(20%);
+    filter: grayscale(30%);
+  }
+#Fahr{ border:1px solid;
+  border-radius:3%;
+  background-color:#555;
+opacity:0.8}
+#tempF{ border:1px solid;
+  border-radius:3%;
+  background-color:#555;
+opacity:0.8}
+.btn{}
+.btn-default{}
+.btn-primary{}
+#Fahr{font-size:17px;}
