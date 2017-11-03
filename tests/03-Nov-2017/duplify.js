@@ -7,4 +7,4 @@ String.prototype.duplify = function(num){
     }
 
 
- console.log("Scieb".duplify(5))
+ console.log("Mark".duplify(5))
