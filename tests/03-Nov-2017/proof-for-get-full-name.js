@@ -9,8 +9,8 @@ var obj={
     }
 };
 
-console.log(name)
-console.log(obj)
-console.log(obj.name)
-console.log(obj.prop.name)
+var fullName = obj.prop.getFullName();
+
+
 console.log(obj.prop.getFullName())
+console.log(fullName)
