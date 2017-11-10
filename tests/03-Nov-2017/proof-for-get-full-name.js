@@ -1,16 +1,17 @@
-var name = 'Vitalik Buterin';
+var name = {name:'Vitalik Buterin'};
 var obj={
     name: 'Satoshi Nakamoto',
     prop:{
         name:'Adam Back',
-        getFullName:function(){
+        getFullName:function(name){
             return this.name;
         }
     }
 };
 
-var fullName = obj.prop.getFullName();
 
 
-console.log(obj.prop.getFullName())
-console.log(fullName)
+
+console.log(obj.prop.getFullName());
+var fullName = obj.prop.getFullName;
+console.log();
