@@ -25,4 +25,4 @@ obj.method(fn, 1);
 The first function, fn will output 10 because "this.length" access length at a global scope, so when fu() is executed "this." searches for length in the window.
 
 
-The obj.method(fn,1) will return 2 because when fn is executed in obj.method and the "arguments[0]()" gives us an object the arguments passed in obj.method, therefore in this case, "this.length" becomes arguments.length.  
+The obj.method(fn,1) will return 2 because when fn is executed in obj.method and the "arguments[0]()" gives us an object the arguments passed in obj.method, therefore in this case, "this.length" becomes arguments.length.
