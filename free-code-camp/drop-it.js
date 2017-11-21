@@ -1,6 +1,9 @@
 function dropElements(arr, func) {
     var len = arr.length;
     var n = 0;
+    while(n < len){
+        n++;
+    }
     return arr;
 }
 
