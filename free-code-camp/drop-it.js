@@ -1,6 +1,6 @@
 function dropElements(arr, func) {
-    // Drop them elements.
-
+    var len = arr.length;
+    var n = 0;
     return arr;
 }
 
