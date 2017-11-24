@@ -13,3 +13,4 @@ function addStringNum(strNum) {
 console.log(addStringNum(""));
 console.log(addStringNum("1"));
 console.log(addStringNum("1,2"));
+console.log(addStringNum("1,2\n10"));
