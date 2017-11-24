@@ -10,7 +10,7 @@ function addStringNum(strNum) {
         }
         sum += parseInt(matchNum[i]);
     }
-    return matchNum;
+    return sum;
 }
 
 console.log(addStringNum(""));
