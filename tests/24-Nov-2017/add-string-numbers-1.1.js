@@ -1,12 +1,15 @@
-function addStringNum(strNum){
+function addStringNum(strNum) {
     var sum = 0;
-    if(strNum.length === 0){
-        sum+=0;
-    }else{
-        sum+=parseInt(strNum);
+    var matchNum = strNum.match(/\d/g);
+    for(var i in matchNum) {
+        if(matchNum === null){
+            sum+=0;
+        }
+        sum += parseInt(matchNum[i]);
     }
     return sum;
 }
 
 console.log(addStringNum(""));
 console.log(addStringNum("1"));
+console.log(addStringNum("1,2"));
