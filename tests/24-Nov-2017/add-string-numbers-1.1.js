@@ -9,5 +9,4 @@ function addStringNum(strNum){
 }
 
 console.log(addStringNum(""));
-
 console.log(addStringNum("1"));
