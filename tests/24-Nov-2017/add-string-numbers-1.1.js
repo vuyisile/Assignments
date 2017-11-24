@@ -16,5 +16,6 @@ function addStringNum(strNum) {
 console.log(addStringNum(""));
 console.log(addStringNum("1"));
 console.log(addStringNum("1,2"));
-console.log(addStringNum("1\n2,9,-4,6,8,9,-6"));            
+console.log(addStringNum("1\n2,6"));  
 console.log(addStringNum("//;1\n3;4")); 
+console.log(addStringNum("1\n2,9,-4,6,8,9,-6"));            
