@@ -1,7 +1,6 @@
 function addStringNum(strNum) {
     var sum = 0;
     var matchNum = strNum.match(/(\d)|(-\d)/g);
-    //var negNum = strNum.match(/-\d/g)[0];
     for (var i in matchNum) {
         if (matchNum === null) {
             sum += 0;
