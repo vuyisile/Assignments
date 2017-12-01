@@ -8,6 +8,7 @@ function addStringNum(strNum) {
     if(/,\n/g.exec(strNum)){
         return new Error ('invalid structure');
     }
+ 
     var matchNum = strNum.match(/(\d)(\d)|(\d)|(-\d)/g);
 
     for (var i in matchNum) {

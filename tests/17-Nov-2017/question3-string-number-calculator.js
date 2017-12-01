@@ -16,4 +16,5 @@ function addStringNumbers(strNum){
 
 console.log(addStringNumbers("1,2"));
 console.log(addStringNumbers(""));
-console.log(addStringNumbers("1jkk4kj86 po1.6"));
+console.log(addStringNumbers("1jk\nk4kj86 po1.6"));
+console.log(addStringNumbers("//;\n1jk\nk4;8kj86 po1.6"));
