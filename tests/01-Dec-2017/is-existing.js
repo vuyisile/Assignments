@@ -6,3 +6,4 @@ function isExisting(string, word) {
 }
 
 console.log(isExisting("I was once a child", "child"));
+console.log(isExisting("I was once a child", "kid"));

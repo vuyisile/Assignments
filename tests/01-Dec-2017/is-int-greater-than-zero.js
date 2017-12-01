@@ -9,4 +9,6 @@ function isIntGreaterThanZero(input){
     
 }
 
+console.log(isIntGreaterThanZero(1));
 console.log(isIntGreaterThanZero(-1));
+console.log(isIntGreaterThanZero('e'));
