@@ -8,12 +8,12 @@
                 for (var n = 1; n < sorted.length; n++) {
                     var iPlus1= i++;
                     if (sorted[n] === sorted[iPlus1]) {
-                        results.push(sorted[n] === sorted[i]);
-                        return true;
+                        results.push(sorted[n]);
+                        //return true;
                     }
                 }
                
-                return false;
+                return results;
             }
             
         }
