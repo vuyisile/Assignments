@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: "788190698032296",
+                xfbml: true,
+                version: "v1.1"
+            });
+            FB.getLoginStatus(function (response) {
+                if (response.status === "connect") {
+                    document.getElementById("test1").innerHTML = "you are connected";
+                } else if (response.status === "not_authorized") {
+                    document.getElementById("test2").innerHTML = "invalild authantication";
+                }
+            });
+            FB.AppEvents.logPageView();
+        };
+        (function (d, s, id) {
+            var js, fjs = d.getElementById(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+        }(document, "script", "facebook-jssdk"));
+        function login() {
+            FB.login(function (response) {
+                if (response.status === "connect") {
+                    document.getElementById("test1").innerHTML = "you are connected";
+                } else if (response.status === "not_authorized") {
+                    document.getElementById("test1").innerHTML = "invalild authantication";
+                } else {
+                    document.getElementById("test1").innerHTML = "you are not logged in to any facebook account";
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <button onclick="login()">login</button>
+</body>
+
+</html>
