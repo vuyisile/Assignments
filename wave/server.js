@@ -4,7 +4,9 @@ const app = express()
 const qs = require('qs');
 
 
-var users = [];
+var appUsers = [];
+
+
 
 const config = {
   consumerKey: "4ZgxsRYoGsQViRpQcmD5uSQaY",
@@ -14,26 +16,25 @@ const config = {
 app.get('/authorize/twitter', (req, res) => {
   console.log("Requesting a refresh token from twitter");
   getRequestToken((err, data) => {
-    if (err){
+    if (err) {
       res.statusCode(500);
     }
-    //console.log('got data', data);
-    res.send("<a href='https://api.twitter.com/oauth/authorize?oauth_token=" + data.oauth_token + "'>Authorize Twitter</a>" );
+
+    res.send("<a href='https://api.twitter.com/oauth/authorize?oauth_token=" + data.oauth_token + "'>Authorize Twitter</a>");
   });
 });
 
 app.get('/twitter/callback', (req, res) => {
   var tokenDetails = qs.parse(req.query);
 
-  //we still need to compare the tokenDetails.oauth_token with our original request token to make sure nobody has messed with our stuff and it is twitter calling us back.
 
-  getAccessToken(tokenDetails.oauth_verifier, tokenDetails.oauth_token, (err, data) =>{
+  getAccessToken(tokenDetails.oauth_verifier, tokenDetails.oauth_token, (err, data) => {
     if (err) {
       console.log('error getting access token');
-      res.send('<h1>Oh nooo! Something went wrong while giving access, please try again.</h1>');
-    }else {
+      res.send('Oh nooo! Something went wrong while giving access, please try again.');
+    } else {
 
-      users.push(data); // save the oauth token and secret (somewhere safe) so that we can use it when the user 
+      users.push(data);
 
       console.log('the access token is: ', data);
       res.send('<h1>welcome to Wave:)</h1> <textarea></textarea><button>post</button>');
@@ -41,11 +42,7 @@ app.get('/twitter/callback', (req, res) => {
   });
 });
 
-app.get('/', (req, res) => res.send('<h1>Hello World!</h1>'));
-
-app.listen(3001, () => console.log('The server is listening on port 3000!'))
-
-function tweet(message){
+function postMessage(message) {
   const url = "https://api.twitter.com/1.1/statuses/update.json";
 
   var oauth = {
@@ -57,50 +54,49 @@ function tweet(message){
 
   var options = {
     url: url,
-    oauth:oauth,
-    qs: {status: "Hello World"}
+    oauth: oauth,
+    qs: { status: "Hello World" }
   };
 
   request.post(options,
-               function(err,response,body){
-                 console.log("http response code", response.statusCode);
-                 console.log("http response body", response.body);
+    function (err, response, body) {
+      console.log("http response code", response.statusCode);
+      console.log("http response body", response.body);
 
-                 if (error){
-                   console.log(error);
-                 }
-               });
+      if (error) {
+        console.log(error);
+      }
+    });
 }
 
-function getAccessToken(oauthVerifier, requestToken, cb){
+function getAccessToken(oauthVerifier, requestToken, callBack) {
   var oauth = {
     consumer_key: config.consumerKey,
     consumer_secret: config.consumerSecret,
-    token: requestToken // in the documentation this says that it should be oauth_token but that does not work, it should just be token like the other requests and then it works.
+    token: requestToken
   };
   console.log("oauth = ", oauth);
 
   request.post({
-    url:'https://api.twitter.com/oauth/access_token',
+    url: 'https://api.twitter.com/oauth/access_token',
     oauth: oauth,
-    qs: {oauth_verifier: oauthVerifier}
+    qs: { oauth_verifier: oauthVerifier }
   }, function (err, res, body) {
     console.log("body = ", body);
-    if (err){
+    if (err) {
       console.log(err);
-      cb(err);
-      return;
+      callBack(err);
     };
 
 
     var data = qs.parse(body);
-    cb(null, data);
+    callBack(null, data);
   });
 
 }
 
 
-function getRequestToken(cb){
+function getRequestToken(callBack) {
   var oauth = {
     callback: 'http://localhost:3001/twitter/callback'
     , consumer_key: config.consumerKey
@@ -108,21 +104,24 @@ function getRequestToken(cb){
   };
 
   request.post({
-    url:'https://api.twitter.com/oauth/request_token',
-    oauth:oauth
-  }, function (e, r, body) {
-    if (e){
-      console.log(e);
-      cb(e);
+    url: 'https://api.twitter.com/oauth/request_token',
+    oauth: oauth
+  }, function (err, res, body) {
+    if (err) {
+      console.log(err);
+      callBack(err);
       return;
     };
 
     var data = qs.parse(body);
-    cb(null, data);
+    callBack(null, data);
   });
 
 }
 
 
 
+app.get('/', (req, res) => res.send("Hello World! \n welcome to status wave :) \n wanna post on twitter, first give use Autherization \n <a href='http://localhost:3001/authorize/twitter'>Go to the next page-></a>"));
+
+app.listen(3001, () => console.log('The server is listening on port 3000!'))
   
