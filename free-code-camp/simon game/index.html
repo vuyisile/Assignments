@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="theJava.js"></script>
+    <link rel="stylesheet" href="theCss.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <title>Simon Game</title>
+</head>
+
+<body>
+    <center>
+        <h1>Simon Game</h1>
+        <div class="row container">
+            <button onclick ="playUser('red');" class="col-md-6" id="red"></button>
+            <button onclick ="playUser('green');"  class="col-md-6" id="green"></button>
+            <button onclick ="playUser('blue');"  class="col-md-6" id="blue"></button>
+            <button onclick ="playUser('yellow');"  class="col-md-6" id="yellow"></button>
+        </div>
+        <button onclick="runGame()">start</button>
+    </center>
+</body>

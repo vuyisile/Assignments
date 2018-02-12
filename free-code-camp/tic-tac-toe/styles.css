@@ -1,0 +1,37 @@
+.container {}
+
+.cell {height: 200px;
+       border: 5px solid;
+       border-color: burlywood;
+       font-size: 100px;
+       color: burlywood;
+    }
+.h1-s{
+    margin:50px;
+    background-color: burlywood;
+    font-size: 110px;
+}
+.p-s{
+    margin:50px;
+    background-color: burlywood;
+    font-size: 90px;
+}
+.btn{}
+.b-s{
+    margin:50px;
+    font-size: 90px;
+    color:black;
+}
+.b-s2{  
+    margin:50px;
+    background-color:burlywood;
+    background-origin: fixed;
+    }
+
+.body-c{background-color: black;}
+
+.h1-s2{
+    margin:30px;
+    background-color: burlywood;
+    font-size: 100px;
+}

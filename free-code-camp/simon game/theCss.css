@@ -1,0 +1,27 @@
+.container{}
+.btn{}
+.container-fluid{}
+button{
+    width: 250px;
+    height: 250px;
+    margin:50px;
+  
+}
+#red{
+    border: 6px solid;
+    border-color:#FF1744;
+}
+#blue{
+    border: 6px solid;
+    border-color:#0D47A1;
+}
+#green{
+    border: 6px solid;
+    border-color:#2E7D32;
+}
+
+#yellow{
+    border: 6px solid;
+    border-color:#FFA000;
+
+}

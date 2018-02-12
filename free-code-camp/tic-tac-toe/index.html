@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="script.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <title>tic-tac-toe</title>
+</head>
+
+<body class = "body-c">
+
+    <div class="container" id="select">
+        <center>
+            <div>
+                <h1 class="h1-s">Hi there lets play a game of Tic Tac Toe!</h1>
+                <h2>
+                    <p class = "p-s"><b>Please select a character</b></p>
+                </h2>
+            </div>
+            <div class = "b-s2">
+                <button class = "b-s btn" onclick="characterX()"><h4><b>X</b></h4></button> 
+                <button class = "b-s btn" onclick="characterO()"><h4><b>O</b></h4></button>
+                <br>
+                <button class = "b-s btn btn-success" onclick="displayGame()">start</button>
+            </div>
+    </div>
+
+    </center>
+
+    <div id="game"></div>
+
+</body>
