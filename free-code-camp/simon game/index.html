@@ -10,15 +10,23 @@
     <title>Simon Game</title>
 </head>
 
-<body>
+<body class = "b-bg">
     <center>
-        <h1>Simon Game</h1>
+        <h1 class = "head-font">Simon Game</h1>
+        <br/>
+        <br/>
         <div class="row container">
-            <button onclick ="playUser('red');" class="col-md-6" id="red"></button>
-            <button onclick ="playUser('green');"  class="col-md-6" id="green"></button>
-            <button onclick ="playUser('blue');"  class="col-md-6" id="blue"></button>
-            <button onclick ="playUser('yellow');"  class="col-md-6" id="yellow"></button>
+            <button onclick="playUser('red');" class="col-md-6" id="red"></button>
+            <button onclick="playUser('green');" class="col-md-6" id="green"></button>
+            <button onclick="playUser('blue');" class="col-md-6" id="blue"></button>
+            <button onclick="playUser('yellow');" class="col-md-6" id="yellow"></button>
         </div>
-        <button onclick="runGame()">start</button>
+        <br>
+        <div>
+        <p id = "score">--</p>
+        <button class="btn" id="switchON" onclick="switchOn()">ON</button>
+        <button class="btn" id="switchOFF" onclick="switchOff()" style ="background-color:red">OFF</button>
+        <button class="btn" id ="start" onclick="runGame()">start</button>
+        </div>
     </center>
 </body>

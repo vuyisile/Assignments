@@ -10,18 +10,60 @@ button{
 #red{
     border: 6px solid;
     border-color:#FF1744;
+    background-color: white;
 }
 #blue{
     border: 6px solid;
     border-color:#0D47A1;
+     background-color: white;
 }
 #green{
     border: 6px solid;
     border-color:#2E7D32;
+    background-color: white;
 }
 
 #yellow{
     border: 6px solid;
     border-color:#FFA000;
+    background-color: white;
 
+}
+
+#switchON{
+    width:55px;
+    height:35px;
+    background-color: #FFA000;
+    color:white;
+}
+#switchOFF{
+    width:55px;
+    height:35px;
+    background-color: #FFA000;
+    color:white;
+}
+
+#start{
+    width:65px;
+    height:35px;
+    background-color: #0D47A1;
+    color:white;
+}
+
+#score{
+    border:4px solid;
+    border-color:#FF1744;
+    width:50px;
+    font-size: 30px;
+    background-color: #2E7D32;
+}
+
+.b-bg{
+    background-image: url('http://hdimages.org/wp-content/uploads/2016/11/html-background-image-HD3-1.jpg');
+    background-origin: fixed;
+}
+.head-font{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 100px;
 }
