@@ -66,4 +66,17 @@ button{
     font-family: 'Times New Roman', Times, serif;
     color: white;
     font-size: 100px;
+
+}
+#score-lable{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 50px;
+}
+
+#strict{
+    width:125px;
+    height:35px;
+    background-color: #455A64;
+    color: white;
 }

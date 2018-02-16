@@ -1,9 +1,9 @@
 var colors = ['red', 'blue', 'yellow', 'green']
 var compCombination = [];
 var playerCombination = [];
-var score = 0;
+var score = 1;
 var i = 1;
-
+var strictMode = 0;
 
 function switchOn() {
     var state = document.getElementById('switchON');
@@ -20,6 +20,7 @@ function switchOff() {
 }
 
 function start() {
+    document.getElementById('score').innerHTML = score;
     var random = Math.floor(Math.random() * colors.length);
 
     if (compCombination.length < i) {
@@ -62,19 +63,27 @@ function playUser(id) {
     }
     console.log('playerCombination : ', playerCombination);
     var checker = checkMatch(compCombination, playerCombination);
-
+    //var strict = strict();
     if (playerCombination.length === compCombination.length && checker === true) {
         setTimeout(() => runGame(), 1000);
         playerCombination = [];
         score += 1;
         document.getElementById('score').innerHTML = score;
-    } else if (playerCombination.length === compCombination.length && checker === false) {
+    } else if (playerCombination.length === compCombination.length && checker === false && strictMode === 1) {
         playerCombination = [];
         compCombination = [];
         document.getElementById('switchON').style.background = '#FFA000';
+        document.getElementById('switchOFF').style.background = 'red';
         alert("sorry colors don't match, you lose!");
+        score = 0;
          document.getElementById('score').innerHTML = '--';
        
+    }else if(playerCombination.length === compCombination.length && checker === false && strictMode === 0){
+         score -= 1;
+         compCombination = [compCombination.pop()];
+         document.getElementById('score').innerHTML = score;
+         console.log(compCombination)
+    
     }
 
 }
@@ -85,7 +94,7 @@ function playUser(id) {
 
 function runGame() {
     var stateColor = document.getElementById('switchON').style.background;
-    if (stateColor === 'green white repeat scroll 0% 0%') {
+    if (stateColor === 'green none repeat scroll 0% 0%') {
         compCombination = start();
         flashUp(compCombination);
     }
@@ -119,4 +128,19 @@ function checkMatch(comp, player) {
     } else {
         return false;
     }
+}
+
+function strict(){
+    if(strictMode === 0){
+        strictMode+=1;
+        alert('you are on strict mode');
+       console.log(strictMode);
+        return true;
+    }else if(strictMode > 0){
+        strictMode = 0;
+        alert('strict mode is off!');
+      console.log(strictMode);
+        return false;
+    }
+  
 }
