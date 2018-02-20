@@ -7,10 +7,41 @@
     padding: 25px;
     margin: 25px;
 }
-.bg-c{background-color:yellow;}
+.bg-c{background-color:#FFDAB9;}
 h1{text-align:center}
 button{margin:3%;
        width:100%;
+     box-shadow: 2px 3px 2px 0px #222121;
+  text-align:center;
 }
-input{margin:3%;
-border: 3px solid green}
+#input-box{
+  width: 100%;
+  height: 35px;
+  margin-top:3%;
+  margin-bottom:1%;
+  border: 5px solid #b4b39d;
+  border-radius: 4px;
+  background-color: #c3c2ab;
+  text-align:right;
+  font-family: 'Orbitron';
+}
+
+.s-color{
+  background-color:#4682B4;
+  color:white;
+ }
+
+#containing{
+   box-shadow: 3px 0px 3px 4px #222121;
+  border: 4px solid #FEF0DB;
+  border-radius: 10px;
+  width:30%;
+  height:24em;
+}
+
+body{font-family: 'Orbitron';
+      font-size:20px}
+p{text-align:center;
+  color:#BC8F8F;}
+
+.bg-body{background-color:#FFE4B5;}

@@ -1,30 +1,42 @@
 <html>
   <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
    </head>
-<body class="bg-primary container">
-  <div class="container-fluid"><h1>Simple Calculator</h1></div>
+<body class="bg-body container">
+  <div class="container-fluid"><h1>Simple Calculator </h1></div>
+  <div class="container-fluid"><p>by VUYISILE WENI</p></div>
   <center>
-  <div class = "bg-c container row">
-    
-    <div class = "col-md-12"><input id ="input-box" class ="container-fluid"></input></div>
-    <div class = "col-md-3"><button id="ac" class="btn btn-danger">AC</button></div>   
-    <div class = "col-md-3"><button id="ce" class="btn btn-danger">CE</button></div>  
-    <div class = "col-md-3"><button id="divide" class="btn btn-default">/</button></div>  
-    <div class = "col-md-3"><button id="multiply" class="btn btn-default">*</button></div>  
-    <div class = "col-md-3"><button id="seven" class="btn btn-primary">7</button></div>  
-    <div class = "col-md-3"><button id="eight" class="btn btn-primary">8</button></div>  
-    <div class = "col-md-3"><button id="nine" class="btn btn-primary">9</button></div>   
-    <div class = "col-md-3"><button id="subtract" class="btn btn-default">-</button></div>  
-    <div class = "col-md-3"><button id="four" class="btn btn-primary">4</button></div>  
-    <div class = "col-md-3"><button id="five" class="btn btn-primary">5</button></div>  
-    <div class = "col-md-3"><button id="six" class="btn btn-primary">6</button></div>  
-    <div class = "col-md-3"><button id="equal" class="btn btn-success">=</button></div>
-    <div class = "col-md-3"><button id="one" class="btn btn-primary">1</button></div>   
-    <div class = "col-md-3"><button id="two" class="btn btn-primary">2</button></div>  
-    <div class = "col-md-3"><button id="three" class="btn btn-primary">3</button></div>  
-    <div class = "col-md-3"><button id="zero" class="btn btn-primary">0</button></div>  
-    <div class = "col-md-3"><button id="comma" class="btn btn-primary">.</button></div>  
+  <div id = "containing" class = "bg-c container row">
+     <div class = "col-md-12">
+       <b><p>WAYAZI CALCULATOR</p></b>
+    </div>
+    <div class = "col-md-12">
+      <textarea  rows="1" id ="input-box" class ="container"></textarea>
+    </div>
+    <div class = "col-md-3"><button onClick="allClear()" id="ac" class="btn btn-danger">AC</button></div>   
+    <div class = "col-md-3"><button onClick="clearEntry()" id="ce" class="btn btn-danger">CE</button></div>  
+    <div class = "col-md-3"><button onClick="pushDivideSign()" id="divide" class="btn s-color">/</button></div>  
+    <div class = "col-md-3"><button onClick="pushMultiplicationSign()" id="multiply" class="btn s-color">*</button></div>  
+    <div class = "col-md-3"><button onClick="pushSeven()" id="seven" class="btn btn-primary">7</button></div>  
+    <div class = "col-md-3"><button onClick="pushEight()" id="eight" class="btn btn-primary">8</button></div>  
+    <div class = "col-md-3"><button onClick="pushNine()" id="nine" class="btn btn-primary">9</button></div>   
+    <div class = "col-md-3"><button onClick="pushSubtractionSign()" id="subtract" class="btn s-color">-</button></div>  
+    <div class = "col-md-3"><button onClick="pushFour()" id="four" class="btn btn-primary">4</button></div>  
+    <div class = "col-md-3"><button onClick="pushFive()" id="five" class="btn btn-primary">5</button></div>  
+    <div class = "col-md-3"><button onClick="pushSix()" id="six" class="btn btn-primary">6</button></div>  
+    <div class = "col-md-3"><button onClick="pushAdditionSign()" id="addition" class="btn s-color">+</button></div>
+    <div class = "col-md-3"><button onClick="pushOne()" id="one" class="btn btn-primary">1</button></div>   
+    <div class = "col-md-3"><button onClick="pushTwo()" id="two" class="btn btn-primary">2</button></div>  
+    <div class = "col-md-3"><button onClick="pushThree()" id="three" class="btn btn-primary">3</button></div>  
+    <div class = "col-md-3"><button onClick="calculate()" id="equal" class="btn btn-success">=</button></div>
+    <div class = "col-md-6"><button onClick="pushZero()" id="zero" class="btn btn-primary zd-btn">0</button></div>  
+    <div class = "col-md-6"><button onClick="pushCommaSign()" id="comma" class="btn btn-primary">.</button></div>  
 </center>
   </div>
 </body>
