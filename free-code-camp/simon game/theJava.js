@@ -75,13 +75,14 @@ function playUser(id) {
         document.getElementById('switchON').style.background = '#FFA000';
         document.getElementById('switchOFF').style.background = 'red';
         alert("sorry colors don't match, you lose!");
-        score = 0;
+        score = 1;
          document.getElementById('score').innerHTML = '--';
        
     }else if(playerCombination.length === compCombination.length && checker === false && strictMode === 0){
          score -= 1;
-         compCombination = [compCombination.pop()];
          document.getElementById('score').innerHTML = score;
+         alert("wrong pattern please try again.");
+         setTimeout(() => runGame(), 1000);
          console.log(compCombination)
     
     }

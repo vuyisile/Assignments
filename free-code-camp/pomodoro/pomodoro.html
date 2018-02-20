@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <style>
     #timer-container {
       background-color: #ad0afe;
@@ -10,22 +11,18 @@
     span {
       font-size: 60px;
     }
-    .container{};
 
-    .align-lf{text-align: left;}
+    .container {}
+
+    ;
+
+    .align-lf {
+      text-align: left;
+    }
   </style>
 
 
   <script>
-
-    function resetAll(){
-      document.getElementById('session').innerHTML = "0";
-      document.getElementById('timer').innerHTML = "00:00";
-      document.getElementById('btime').innerHTML = "00:00";
-      clearTimeout(btimer);
-      clearTimeout(timer);
-    }
-
     function setTimer() {
       var setMin = document.getElementById('setMin').value;
       var sessions = document.getElementById("session").innerHTML;
@@ -48,7 +45,7 @@
       var tArray = cTime.split(/[:]+/);
       console.log(tArray);
       var m = parseInt(tArray[0]);
-    
+
       var s = checkSecond((tArray[1] - 1));
       var session = parseInt(currentSession);
 
@@ -58,7 +55,7 @@
 
       document.getElementById('btime').innerHTML = m + ":" + s;
       var btimer = setTimeout(breakTime, 1000);
-      session= session+1;
+      session = session + 1;
 
       if (tArray[0] === "0" && tArray[1] === "00") {
         var min = "0";
@@ -69,7 +66,7 @@
         document.getElementById('session').innerHTML = session;
         notify();
       }
-      
+
 
     }
 
@@ -130,27 +127,31 @@
       };
       return sec;
     }
+
+    function resetAll() {
+      window.location.href = window.location.href
+    }
   </script>
 </head>
 
 
 
 <body>
- 
+
   <center>
-  <div id="timer-container" class="row container">
-    <div class="col-md-6">st:<input type="number" id="setMin" min ="1"  max="60"/></div>
-    <div class="col-md-6">bt:<input type="number" id="breaktime" min ="1"  max="60" /></div>
-    <div class="col-md-12"><button onclick="setTimer();countdown();">start</button></div>
-    <div class="col-md-6 align-lf">Time:</div>
-    <div class="col-md-12"><span id="timer">00:00</span></div>
-    <div class="col-md-6 align-lf">B-Time:</div>
-    <div class="col-md-12"><span id="btime">00:00</span></div>
-    <div class="col-md-6 align-lf">Sessions:</div>
-    <div class="col-md-12"><span id="session">0</span></div>
-    <div class="col-md-6"><button onclick="stopAlarm()">stop alarm</button></div>
-    <div class="col-md-6"><button onclick="resetAll();">reset</button></div>
-  </div>
+    <div id="timer-container" class="row container">
+      <div class="col-md-6">st:<input type="number" id="setMin" min="1" max="60" /></div>
+      <div class="col-md-6">bt:<input type="number" id="breaktime" min="1" max="60" /></div>
+      <div class="col-md-12"><button onclick="setTimer();countdown();">start</button></div>
+      <div class="col-md-6 align-lf">Time:</div>
+      <div class="col-md-12"><span id="timer">00:00</span></div>
+      <div class="col-md-6 align-lf">B-Time:</div>
+      <div class="col-md-12"><span id="btime">00:00</span></div>
+      <div class="col-md-6 align-lf">Sessions:</div>
+      <div class="col-md-12"><span id="session">0</span></div>
+      <div class="col-md-6"><button onclick="stopAlarm()">stop alarm</button></div>
+      <div class="col-md-6"><button onclick="resetAll();">reset</button></div>
+    </div>
   </center>
 </body>
 
