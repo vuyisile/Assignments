@@ -16,8 +16,8 @@ class MarkdownViewer extends React.Component {
         return (
             <div className='row'>
                 <div className='col-sm-12 header'>Markdown Previewer</div>
-                <textarea className='col-sm-6' id='input' onChange={this.handleChange.bind(this)} />
-                <div className='col-sm-6 iframe' dangerouslySetInnerHTML={{ __html: marked(this.state.value) }}></div>
+                <textarea className='col-sm-11' id='input' onChange={this.handleChange.bind(this)} />
+                <div className='col-sm-11 iframe' dangerouslySetInnerHTML={{ __html: marked(this.state.value) }}></div>
 
             </div>
         )
