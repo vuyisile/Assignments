@@ -1,12 +1,13 @@
 import React from 'react';
 import Axios from 'axios';
+// import {Link} from 'react-router-dom';
 
 export default class Recents extends React.Component {
     constructor() {
         super();
         this.state = { data: [] }
     }
-    i = 1;
+
     componentDidMount() {
         Axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
             .then(response => {
@@ -27,11 +28,13 @@ export default class Recents extends React.Component {
                 <th>{'All-time Points'}</th>
                 <th>{'Recent Points'}</th>
             </thead>
+        
+            
             {this.state.data.map(data => (
 
 
                 <tbody>
-                    <td>{this.i++}</td>
+                    <td>{this.state.data.indexOf(data)+1}</td>
                     <td><a href={`https://www.freecodecamp.org/${data.username}`} ><img src={data.img} alt={""} />{data.username}</a></td>
                     <td>{data.alltime}</td>
                     <td>{data.recent}</td>
