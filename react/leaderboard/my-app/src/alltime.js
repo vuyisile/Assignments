@@ -3,8 +3,8 @@ import Axios from 'axios';
 
 
 export default class Alltime extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { data: [] }
     }
     i = 0;
@@ -21,7 +21,7 @@ export default class Alltime extends React.Component {
     }
 
     render() {
-        return (<table>
+        return (<table name = "all-time">
             <thead>
                 <th>{'#'}</th>
                 <th>{'Camper Name'}</th>
