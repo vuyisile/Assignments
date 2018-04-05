@@ -5,6 +5,8 @@ import './index.css';
 function createRecipeObj(name,recipe){
     const reci = document.getElementById('recipe').value;
     const list = document.getElementById('list').value;
+    console.log({name: reci, recipe: list.split(',')});
+    
     return {name: reci, recipe: list.split(',')}
 
 }
