@@ -44,10 +44,4 @@ export default class Alltime extends React.Component {
         </table>)
     }
 
-
-
-
-
-
-
 }

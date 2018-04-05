@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+input{
+  width:100%;
+  position: center;
+}
+textarea{
+  width:102%;
+}
+button{
+  width:103.4%;
+  position: center;
+}
+
+
