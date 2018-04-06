@@ -46,11 +46,15 @@ class RecipeBox extends React.Component {
     }
 
     storeRecipes() {
-
         localStorage.setItem('Recipes', JSON.stringify(this.state.recipes));
+        console.log('Local storage length:', localStorage.length);
+        this.displayFromLS();
+    }
+
+    displayFromLS() {
         var item = JSON.parse(localStorage.getItem("Recipes"));
-        console.log('The stored:', item);
-        console.log('Local storage length:', localStorage.length)
+        console.log('From localstorage:', item);
+
     }
 
     render() {
