@@ -3,61 +3,49 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-
-
-// function storeRecipeObj() {
-//     //var LocalStorage = require('node-localstorage').LocalStorage;
-//     //localStorage = new LocalStorage('./scratch');
-//     var currentObj = createRecipeObj();
-
-// }
 class RecipeBox extends React.Component {
     constructor() {
         super();
-        this.state = { recipeName: '', recipeList: [], recipes: [{ recipe: 'Pap', listOfItems: ['boiling water', 'maze'] }] };
-
+        this.state = { lsFromLocalStorage: [], recipeName: '', recipeList: [], recipes: [{ recipe: '', listOfItems: [] }] };
     }
-
-
-
 
     handleChange(e) {
         let change = {}
         change[e.target.name] = e.target.value
         this.setState(change)
-        console.log(this.state)
     }
+
     addNewRecipeObj() {
         var newRecipeObj = { recipe: this.state.recipeName, listOfItems: this.state.recipeList.split(',') };
-        var newRecipes = this.state.recipes;
-        newRecipes.push(newRecipeObj);
-        this.setState({ recipes: newRecipes });
-        console.log('new state:', this.state);
+        this.state.recipes.splice(this.state.recipes.length, 0, newRecipeObj)
+        this.setState({ recipes: this.state.recipes })
+        console.log("recipes", this.state.recipes)
+        this.storeRecipes();
         this.clearInputBoxes();
-
     }
 
     clearInputBoxes() {
-        this.storeRecipes();
         this.refs.recipeName.value = '';
         this.refs.recipeList.value = [];
         this.setState({ recipeName: '', recipeList: [] });
-        console.log('cleared input boxes')
+        console.log('cleared input boxes');
     }
 
     storeRecipes() {
-        localStorage.setItem('Recipes', JSON.stringify(this.state.recipes));
-        console.log('Local storage length:', localStorage.length);
-        this.displayFromLS();
+        localStorage.setItem("allData", JSON.stringify(this.state.recipes));
+        console.log('new state:', this.state);
     }
-
-    displayFromLS() {
-        var item = JSON.parse(localStorage.getItem("Recipes"));
-        console.log('From localstorage:', item);
-
+    
+    componentDidMount() {
+        var oldSate = JSON.parse(localStorage.getItem("allData"));
+        if (oldSate) {
+            this.setState({ recipes: oldSate })
+            console.log(this.state.recipes);
+        }
     }
 
     render() {
+
         return (
             <div>
                 <table>
