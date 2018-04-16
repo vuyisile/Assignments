@@ -66,7 +66,7 @@ class RecipeBox extends React.Component {
         // this.setState({currentIndex: index});
         if (this.state.btnState === true && this.state.recipes.indexOf(currentRecipe) === index) {
             this.value = items.map(e => (
-                <ol>{e}</ol>));
+                <ol>{'-'+e}</ol>));
         }
         else if (this.state.recipes.indexOf(currentRecipe) !== index) {
             this.value = '';
@@ -77,21 +77,27 @@ class RecipeBox extends React.Component {
 
     }
 
-    editRecipe(index) {
+    deleteRecipe(index) {
         this.changeBtnState();
         var currentRecipe = this.state.recipes[index];
-        var items = currentRecipe.ingredients;
-        console.log('Editing items:', items);
-        console.log('recipe indexed at', index);
+        var recipesList = this.state.recipes;
+        recipesList.splice(index,1);
+        this.setState({recipes:recipesList});
+        localStorage.setItem("allData", JSON.stringify(this.state.recipes));
+        console.log('filtered:', recipesList);
+        console.log('recipe', currentRecipe);
+        this.value = '';
     }
 
+    
     render() {
 
         return (
             <layer className={'ov-lay'}>
-            <div className={'row container'}>
-            
-                <h1 className={'col-md-12 header text-color'}>Recipe Box</h1>
+            <div className={'row container z-indx'}>
+               
+                <h1 className={'col-md-12 header  text-color'}>Recipe Box</h1>
+             
                 <form className={'col-md-6 '} id={"form"}>
                     <input className={'col-md-12 marginer'} name={'recipe'} ref={'recipe'} type='text' placeholder={'Please add name here'} onChange={this.handleChange.bind(this)} />
                     <textarea className={'marginer col-md-12 form-control'} name={'ingredients'} ref={'ingredients'} rows={4} cols={50} placeholder={'Please add ingrediants here and separate them by commas....example: tomato,onion,olive oil'} onChange={this.handleChange.bind(this)}></textarea>
@@ -106,8 +112,8 @@ class RecipeBox extends React.Component {
                     <h2 className={'col-md-12 header text-color'}>View Recipe</h2>
                 <div className={'col-md-12 container'} id={"display-panel"}>
                   
-                        <button className={'col-md-6 btn btn-primary'} onClick={() => this.editRecipe(this.currentIndex)}>Edit</button>
-                        <button className={'col-md-6 btn btn-danger'}>Delete</button>
+                        <button className={'col-md-6 btn btn-primary'}>Edit</button>
+                        <button className={'col-md-6 btn btn-danger'} onClick={() => this.deleteRecipe(this.currentIndex)}>Delete</button>
                    
                     <div >{this.value}</div>
                 </div>
