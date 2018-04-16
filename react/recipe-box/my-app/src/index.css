@@ -1,18 +1,88 @@
+.container{}
+.container-fluid{}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 input{
-  width:100%;
-  position: center;
-}
-textarea{
-  width:102%;
-}
-button{
-  width:103.4%;
-  position: center;
+  margin-bottom:10%;
+  margin-top: 10%;
 }
 
+textarea{
+  margin-bottom:10%;
+} 
+
+.btn{
+  margin-top: 4%;
+  margin-bottom:4px;
+  align:center; 
+}
+.form-control{}
+
+/* button{
+  width:100%;
+  position: center;
+} */
+#display-panel{
+  width: 300px;
+  height: 350px;
+  overflow-y:scroll;
+}
+
+
+#btn-panel{
+  width: 500px;
+  height: 250px;
+  overflow-y:scroll; 
+}
+
+#form{
+  width: 500px;
+  height: 250px;  
+}
+.header{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  
+}
+.marginer{
+  margin-top: 2%;
+}
+
+.body-bg{
+  background-image: url("chicken.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  #root{
+  margin-left: 0px;
+  }
+  .body-bg{
+    
+    background-image: url("burger.jpg");
+    background-size: 100%;
+    background-repeat: repeat-y;
+    
+}
+
+  
+}
+.text-color{
+color:whitesmoke;
+}
+
+
+.ov-lay{
+  background-color: black;
+  opacity: 0.2;
+  position: absolute;
+  z-index: -10;
+}
 
