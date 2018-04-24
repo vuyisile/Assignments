@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-// import {Link} from 'react-router-dom';
+
 
 export default class Alltime extends React.Component {
     constructor(props) {
@@ -11,13 +11,12 @@ export default class Alltime extends React.Component {
     
     componentDidMount() {
         Axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
-            .then(respon => {
-                this.setState({ data: respon.data })
-                console.log(this.state.data)
-                console.log(respon.data)
+            .then(response => {
+                this.setState({ data: response.data })
+
             })
             .catch(error => {
-                console.log(error)
+                return error;
             });
     }
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  vuyisile</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <html>
+
+<body>
+ 
+  <center>
+    <div><h1>Pomodoro Clock</h1></div>
+    <div><h6>by Vuyisile</h6></div>
+    <br/>
+  <div id="timer-container" class="row container">
+    <div class="col-md-6">st:<input type="number" id="setMin" min ="1"  max="60"/></div>
+    <div class="col-md-6">bt:<input type="number" id="breaktime" min ="1"  max="60" /></div>
+    <div class="col-md-12"><button onclick="setTimer();countdown();" class='btn btn-success'>start</button></div>
+    <div class="col-md-6 align-lf">Time:</div>
+    <div class="col-md-12"><span id="timer">0:00</span></div>
+    <div class="col-md-6 align-lf">B-Time:</div>
+    <div class="col-md-12"><span id="btime">0:00</span></div>
+    <div class="col-md-6 align-lf">Sessions:</div>
+    <div class="col-md-12"><span id="session">0</span></div>
+    <div class="col-md-6"><button onclick="stopAlarm()" class='btn btn-danger'>stop alarm</button></div>
+    <div class="col-md-6"><button onclick="resetAll();" class='btn btn-danger'>reset</button></div>
+  </div>
+  </center>
+</body>
+
+</html>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

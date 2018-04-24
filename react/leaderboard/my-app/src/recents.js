@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-// import {Link} from 'react-router-dom';
+
 
 export default class Recents extends React.Component {
     constructor() {
@@ -12,8 +12,7 @@ export default class Recents extends React.Component {
         Axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
             .then(response => {
                 this.setState({ data: response.data })
-                console.log(this.state.data)
-                console.log(response.data)
+              
             })
             .catch(error => {
                 console.log(error)
