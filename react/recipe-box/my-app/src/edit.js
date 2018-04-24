@@ -10,7 +10,8 @@ export default class EditForm extends React.Component {
         this.state = { recipe: props.recipe, ingredients: props.ingredients }
     }
 
-    saveRecipe(){
+    saveRecipe(e){
+        e.preventDefault();
       this.props.save(this.state); 
     }
 
