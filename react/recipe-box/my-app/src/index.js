@@ -2,27 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './bootstrap.min.css';
+import EditForm from './edit'
 
 
 
 class RecipeBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { btnState: true, recipe: '', ingredients: [], recipes: [] };
+        this.state = { recipe: '', ingredients: '', recipes: [], currentDisplay: '', showEditForm: false, activeRecipe: {} };
     }
-    currentIndex = 0;
-    value;
     handleChange(e) {
         let change = {}
         change[e.target.name] = e.target.value
-        this.setState(change)
+        this.setState(change);
+        console.log('state from edit form:', this.state);
+
     }
 
     addNewRecipeObj() {
-        var newRecipeObj = { recipe: this.state.recipe, ingredients: this.state.ingredients.split(',') };
+        var newRecipeObj = { recipe: this.state.recipe, ingredients: this.state.ingredients };
         this.state.recipes.splice(this.state.recipes.length, 0, newRecipeObj)
-        this.setState({ recipes: this.state.recipes })
-
+        this.setState({ recipes: this.state.recipes });
         this.storeRecipes();
         this.clearInputBoxes();
     }
@@ -30,13 +30,17 @@ class RecipeBox extends React.Component {
     clearInputBoxes() {
         this.refs.recipe.value = '';
         this.refs.ingredients.value = [];
-        this.setState({ recipe: '', ingredients: [] });
+        this.setState({ recipe: '', ingredients: '' });
+    }
 
+    saveUpdate(update) {
+        var theUpdate = {recipe: update.recipe, ingredientsUpdate: update.ingredients};
+        var allRecipes = this.state.recipes;
+        
     }
 
     storeRecipes() {
         localStorage.setItem("allData", JSON.stringify(this.state.recipes));
-
     }
 
     componentDidMount() {
@@ -47,69 +51,35 @@ class RecipeBox extends React.Component {
         }
     }
 
-    changeBtnState() {
-        if (this.state.btnState === false) {
-            this.setState({ btnState: true });
-            console.log("status:", this.state.btnState)
-        } else {
-            this.setState({ btnState: false });
-            console.log("status:", this.state.btnState)
-        }
-    }
-
     displayIngredients(index) {
-        this.changeBtnState();
         var currentRecipe = this.state.recipes[index];
-        var items = currentRecipe.ingredients;
-        
-        if (this.state.btnState === true && this.state.recipes.indexOf(currentRecipe) === index) {
-            this.setState({recipe:currentRecipe.recipe, ingredients:currentRecipe.ingredients})
-            this.value = items.map(e => (
-                <ol>{'-' + e}</ol>));
-        }
-        else if (this.state.recipes.indexOf(currentRecipe) !== index) {
-            this.value = '';
-        }
-        else {
-            this.value = '';
-        }
-
+        this.setState({ recipe: currentRecipe.recipe, ingredients: currentRecipe.ingredients, activeRecipe: currentRecipe, showEditForm: false });
     }
 
-    deleteRecipe(index) {
-        this.changeBtnState();
-        var currentRecipe = this.state.recipes[index];
+    deleteRecipe() {
+        var recipeActive = this.state.activeRecipe;
         var recipesList = this.state.recipes;
-        recipesList.splice(index, 1);
-        this.setState({ recipes: recipesList });
-        localStorage.setItem("allData", JSON.stringify(this.state.recipes));
-        this.value = '';
+        var newList = recipesList.filter(function (val) { return val !== recipeActive });
+        this.setState({ recipes: newList, currentDisplay: '', recipe: '', ingredients: '' });
+        localStorage.setItem("allData", JSON.stringify(newList));
     }
 
-    editRecipe(index) {
-        this.changeBtnState();
-        var currentRecipe = this.state.recipes[index];
-        var recipesList = this.state.recipes;
 
-        console.log('list of recipes:', recipesList);
-        console.log('current recipe:', this.state.recipe);
+    editRecipe(state) {
+        this.setState({ showEditForm: true });
+    }
 
-        this.value = (<form className={'col-md-6 '} id={"form"}>
-                        <input value = {currentRecipe.recipe} type='text' placeholder={'Please add name here'} onChange={this.handleChange.bind(this)} />
-                        <textarea value = {this.state.ingredients} rows={4} cols={50} placeholder={'Please add ingrediants here and separate them by commas....example: tomato,onion,olive oil'} onChange={this.handleChange.bind(this)}></textarea>
-                        <button className={'btn btn-success'} onClick={this.addNewRecipeObj.bind(this)}>Add Recipe</button>
-                    </form>)
-        //recipesList.splice(index,1);
-        // this.setState({recipes:recipesList});
-        // localStorage.setItem("allData", JSON.stringify(this.state.recipes));
-        // this.value = '';
+    getIngredientsForDisplay() {
+        var ingredients = this.state.ingredients.split(',');
+        return ingredients.map(e => (<ol>{e}</ol>));
 
     }
+
 
     render() {
 
         return (
-            <layer className={'ov-lay'}>
+            <div className={'ov-lay'}>
                 <div className={'row container z-indx'}>
 
                     <h1 className={'col-md-12 header  text-color'}>Recipe Box</h1>
@@ -128,18 +98,18 @@ class RecipeBox extends React.Component {
                     <h2 className={'col-md-12 header text-color'}>View Recipe</h2>
                     <div className={'col-md-12 container'} id={"display-panel"}>
 
-                        <button className={'col-md-6 btn btn-primary'} onClick={() => this.editRecipe(this.currentIndex)}>Edit</button>
-                        <button className={'col-md-6 btn btn-danger'} onClick={() => this.deleteRecipe(this.currentIndex)}>Delete</button>
+                        <button className={'col-md-6 btn btn-primary'} onClick={() => this.editRecipe(this.state)}>Edit</button>
+                        <button className={'col-md-6 btn btn-danger'} onClick={() => this.deleteRecipe()}>Delete</button>
 
-                        <div >{this.value}</div>
+                        <div>
+                            {this.state.showEditForm ? <EditForm save={this.saveUpdate.bind(this)} recipe={this.state.recipe} ingredients={this.state.ingredients} /> : this.getIngredientsForDisplay()}
+                        </div>
                     </div>
                 </div>
-            </layer>
+            </div>
         )
     }
 }
-
-
 
 
 
