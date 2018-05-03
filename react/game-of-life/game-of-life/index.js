@@ -39,7 +39,7 @@ function getNeighbours() {
 
         var ni = [p1, p2, p3, p4, p5, p6, p7, p8]
 
-        interections.push({ cell: { 'x': point.x, 'y': point.y, isAlive: point.isAlive }, neighbors: ni });
+        interections.push({ cell: { 'x': point.x, 'y': point.y, isAlive: point.isAlive }, neighbours: ni });
 
     })
     return interections;
@@ -48,6 +48,7 @@ function getNeighbours() {
 
 
 function createNewGeneration(){
+    var neighbours = getNeighbours();
 
 }
 
