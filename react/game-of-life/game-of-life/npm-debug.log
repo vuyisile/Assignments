@@ -1,0 +1,725 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'chai',
+1 verbose cli   '--save' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData chai
+8 silly fetchNamedPackageData chai
+9 silly mapToRegistry name chai
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/chai
+13 verbose request uri https://registry.npmjs.org/chai
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 1:54:23 PM
+16 verbose request id 0378407f530f2f78
+17 http request GET https://registry.npmjs.org/chai
+18 http 200 https://registry.npmjs.org/chai
+19 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+19 verbose headers   server: 'UploadServer',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'last-modified': 'Wed, 21 Mar 2018 1:47:56 GMT',
+19 verbose headers   etag: '"5ab1b9cc-1a27c"',
+19 verbose headers   'x-npm-region': 'South-Africa',
+19 verbose headers   'content-encoding': 'gzip',
+19 verbose headers   'content-length': '12296',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Thu, 26 Apr 2018 11:54:24 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '8175',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-jnb7522-JNB',
+19 verbose headers   'x-cache': 'HIT',
+19 verbose headers   'x-cache-hits': '4',
+19 verbose headers   'x-timer': 'S1524743665.667732,VS0,VE0',
+19 verbose headers   vary: 'Accept-Encoding, Accept' }
+20 silly get cb [ 200,
+20 silly get   { 'content-type': 'application/json; charset=UTF-8',
+20 silly get     server: 'UploadServer',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'last-modified': 'Wed, 21 Mar 2018 1:47:56 GMT',
+20 silly get     etag: '"5ab1b9cc-1a27c"',
+20 silly get     'x-npm-region': 'South-Africa',
+20 silly get     'content-encoding': 'gzip',
+20 silly get     'content-length': '12296',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Thu, 26 Apr 2018 11:54:24 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '8175',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-jnb7522-JNB',
+20 silly get     'x-cache': 'HIT',
+20 silly get     'x-cache-hits': '4',
+20 silly get     'x-timer': 'S1524743665.667732,VS0,VE0',
+20 silly get     vary: 'Accept-Encoding, Accept' } ]
+21 verbose get saving chai to /home/skywalker/.npm/registry.npmjs.org/chai/.cache.json
+22 silly install normalizeTree
+23 silly loadCurrentTree Finishing
+24 silly loadIdealTree Starting
+25 silly install loadIdealTree
+26 silly cloneCurrentTree Starting
+27 silly install cloneCurrentTreeToIdealTree
+28 silly cloneCurrentTree Finishing
+29 silly loadShrinkwrap Starting
+30 silly install loadShrinkwrap
+31 silly loadShrinkwrap Finishing
+32 silly loadAllDepsIntoIdealTree Starting
+33 silly install loadAllDepsIntoIdealTree
+34 silly resolveWithNewModule chai@4.1.2 checking installable status
+35 silly cache add args [ 'chai', null ]
+36 verbose cache add spec chai
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: 'chai',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'chai',
+37 silly cache add   rawSpec: '',
+37 silly cache add   spec: 'latest',
+37 silly cache add   type: 'tag' }
+38 silly addNamed chai@latest
+39 verbose addNamed "latest" is being treated as a dist-tag for chai
+40 info addNameTag [ 'chai', 'latest' ]
+41 silly mapToRegistry name chai
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/chai
+45 verbose addNameTag registry:https://registry.npmjs.org/chai not in flight; fetching
+46 verbose get https://registry.npmjs.org/chai not expired, no request
+47 silly addNameTag next cb for chai with tag latest
+48 silly addNamed chai@4.1.2
+49 verbose addNamed "4.1.2" is a plain semver version for chai
+50 silly mapToRegistry name chai
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/chai
+54 verbose addRemoteTarball https://registry.npmjs.org/chai/-/chai-4.1.2.tgz not in flight; adding
+55 verbose addRemoteTarball [ 'https://registry.npmjs.org/chai/-/chai-4.1.2.tgz',
+55 verbose addRemoteTarball   '0f64584ba642f0f2ace2806279f4f06ca23ad73c' ]
+56 info retry fetch attempt 1 at 1:54:25 PM
+57 info attempt registry request try #1 at 1:54:25 PM
+58 http fetch GET https://registry.npmjs.org/chai/-/chai-4.1.2.tgz
+59 http fetch 200 https://registry.npmjs.org/chai/-/chai-4.1.2.tgz
+60 silly fetchAndShaCheck shasum 0f64584ba642f0f2ace2806279f4f06ca23ad73c
+61 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/chai/-/chai-4.1.2.tgz not in flight; adding
+62 verbose addTmpTarball already have metadata; skipping unpack for chai@4.1.2
+63 silly cache afterAdd chai@4.1.2
+64 verbose afterAdd /home/skywalker/.npm/chai/4.1.2/package/package.json not in flight; writing
+65 verbose afterAdd /home/skywalker/.npm/chai/4.1.2/package/package.json written
+66 silly fetchNamedPackageData assertion-error
+67 silly mapToRegistry name assertion-error
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/assertion-error
+71 silly fetchNamedPackageData check-error
+72 silly mapToRegistry name check-error
+73 silly mapToRegistry using default registry
+74 silly mapToRegistry registry https://registry.npmjs.org/
+75 silly mapToRegistry uri https://registry.npmjs.org/check-error
+76 silly fetchNamedPackageData deep-eql
+77 silly mapToRegistry name deep-eql
+78 silly mapToRegistry using default registry
+79 silly mapToRegistry registry https://registry.npmjs.org/
+80 silly mapToRegistry uri https://registry.npmjs.org/deep-eql
+81 silly fetchNamedPackageData get-func-name
+82 silly mapToRegistry name get-func-name
+83 silly mapToRegistry using default registry
+84 silly mapToRegistry registry https://registry.npmjs.org/
+85 silly mapToRegistry uri https://registry.npmjs.org/get-func-name
+86 silly fetchNamedPackageData pathval
+87 silly mapToRegistry name pathval
+88 silly mapToRegistry using default registry
+89 silly mapToRegistry registry https://registry.npmjs.org/
+90 silly mapToRegistry uri https://registry.npmjs.org/pathval
+91 silly fetchNamedPackageData type-detect
+92 silly mapToRegistry name type-detect
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/type-detect
+96 verbose request uri https://registry.npmjs.org/assertion-error
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 1:54:25 PM
+99 http request GET https://registry.npmjs.org/assertion-error
+100 verbose request uri https://registry.npmjs.org/check-error
+101 verbose request no auth needed
+102 info attempt registry request try #1 at 1:54:25 PM
+103 http request GET https://registry.npmjs.org/check-error
+104 verbose request uri https://registry.npmjs.org/deep-eql
+105 verbose request no auth needed
+106 info attempt registry request try #1 at 1:54:25 PM
+107 http request GET https://registry.npmjs.org/deep-eql
+108 verbose request uri https://registry.npmjs.org/get-func-name
+109 verbose request no auth needed
+110 info attempt registry request try #1 at 1:54:25 PM
+111 http request GET https://registry.npmjs.org/get-func-name
+112 verbose request uri https://registry.npmjs.org/pathval
+113 verbose request no auth needed
+114 info attempt registry request try #1 at 1:54:25 PM
+115 http request GET https://registry.npmjs.org/pathval
+116 verbose request uri https://registry.npmjs.org/type-detect
+117 verbose request no auth needed
+118 info attempt registry request try #1 at 1:54:25 PM
+119 http request GET https://registry.npmjs.org/type-detect
+120 http 200 https://registry.npmjs.org/check-error
+121 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+121 verbose headers   server: 'UploadServer',
+121 verbose headers   'cache-control': 'max-age=300',
+121 verbose headers   'last-modified': 'Mon, 6 Nov 2017 5:07:14 GMT',
+121 verbose headers   etag: '"59ffee02-3d97"',
+121 verbose headers   'x-npm-region': 'South-Africa',
+121 verbose headers   'content-encoding': 'gzip',
+121 verbose headers   'content-length': '3217',
+121 verbose headers   'accept-ranges': 'bytes',
+121 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+121 verbose headers   via: '1.1 varnish',
+121 verbose headers   age: '12883',
+121 verbose headers   connection: 'keep-alive',
+121 verbose headers   'x-served-by': 'cache-jnb7523-JNB',
+121 verbose headers   'x-cache': 'HIT',
+121 verbose headers   'x-cache-hits': '2',
+121 verbose headers   'x-timer': 'S1524743666.109528,VS0,VE0',
+121 verbose headers   vary: 'Accept-Encoding, Accept' }
+122 silly get cb [ 200,
+122 silly get   { 'content-type': 'application/json; charset=UTF-8',
+122 silly get     server: 'UploadServer',
+122 silly get     'cache-control': 'max-age=300',
+122 silly get     'last-modified': 'Mon, 6 Nov 2017 5:07:14 GMT',
+122 silly get     etag: '"59ffee02-3d97"',
+122 silly get     'x-npm-region': 'South-Africa',
+122 silly get     'content-encoding': 'gzip',
+122 silly get     'content-length': '3217',
+122 silly get     'accept-ranges': 'bytes',
+122 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+122 silly get     via: '1.1 varnish',
+122 silly get     age: '12883',
+122 silly get     connection: 'keep-alive',
+122 silly get     'x-served-by': 'cache-jnb7523-JNB',
+122 silly get     'x-cache': 'HIT',
+122 silly get     'x-cache-hits': '2',
+122 silly get     'x-timer': 'S1524743666.109528,VS0,VE0',
+122 silly get     vary: 'Accept-Encoding, Accept' } ]
+123 verbose get saving check-error to /home/skywalker/.npm/registry.npmjs.org/check-error/.cache.json
+124 http 200 https://registry.npmjs.org/assertion-error
+125 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+125 verbose headers   server: 'UploadServer',
+125 verbose headers   'cache-control': 'max-age=300',
+125 verbose headers   'last-modified': 'Sun, 7 Jan 2018 14:59:31 GMT',
+125 verbose headers   etag: '"5a5235d3-20ca"',
+125 verbose headers   'x-npm-region': 'South-Africa',
+125 verbose headers   'content-encoding': 'gzip',
+125 verbose headers   'content-length': '2252',
+125 verbose headers   'accept-ranges': 'bytes',
+125 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+125 verbose headers   via: '1.1 varnish',
+125 verbose headers   age: '12271',
+125 verbose headers   connection: 'keep-alive',
+125 verbose headers   'x-served-by': 'cache-jnb7520-JNB',
+125 verbose headers   'x-cache': 'HIT',
+125 verbose headers   'x-cache-hits': '7',
+125 verbose headers   'x-timer': 'S1524743666.109340,VS0,VE0',
+125 verbose headers   vary: 'Accept-Encoding, Accept' }
+126 silly get cb [ 200,
+126 silly get   { 'content-type': 'application/json; charset=UTF-8',
+126 silly get     server: 'UploadServer',
+126 silly get     'cache-control': 'max-age=300',
+126 silly get     'last-modified': 'Sun, 7 Jan 2018 14:59:31 GMT',
+126 silly get     etag: '"5a5235d3-20ca"',
+126 silly get     'x-npm-region': 'South-Africa',
+126 silly get     'content-encoding': 'gzip',
+126 silly get     'content-length': '2252',
+126 silly get     'accept-ranges': 'bytes',
+126 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+126 silly get     via: '1.1 varnish',
+126 silly get     age: '12271',
+126 silly get     connection: 'keep-alive',
+126 silly get     'x-served-by': 'cache-jnb7520-JNB',
+126 silly get     'x-cache': 'HIT',
+126 silly get     'x-cache-hits': '7',
+126 silly get     'x-timer': 'S1524743666.109340,VS0,VE0',
+126 silly get     vary: 'Accept-Encoding, Accept' } ]
+127 verbose get saving assertion-error to /home/skywalker/.npm/registry.npmjs.org/assertion-error/.cache.json
+128 http 200 https://registry.npmjs.org/get-func-name
+129 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+129 verbose headers   server: 'UploadServer',
+129 verbose headers   'cache-control': 'max-age=300',
+129 verbose headers   'last-modified': 'Mon, 6 Nov 2017 5:13:34 GMT',
+129 verbose headers   etag: '"59ffef7e-283e"',
+129 verbose headers   'x-npm-region': 'South-Africa',
+129 verbose headers   'content-encoding': 'gzip',
+129 verbose headers   'content-length': '2601',
+129 verbose headers   'accept-ranges': 'bytes',
+129 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+129 verbose headers   via: '1.1 varnish',
+129 verbose headers   age: '11861',
+129 verbose headers   connection: 'keep-alive',
+129 verbose headers   'x-served-by': 'cache-jnb7521-JNB',
+129 verbose headers   'x-cache': 'HIT',
+129 verbose headers   'x-cache-hits': '4',
+129 verbose headers   'x-timer': 'S1524743666.136253,VS0,VE0',
+129 verbose headers   vary: 'Accept-Encoding, Accept' }
+130 silly get cb [ 200,
+130 silly get   { 'content-type': 'application/json; charset=UTF-8',
+130 silly get     server: 'UploadServer',
+130 silly get     'cache-control': 'max-age=300',
+130 silly get     'last-modified': 'Mon, 6 Nov 2017 5:13:34 GMT',
+130 silly get     etag: '"59ffef7e-283e"',
+130 silly get     'x-npm-region': 'South-Africa',
+130 silly get     'content-encoding': 'gzip',
+130 silly get     'content-length': '2601',
+130 silly get     'accept-ranges': 'bytes',
+130 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+130 silly get     via: '1.1 varnish',
+130 silly get     age: '11861',
+130 silly get     connection: 'keep-alive',
+130 silly get     'x-served-by': 'cache-jnb7521-JNB',
+130 silly get     'x-cache': 'HIT',
+130 silly get     'x-cache-hits': '4',
+130 silly get     'x-timer': 'S1524743666.136253,VS0,VE0',
+130 silly get     vary: 'Accept-Encoding, Accept' } ]
+131 verbose get saving get-func-name to /home/skywalker/.npm/registry.npmjs.org/get-func-name/.cache.json
+132 http 200 https://registry.npmjs.org/deep-eql
+133 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+133 verbose headers   server: 'UploadServer',
+133 verbose headers   'cache-control': 'max-age=300',
+133 verbose headers   'last-modified': 'Mon, 19 Mar 2018 4:35:06 GMT',
+133 verbose headers   etag: '"5aaf3dfa-8ad2"',
+133 verbose headers   'x-npm-region': 'South-Africa',
+133 verbose headers   'content-encoding': 'gzip',
+133 verbose headers   'content-length': '4908',
+133 verbose headers   'accept-ranges': 'bytes',
+133 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+133 verbose headers   via: '1.1 varnish',
+133 verbose headers   age: '1509',
+133 verbose headers   connection: 'keep-alive',
+133 verbose headers   'x-served-by': 'cache-jnb7523-JNB',
+133 verbose headers   'x-cache': 'HIT',
+133 verbose headers   'x-cache-hits': '1',
+133 verbose headers   'x-timer': 'S1524743666.126018,VS0,VE0',
+133 verbose headers   vary: 'Accept-Encoding, Accept' }
+134 silly get cb [ 200,
+134 silly get   { 'content-type': 'application/json; charset=UTF-8',
+134 silly get     server: 'UploadServer',
+134 silly get     'cache-control': 'max-age=300',
+134 silly get     'last-modified': 'Mon, 19 Mar 2018 4:35:06 GMT',
+134 silly get     etag: '"5aaf3dfa-8ad2"',
+134 silly get     'x-npm-region': 'South-Africa',
+134 silly get     'content-encoding': 'gzip',
+134 silly get     'content-length': '4908',
+134 silly get     'accept-ranges': 'bytes',
+134 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+134 silly get     via: '1.1 varnish',
+134 silly get     age: '1509',
+134 silly get     connection: 'keep-alive',
+134 silly get     'x-served-by': 'cache-jnb7523-JNB',
+134 silly get     'x-cache': 'HIT',
+134 silly get     'x-cache-hits': '1',
+134 silly get     'x-timer': 'S1524743666.126018,VS0,VE0',
+134 silly get     vary: 'Accept-Encoding, Accept' } ]
+135 verbose get saving deep-eql to /home/skywalker/.npm/registry.npmjs.org/deep-eql/.cache.json
+136 silly resolveWithNewModule check-error@1.0.2 checking installable status
+137 silly cache add args [ 'check-error@^1.0.1', null ]
+138 verbose cache add spec check-error@^1.0.1
+139 silly cache add parsed spec Result {
+139 silly cache add   raw: 'check-error@^1.0.1',
+139 silly cache add   scope: null,
+139 silly cache add   name: 'check-error',
+139 silly cache add   rawSpec: '^1.0.1',
+139 silly cache add   spec: '>=1.0.1 <2.0.0',
+139 silly cache add   type: 'range' }
+140 silly addNamed check-error@>=1.0.1 <2.0.0
+141 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for check-error
+142 silly addNameRange { name: 'check-error', range: '>=1.0.1 <2.0.0', hasData: false }
+143 silly mapToRegistry name check-error
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry https://registry.npmjs.org/
+146 silly mapToRegistry uri https://registry.npmjs.org/check-error
+147 verbose addNameRange registry:https://registry.npmjs.org/check-error not in flight; fetching
+148 http 200 https://registry.npmjs.org/pathval
+149 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+149 verbose headers   server: 'UploadServer',
+149 verbose headers   'cache-control': 'max-age=300',
+149 verbose headers   'last-modified': 'Mon, 6 Nov 2017 5:14:08 GMT',
+149 verbose headers   etag: '"59ffefa0-46d5"',
+149 verbose headers   'x-npm-region': 'South-Africa',
+149 verbose headers   'content-encoding': 'gzip',
+149 verbose headers   'content-length': '3444',
+149 verbose headers   'accept-ranges': 'bytes',
+149 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+149 verbose headers   via: '1.1 varnish',
+149 verbose headers   age: '1540',
+149 verbose headers   connection: 'keep-alive',
+149 verbose headers   'x-served-by': 'cache-jnb7520-JNB',
+149 verbose headers   'x-cache': 'HIT',
+149 verbose headers   'x-cache-hits': '1',
+149 verbose headers   'x-timer': 'S1524743666.159580,VS0,VE0',
+149 verbose headers   vary: 'Accept-Encoding, Accept' }
+150 silly get cb [ 200,
+150 silly get   { 'content-type': 'application/json; charset=UTF-8',
+150 silly get     server: 'UploadServer',
+150 silly get     'cache-control': 'max-age=300',
+150 silly get     'last-modified': 'Mon, 6 Nov 2017 5:14:08 GMT',
+150 silly get     etag: '"59ffefa0-46d5"',
+150 silly get     'x-npm-region': 'South-Africa',
+150 silly get     'content-encoding': 'gzip',
+150 silly get     'content-length': '3444',
+150 silly get     'accept-ranges': 'bytes',
+150 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+150 silly get     via: '1.1 varnish',
+150 silly get     age: '1540',
+150 silly get     connection: 'keep-alive',
+150 silly get     'x-served-by': 'cache-jnb7520-JNB',
+150 silly get     'x-cache': 'HIT',
+150 silly get     'x-cache-hits': '1',
+150 silly get     'x-timer': 'S1524743666.159580,VS0,VE0',
+150 silly get     vary: 'Accept-Encoding, Accept' } ]
+151 verbose get saving pathval to /home/skywalker/.npm/registry.npmjs.org/pathval/.cache.json
+152 silly resolveWithNewModule assertion-error@1.1.0 checking installable status
+153 silly cache add args [ 'assertion-error@^1.0.1', null ]
+154 verbose cache add spec assertion-error@^1.0.1
+155 silly cache add parsed spec Result {
+155 silly cache add   raw: 'assertion-error@^1.0.1',
+155 silly cache add   scope: null,
+155 silly cache add   name: 'assertion-error',
+155 silly cache add   rawSpec: '^1.0.1',
+155 silly cache add   spec: '>=1.0.1 <2.0.0',
+155 silly cache add   type: 'range' }
+156 silly addNamed assertion-error@>=1.0.1 <2.0.0
+157 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for assertion-error
+158 silly addNameRange { name: 'assertion-error',
+158 silly addNameRange   range: '>=1.0.1 <2.0.0',
+158 silly addNameRange   hasData: false }
+159 silly mapToRegistry name assertion-error
+160 silly mapToRegistry using default registry
+161 silly mapToRegistry registry https://registry.npmjs.org/
+162 silly mapToRegistry uri https://registry.npmjs.org/assertion-error
+163 verbose addNameRange registry:https://registry.npmjs.org/assertion-error not in flight; fetching
+164 silly resolveWithNewModule get-func-name@2.0.0 checking installable status
+165 silly cache add args [ 'get-func-name@^2.0.0', null ]
+166 verbose cache add spec get-func-name@^2.0.0
+167 silly cache add parsed spec Result {
+167 silly cache add   raw: 'get-func-name@^2.0.0',
+167 silly cache add   scope: null,
+167 silly cache add   name: 'get-func-name',
+167 silly cache add   rawSpec: '^2.0.0',
+167 silly cache add   spec: '>=2.0.0 <3.0.0',
+167 silly cache add   type: 'range' }
+168 silly addNamed get-func-name@>=2.0.0 <3.0.0
+169 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for get-func-name
+170 silly addNameRange { name: 'get-func-name',
+170 silly addNameRange   range: '>=2.0.0 <3.0.0',
+170 silly addNameRange   hasData: false }
+171 silly mapToRegistry name get-func-name
+172 silly mapToRegistry using default registry
+173 silly mapToRegistry registry https://registry.npmjs.org/
+174 silly mapToRegistry uri https://registry.npmjs.org/get-func-name
+175 verbose addNameRange registry:https://registry.npmjs.org/get-func-name not in flight; fetching
+176 verbose get https://registry.npmjs.org/check-error not expired, no request
+177 silly addNameRange number 2 { name: 'check-error', range: '>=1.0.1 <2.0.0', hasData: true }
+178 silly addNameRange versions [ 'check-error', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+179 silly addNamed check-error@1.0.2
+180 verbose addNamed "1.0.2" is a plain semver version for check-error
+181 verbose get https://registry.npmjs.org/assertion-error not expired, no request
+182 silly addNameRange number 2 { name: 'assertion-error',
+182 silly addNameRange   range: '>=1.0.1 <2.0.0',
+182 silly addNameRange   hasData: true }
+183 silly addNameRange versions [ 'assertion-error',
+183 silly addNameRange   [ '0.1.0', '1.0.0', '1.0.1', '1.0.2', '1.1.0' ] ]
+184 silly addNamed assertion-error@1.1.0
+185 verbose addNamed "1.1.0" is a plain semver version for assertion-error
+186 silly resolveWithNewModule deep-eql@3.0.1 checking installable status
+187 silly cache add args [ 'deep-eql@^3.0.0', null ]
+188 verbose cache add spec deep-eql@^3.0.0
+189 silly cache add parsed spec Result {
+189 silly cache add   raw: 'deep-eql@^3.0.0',
+189 silly cache add   scope: null,
+189 silly cache add   name: 'deep-eql',
+189 silly cache add   rawSpec: '^3.0.0',
+189 silly cache add   spec: '>=3.0.0 <4.0.0',
+189 silly cache add   type: 'range' }
+190 silly addNamed deep-eql@>=3.0.0 <4.0.0
+191 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for deep-eql
+192 silly addNameRange { name: 'deep-eql', range: '>=3.0.0 <4.0.0', hasData: false }
+193 silly mapToRegistry name deep-eql
+194 silly mapToRegistry using default registry
+195 silly mapToRegistry registry https://registry.npmjs.org/
+196 silly mapToRegistry uri https://registry.npmjs.org/deep-eql
+197 verbose addNameRange registry:https://registry.npmjs.org/deep-eql not in flight; fetching
+198 silly mapToRegistry name check-error
+199 silly mapToRegistry using default registry
+200 silly mapToRegistry registry https://registry.npmjs.org/
+201 silly mapToRegistry uri https://registry.npmjs.org/check-error
+202 verbose addRemoteTarball https://registry.npmjs.org/check-error/-/check-error-1.0.2.tgz not in flight; adding
+203 verbose addRemoteTarball [ 'https://registry.npmjs.org/check-error/-/check-error-1.0.2.tgz',
+203 verbose addRemoteTarball   '574d312edd88bb5dd8912e9286dd6c0aed4aac82' ]
+204 http 200 https://registry.npmjs.org/type-detect
+205 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+205 verbose headers   server: 'UploadServer',
+205 verbose headers   'cache-control': 'max-age=300',
+205 verbose headers   'last-modified': 'Tue, 13 Mar 2018 16:36:18 GMT',
+205 verbose headers   etag: '"5aa7fe02-c438"',
+205 verbose headers   'x-npm-region': 'South-Africa',
+205 verbose headers   'content-encoding': 'gzip',
+205 verbose headers   'content-length': '7041',
+205 verbose headers   'accept-ranges': 'bytes',
+205 verbose headers   date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+205 verbose headers   via: '1.1 varnish',
+205 verbose headers   age: '29',
+205 verbose headers   connection: 'keep-alive',
+205 verbose headers   'x-served-by': 'cache-jnb7522-JNB',
+205 verbose headers   'x-cache': 'HIT',
+205 verbose headers   'x-cache-hits': '1',
+205 verbose headers   'x-timer': 'S1524743666.177245,VS0,VE0',
+205 verbose headers   vary: 'Accept-Encoding, Accept' }
+206 silly get cb [ 200,
+206 silly get   { 'content-type': 'application/json; charset=UTF-8',
+206 silly get     server: 'UploadServer',
+206 silly get     'cache-control': 'max-age=300',
+206 silly get     'last-modified': 'Tue, 13 Mar 2018 16:36:18 GMT',
+206 silly get     etag: '"5aa7fe02-c438"',
+206 silly get     'x-npm-region': 'South-Africa',
+206 silly get     'content-encoding': 'gzip',
+206 silly get     'content-length': '7041',
+206 silly get     'accept-ranges': 'bytes',
+206 silly get     date: 'Thu, 26 Apr 2018 11:54:26 GMT',
+206 silly get     via: '1.1 varnish',
+206 silly get     age: '29',
+206 silly get     connection: 'keep-alive',
+206 silly get     'x-served-by': 'cache-jnb7522-JNB',
+206 silly get     'x-cache': 'HIT',
+206 silly get     'x-cache-hits': '1',
+206 silly get     'x-timer': 'S1524743666.177245,VS0,VE0',
+206 silly get     vary: 'Accept-Encoding, Accept' } ]
+207 verbose get saving type-detect to /home/skywalker/.npm/registry.npmjs.org/type-detect/.cache.json
+208 silly mapToRegistry name assertion-error
+209 silly mapToRegistry using default registry
+210 silly mapToRegistry registry https://registry.npmjs.org/
+211 silly mapToRegistry uri https://registry.npmjs.org/assertion-error
+212 verbose addRemoteTarball https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz not in flight; adding
+213 verbose addRemoteTarball [ 'https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz',
+213 verbose addRemoteTarball   'e60b6b0e8f301bd97e5375215bda406c85118c0b' ]
+214 verbose get https://registry.npmjs.org/get-func-name not expired, no request
+215 silly addNameRange number 2 { name: 'get-func-name', range: '>=2.0.0 <3.0.0', hasData: true }
+216 silly addNameRange versions [ 'get-func-name', [ '1.0.0', '2.0.0' ] ]
+217 silly addNamed get-func-name@2.0.0
+218 verbose addNamed "2.0.0" is a plain semver version for get-func-name
+219 info retry fetch attempt 1 at 1:54:26 PM
+220 info attempt registry request try #1 at 1:54:26 PM
+221 http fetch GET https://registry.npmjs.org/check-error/-/check-error-1.0.2.tgz
+222 info retry fetch attempt 1 at 1:54:26 PM
+223 info attempt registry request try #1 at 1:54:26 PM
+224 http fetch GET https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz
+225 silly mapToRegistry name get-func-name
+226 silly mapToRegistry using default registry
+227 silly mapToRegistry registry https://registry.npmjs.org/
+228 silly mapToRegistry uri https://registry.npmjs.org/get-func-name
+229 verbose addRemoteTarball https://registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz not in flight; adding
+230 verbose addRemoteTarball [ 'https://registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz',
+230 verbose addRemoteTarball   'ead774abee72e20409433a066366023dd6887a41' ]
+231 silly resolveWithNewModule pathval@1.1.0 checking installable status
+232 silly cache add args [ 'pathval@^1.0.0', null ]
+233 verbose cache add spec pathval@^1.0.0
+234 silly cache add parsed spec Result {
+234 silly cache add   raw: 'pathval@^1.0.0',
+234 silly cache add   scope: null,
+234 silly cache add   name: 'pathval',
+234 silly cache add   rawSpec: '^1.0.0',
+234 silly cache add   spec: '>=1.0.0 <2.0.0',
+234 silly cache add   type: 'range' }
+235 silly addNamed pathval@>=1.0.0 <2.0.0
+236 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for pathval
+237 silly addNameRange { name: 'pathval', range: '>=1.0.0 <2.0.0', hasData: false }
+238 silly mapToRegistry name pathval
+239 silly mapToRegistry using default registry
+240 silly mapToRegistry registry https://registry.npmjs.org/
+241 silly mapToRegistry uri https://registry.npmjs.org/pathval
+242 verbose addNameRange registry:https://registry.npmjs.org/pathval not in flight; fetching
+243 verbose get https://registry.npmjs.org/deep-eql not expired, no request
+244 silly addNameRange number 2 { name: 'deep-eql', range: '>=3.0.0 <4.0.0', hasData: true }
+245 silly addNameRange versions [ 'deep-eql',
+245 silly addNameRange   [ '0.1.0',
+245 silly addNameRange     '0.1.1',
+245 silly addNameRange     '0.1.2',
+245 silly addNameRange     '0.1.3',
+245 silly addNameRange     '1.0.0',
+245 silly addNameRange     '1.0.1',
+245 silly addNameRange     '1.0.2',
+245 silly addNameRange     '1.0.3',
+245 silly addNameRange     '2.0.0',
+245 silly addNameRange     '2.0.1',
+245 silly addNameRange     '2.0.2',
+245 silly addNameRange     '3.0.0',
+245 silly addNameRange     '3.0.1' ] ]
+246 silly addNamed deep-eql@3.0.1
+247 verbose addNamed "3.0.1" is a plain semver version for deep-eql
+248 silly mapToRegistry name deep-eql
+249 silly mapToRegistry using default registry
+250 silly mapToRegistry registry https://registry.npmjs.org/
+251 silly mapToRegistry uri https://registry.npmjs.org/deep-eql
+252 verbose addRemoteTarball https://registry.npmjs.org/deep-eql/-/deep-eql-3.0.1.tgz not in flight; adding
+253 verbose addRemoteTarball [ 'https://registry.npmjs.org/deep-eql/-/deep-eql-3.0.1.tgz',
+253 verbose addRemoteTarball   'dfc9404400ad1c8fe023e7da1df1c147c4b444df' ]
+254 info retry fetch attempt 1 at 1:54:26 PM
+255 info attempt registry request try #1 at 1:54:26 PM
+256 http fetch GET https://registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz
+257 info retry fetch attempt 1 at 1:54:26 PM
+258 info attempt registry request try #1 at 1:54:26 PM
+259 http fetch GET https://registry.npmjs.org/deep-eql/-/deep-eql-3.0.1.tgz
+260 verbose get https://registry.npmjs.org/pathval not expired, no request
+261 silly addNameRange number 2 { name: 'pathval', range: '>=1.0.0 <2.0.0', hasData: true }
+262 silly addNameRange versions [ 'pathval',
+262 silly addNameRange   [ '0.0.1', '0.1.0', '0.1.1', '0.2.0', '0.2.1', '1.0.0', '1.1.0' ] ]
+263 silly addNamed pathval@1.1.0
+264 verbose addNamed "1.1.0" is a plain semver version for pathval
+265 silly mapToRegistry name pathval
+266 silly mapToRegistry using default registry
+267 silly mapToRegistry registry https://registry.npmjs.org/
+268 silly mapToRegistry uri https://registry.npmjs.org/pathval
+269 verbose addRemoteTarball https://registry.npmjs.org/pathval/-/pathval-1.1.0.tgz not in flight; adding
+270 verbose addRemoteTarball [ 'https://registry.npmjs.org/pathval/-/pathval-1.1.0.tgz',
+270 verbose addRemoteTarball   'b942e6d4bde653005ef6b71361def8727d0645e0' ]
+271 silly resolveWithNewModule type-detect@4.0.8 checking installable status
+272 silly cache add args [ 'type-detect@^4.0.0', null ]
+273 verbose cache add spec type-detect@^4.0.0
+274 silly cache add parsed spec Result {
+274 silly cache add   raw: 'type-detect@^4.0.0',
+274 silly cache add   scope: null,
+274 silly cache add   name: 'type-detect',
+274 silly cache add   rawSpec: '^4.0.0',
+274 silly cache add   spec: '>=4.0.0 <5.0.0',
+274 silly cache add   type: 'range' }
+275 silly addNamed type-detect@>=4.0.0 <5.0.0
+276 verbose addNamed ">=4.0.0 <5.0.0" is a valid semver range for type-detect
+277 silly addNameRange { name: 'type-detect', range: '>=4.0.0 <5.0.0', hasData: false }
+278 silly mapToRegistry name type-detect
+279 silly mapToRegistry using default registry
+280 silly mapToRegistry registry https://registry.npmjs.org/
+281 silly mapToRegistry uri https://registry.npmjs.org/type-detect
+282 verbose addNameRange registry:https://registry.npmjs.org/type-detect not in flight; fetching
+283 info retry fetch attempt 1 at 1:54:26 PM
+284 info attempt registry request try #1 at 1:54:26 PM
+285 http fetch GET https://registry.npmjs.org/pathval/-/pathval-1.1.0.tgz
+286 verbose get https://registry.npmjs.org/type-detect not expired, no request
+287 silly addNameRange number 2 { name: 'type-detect', range: '>=4.0.0 <5.0.0', hasData: true }
+288 silly addNameRange versions [ 'type-detect',
+288 silly addNameRange   [ '0.1.0',
+288 silly addNameRange     '0.1.1',
+288 silly addNameRange     '0.1.2',
+288 silly addNameRange     '1.0.0',
+288 silly addNameRange     '2.0.0',
+288 silly addNameRange     '2.0.1',
+288 silly addNameRange     '2.0.2',
+288 silly addNameRange     '3.0.0',
+288 silly addNameRange     '4.0.0',
+288 silly addNameRange     '4.0.1',
+288 silly addNameRange     '4.0.2',
+288 silly addNameRange     '4.0.3',
+288 silly addNameRange     '4.0.5',
+288 silly addNameRange     '4.0.6',
+288 silly addNameRange     '4.0.7',
+288 silly addNameRange     '4.0.8' ] ]
+289 silly addNamed type-detect@4.0.8
+290 verbose addNamed "4.0.8" is a plain semver version for type-detect
+291 silly mapToRegistry name type-detect
+292 silly mapToRegistry using default registry
+293 silly mapToRegistry registry https://registry.npmjs.org/
+294 silly mapToRegistry uri https://registry.npmjs.org/type-detect
+295 verbose addRemoteTarball https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz not in flight; adding
+296 verbose addRemoteTarball [ 'https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz',
+296 verbose addRemoteTarball   '7646fb5f18871cfbb7749e69bd39a6388eb7450c' ]
+297 info retry fetch attempt 1 at 1:54:26 PM
+298 info attempt registry request try #1 at 1:54:26 PM
+299 http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz
+300 http fetch 200 https://registry.npmjs.org/check-error/-/check-error-1.0.2.tgz
+301 silly fetchAndShaCheck shasum 574d312edd88bb5dd8912e9286dd6c0aed4aac82
+302 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/check-error/-/check-error-1.0.2.tgz not in flight; adding
+303 verbose addTmpTarball already have metadata; skipping unpack for check-error@1.0.2
+304 silly cache afterAdd check-error@1.0.2
+305 verbose afterAdd /home/skywalker/.npm/check-error/1.0.2/package/package.json not in flight; writing
+306 verbose afterAdd /home/skywalker/.npm/check-error/1.0.2/package/package.json written
+307 http fetch 200 https://registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz
+308 http fetch 200 https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz
+309 silly fetchAndShaCheck shasum ead774abee72e20409433a066366023dd6887a41
+310 silly fetchAndShaCheck shasum e60b6b0e8f301bd97e5375215bda406c85118c0b
+311 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/get-func-name/-/get-func-name-2.0.0.tgz not in flight; adding
+312 verbose addTmpTarball already have metadata; skipping unpack for get-func-name@2.0.0
+313 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz not in flight; adding
+314 verbose addTmpTarball already have metadata; skipping unpack for assertion-error@1.1.0
+315 silly cache afterAdd get-func-name@2.0.0
+316 verbose afterAdd /home/skywalker/.npm/get-func-name/2.0.0/package/package.json not in flight; writing
+317 silly cache afterAdd assertion-error@1.1.0
+318 verbose afterAdd /home/skywalker/.npm/assertion-error/1.1.0/package/package.json not in flight; writing
+319 http fetch 200 https://registry.npmjs.org/deep-eql/-/deep-eql-3.0.1.tgz
+320 verbose afterAdd /home/skywalker/.npm/get-func-name/2.0.0/package/package.json written
+321 verbose afterAdd /home/skywalker/.npm/assertion-error/1.1.0/package/package.json written
+322 silly fetchAndShaCheck shasum dfc9404400ad1c8fe023e7da1df1c147c4b444df
+323 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/deep-eql/-/deep-eql-3.0.1.tgz not in flight; adding
+324 verbose addTmpTarball already have metadata; skipping unpack for deep-eql@3.0.1
+325 http fetch 200 https://registry.npmjs.org/pathval/-/pathval-1.1.0.tgz
+326 silly cache afterAdd deep-eql@3.0.1
+327 verbose afterAdd /home/skywalker/.npm/deep-eql/3.0.1/package/package.json not in flight; writing
+328 verbose afterAdd /home/skywalker/.npm/deep-eql/3.0.1/package/package.json written
+329 silly fetchAndShaCheck shasum b942e6d4bde653005ef6b71361def8727d0645e0
+330 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/pathval/-/pathval-1.1.0.tgz not in flight; adding
+331 verbose addTmpTarball already have metadata; skipping unpack for pathval@1.1.0
+332 http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz
+333 silly fetchAndShaCheck shasum 7646fb5f18871cfbb7749e69bd39a6388eb7450c
+334 verbose addTmpTarball /tmp/npm-9710-9678ab53/registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz not in flight; adding
+335 verbose addTmpTarball already have metadata; skipping unpack for type-detect@4.0.8
+336 silly cache afterAdd pathval@1.1.0
+337 verbose afterAdd /home/skywalker/.npm/pathval/1.1.0/package/package.json not in flight; writing
+338 verbose afterAdd /home/skywalker/.npm/pathval/1.1.0/package/package.json written
+339 silly cache afterAdd type-detect@4.0.8
+340 verbose afterAdd /home/skywalker/.npm/type-detect/4.0.8/package/package.json not in flight; writing
+341 verbose afterAdd /home/skywalker/.npm/type-detect/4.0.8/package/package.json written
+342 silly loadAllDepsIntoIdealTree Finishing
+343 silly idealTree:prePrune lib
+343 silly idealTree:prePrune └─┬ chai@4.1.2
+343 silly idealTree:prePrune   ├── assertion-error@1.1.0
+343 silly idealTree:prePrune   ├── check-error@1.0.2
+343 silly idealTree:prePrune   ├── deep-eql@3.0.1
+343 silly idealTree:prePrune   ├── get-func-name@2.0.0
+343 silly idealTree:prePrune   ├── pathval@1.1.0
+343 silly idealTree:prePrune   └── type-detect@4.0.8
+344 silly loadIdealTree Finishing
+345 silly currentTree lib
+346 silly idealTree lib
+346 silly idealTree └─┬ chai@4.1.2
+346 silly idealTree   ├── assertion-error@1.1.0
+346 silly idealTree   ├── check-error@1.0.2
+346 silly idealTree   ├── deep-eql@3.0.1
+346 silly idealTree   ├── get-func-name@2.0.0
+346 silly idealTree   ├── pathval@1.1.0
+346 silly idealTree   └── type-detect@4.0.8
+347 silly generateActionsToTake Starting
+348 silly install generateActionsToTake
+349 warn checkPermissions Missing write access to /usr/local/lib
+350 silly rollbackFailedOptional Starting
+351 silly rollbackFailedOptional Finishing
+352 silly runTopLevelLifecycles Starting
+353 silly runTopLevelLifecycles Finishing
+354 silly install printInstalled
+355 verbose stack Error: EACCES: permission denied, access '/usr/local/lib'
+355 verbose stack     at Error (native)
+356 verbose cwd /home/skywalker/Documents/workspace/just-js/game-of-life
+357 error Linux 4.4.0-119-generic
+358 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "chai" "--save"
+359 error node v4.2.6
+360 error npm  v3.5.2
+361 error path /usr/local/lib
+362 error code EACCES
+363 error errno -13
+364 error syscall access
+365 error Error: EACCES: permission denied, access '/usr/local/lib'
+365 error     at Error (native)
+365 error  { [Error: EACCES: permission denied, access '/usr/local/lib']
+365 error   errno: -13,
+365 error   code: 'EACCES',
+365 error   syscall: 'access',
+365 error   path: '/usr/local/lib' }
+366 error Please try running this command again as root/Administrator.
+367 verbose exit [ -13, true ]

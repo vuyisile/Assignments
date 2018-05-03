@@ -19,7 +19,8 @@ class RecipeBox extends React.Component {
 
     }
 
-    addNewRecipeObj() {
+    addNewRecipeObj(e) {
+        e.preventDefault();
         var newRecipeObj = { recipe: this.state.recipe, ingredients: this.state.ingredients };
         this.state.recipes.splice(this.state.recipes.length, 0, newRecipeObj)
         this.setState({ recipes: this.state.recipes });
@@ -35,10 +36,12 @@ class RecipeBox extends React.Component {
 
     saveUpdate(update) {
         var theUpdate = { recipe: update.recipe, ingredients: update.ingredients };
-        var allRecipes = JSON.stringify(this.state.recipes);
-        var replacement = allRecipes.replace(JSON.stringify(this.state.activeRecipe), JSON.stringify(theUpdate));
-        this.setState({ recipes: JSON.parse(replacement) });
-        localStorage.setItem("allData", replacement);
+        var allRecipes = this.state.recipes;
+        var index = allRecipes.indexOf(this.state.activeRecipe)
+        allRecipes[index] = theUpdate;
+        console.log(allRecipes)
+        this.setState({ recipes: allRecipes});
+        localStorage.setItem("allData", JSON.stringify(allRecipes));
     }
 
     storeRecipes() {
@@ -101,7 +104,7 @@ class RecipeBox extends React.Component {
                     <div className={'col-md-12 container'} id={"display-panel"}>
                         <button className={'col-md-6 btn btn-primary'} onClick={() => this.editRecipe(this.state)}>Edit</button>
                         <button className={'col-md-6 btn btn-danger'} onClick={() => this.deleteRecipe()}>Delete</button>
-                        <h2 className={'col-md-12 header text-color'}>{this.state.activeRecipe.recipe}</h2>
+                        {/* <h2 className={'col-md-12 header text-color'}>{this.state.activeRecipe.recipe}</h2> */}
 
                         <div>
                             {this.state.showEditForm ? <EditForm save={this.saveUpdate.bind(this)} recipe={this.state.recipe} ingredients={this.state.ingredients} /> : this.getIngredientsForDisplay()}
