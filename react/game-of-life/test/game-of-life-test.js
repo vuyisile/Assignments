@@ -2,12 +2,11 @@ var chai = require('chai');
 var expect = chai.expect;
 var assert = require('assert');
 var gameOfLife = require('../game-of-life');
-var { setInitialGeneration } = gameOfLife;
 
 describe('test game-of-life', function () {
     it('when the grid is seeded with initial live cells, only those cells are alive and the rest are dead', function () {
         var initialAliveCells = [{ 'x': 0, 'y': 1, isAlive: true }, { 'x': 0, 'y': 2, isAlive: true }, { 'x': 0, 'y': 3, isAlive: true }];
-        var initialGrid = setInitialGeneration(initialAliveCells);
+        var initialGrid = gameOfLife.setInitialGeneration(initialAliveCells);
 
 
         for (var aliveCell of initialAliveCells) {
@@ -24,8 +23,14 @@ describe('test game-of-life', function () {
 
     it('A dead cell with three live neighbours come to life in the next generation', function () {
         var initialAliveCells = [{ 'x': 0, 'y': 1, isAlive: true }, { 'x': 0, 'y': 2, isAlive: true }, { 'x': 0, 'y': 3, isAlive: true }];
-        var initialGrid = setInitialGeneration(initialAliveCells);
-        var neighbours = getNeighbours(initialGrid);
-        var newAliveCells = createNewGeneration(neighbours, initialGrid)
+        var initialGrid = gameOfLife.setInitialGeneration(initialAliveCells);
+        var neighbours = gameOfLife.getNeighbours(initialGrid);
+        var newAliveCells = gameOfLife.createNewGeneration(neighbours, initialGrid);
+        var cellInGrid =  newAliveCells.filter(function(c){return c.isAlive === true} );
+        
+    
+            expect(cellInGrid).to.be.eql([{ 'x': -1, 'y': 2, isAlive: true },{ 'x': 0, 'y': 2, isAlive: true },{ 'x': 1, 'y': 2, isAlive: true }]);
+       
+       
     });
 })
