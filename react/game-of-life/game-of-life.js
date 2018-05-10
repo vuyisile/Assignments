@@ -14,7 +14,6 @@ function setInitialGeneration(aliveCells) {
     var grid = createGrid();
     for (var i = 0; i < grid.length; i++) {
         for (var cell of aliveCells) {
-            console.log('cell', cell);
             if (grid[i].x === cell.x && grid[i].y === cell.y) {
                 grid[i] = cell;
             }
@@ -53,20 +52,20 @@ function createNewGeneration(board, theGrid) {
     for (var i in board) {
         if (board[i].len === 2 && board[i].cell.isAlive === true || board[i].len === 3 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = true;
-            console.log('should be alive', theGrid[i]);
+         
         }
         else if (board[i].len < 2 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = false;
-            console.log('should be dead', theGrid[i]);
+            
         }
 
         else if (board[i].len > 3 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = false;
-            console.log('should be dead', theGrid[i]);
+            
         }
         else if (board[i].len === 3 && board[i].cell.isAlive === false) {
             theGrid[i].isAlive = true;
-            console.log('should be true', theGrid[i]);
+           
         }
     }
     return theGrid
@@ -77,6 +76,6 @@ var neigbourHood = getNeighbours(grid);
 var newAliveCells = createNewGeneration(neigbourHood, grid);
 var newCellInGrid = newAliveCells.filter(function (c) { return c.isAlive === true });
 
-console.log('filtered', newCellInGrid)
+
 
 module.exports = { setInitialGeneration, getNeighbours, createNewGeneration }  
