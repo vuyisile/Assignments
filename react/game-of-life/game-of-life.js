@@ -37,7 +37,7 @@ function getNeighbours(board) {
         var p6 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y - 1);
 
         var ni = [p1, p2, p3, p4, p7, p8, p5, p6].filter((cell) => cell !== undefined);
-        ;
+        
         var newNi = ni.filter((cell) => cell.isAlive === true);
 
         interections.push({ cell: { 'x': board[i].x, 'y': board[i].y, isAlive: board[i].isAlive }, neighbours: newNi, len: newNi.length });
