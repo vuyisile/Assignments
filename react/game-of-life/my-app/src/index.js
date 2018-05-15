@@ -1,117 +1,72 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import { setInitialGeneration, getNeighbours, createNewGeneration, createGrid } from "./game-of-life";
 
 class GameOfLife extends React.Component {
     constructor() {
         super()
-        this.state = { gameOfLife: [], aliveCells: [] }
+        this.state = { gameOn: {}, grid: [], currentGen: [] }
     }
-
-    createGrid() {
-        var grid = []
-        for (var x = 0; x <= 20; x++) {
-            for (var y = 0; y <= 20; y++) {
-                grid.push({ 'x': x, 'y': y, isAlive: false })
-            }
-        }
-        this.setState({ gameOfLife: grid });
-    }
-    setInitialGeneration(aliveCells) {
-        var grid = createGrid();
-        for (var i = 0; i < grid.length; i++) {
-            for (var cell of aliveCells) {
-                if (grid[i].x === cell.x && grid[i].y === cell.y) {
-                    grid[i] = cell;
-                }
-            }
-        }
-        this.setState({ gameOfLife: grid });
-    }
-
-    seed(seed) {
-        var grid = this.state.aliveCells;
-        grid.push({ x: seed.x, y: seed.y, isAlive: true });
-        this.setState({ aliveCells: grid });
-        console.log('aliveCells', this.state.aliveCells)
-    }
-
-    startGame() {
-        setInterval(function () {
-            var alive = this.state.aliveCells;
-            this.setInitialGeneration(alive);
-        }, 1000)
-    }
-
-
-getNeighbours(board) {
-        var interections = [];
-        var aliveNeighbours = [];
-        for (var i = 0; i < grid.length; i++) {
-    
-            var p1 = board.find((cell) => cell.x === board[i].x && cell.y === board[i].y + 1)
-            var p2 = board.find((cell) => cell.x === board[i].x && cell.y === board[i].y - 1);
-            var p3 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y);
-            var p4 = board.find((cell) => cell.x === board[i].x - 1 && cell.y === board[i].y);
-            var p7 = board.find((cell) => cell.x === board[i].x - 1 && cell.y === board[i].y + 1);
-            var p8 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y + 1);
-            var p5 = board.find((cell) => cell.x === board[i].x - 1 && cell.y === board[i].y - 1);
-            var p6 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y - 1);
-    
-            var ni = [p1, p2, p3, p4, p7, p8, p5, p6].filter((cell) => cell !== undefined);
-            
-            var newNi = ni.filter((cell) => cell.isAlive === true);
-    
-            interections.push({ cell: { 'x': board[i].x, 'y': board[i].y, isAlive: board[i].isAlive }, neighbours: newNi, len: newNi.length });
-    
-        }
-        return interections;
-    }
-    
-    
-    createNewGeneration(board, theGrid) {
-        var arr = [];
-        for (var i in board) {
-            if (board[i].len === 2 && board[i].cell.isAlive === true || board[i].len === 3 && board[i].cell.isAlive === true) {
-                theGrid[i].isAlive = true;
-             
-            }
-            else if (board[i].len < 2 && board[i].cell.isAlive === true) {
-                theGrid[i].isAlive = false;
-                
-            }
-    
-            else if (board[i].len > 3 && board[i].cell.isAlive === true) {
-                theGrid[i].isAlive = false;
-                
-            }
-            else if (board[i].len === 3 && board[i].cell.isAlive === false) {
-                theGrid[i].isAlive = true;
-               
-            }
-        }
-        return theGrid
-    }
-
 
     componentDidMount() {
-        this.createGrid();
+        this.setState({ grid: createGrid() });
     }
+
+    start(alive) {
+        var grid = setInitialGeneration(alive);
+        var neigbourHood = getNeighbours(grid);
+        var changedGrid = createNewGeneration(neigbourHood, grid);
+        var onlyTrue = changedGrid.filter(function (c) { return c.isAlive === true });
+        this.setState({ currentGen: onlyTrue, grid: changedGrid })
+        var generation = this.state.currentGen
+        if (generation.length === 0) {
+            this.setState({ gameOn: clearInterval(this.state.gameOn) });
+        }
+        return this.state.currentGen
+    }
+
+    play() {
+        this.setState({ gameOn: setInterval(() => { this.start(this.state.currentGen) }, 1000) });
+    }
+
+    endGame() {
+        this.setState({ currentGen: [], grid: createGrid(), gameOn: clearInterval(this.state.gameOn) });
+    }
+
+    pause() {
+        this.setState({ gameOn: clearInterval(this.state.gameOn) });
+    }
+
+    seed(id) {
+        var listOfIds = this.state.currentGen;
+        id.isAlive = true;
+        listOfIds.push(id);
+        this.setState({ currentGen: listOfIds })
+    }
+
 
     render() {
         return (
 
             <div>
-                <table className={'tbl'}>
-                    {this.state.gameOfLife.map((cell) => <button onClick={() => this.seed(cell)}>{cell.x + ';' + cell.y}</button>)}
-                </table>
+                <center><h1 className={'text-light'}>GameOfLife</h1></center>
+
+                <div className={'row col-md-12'}>
+                    <button className={'btn btn-success'}onClick={this.play.bind(this)}>Play</button>
+                    <button className={'btn btn-primary'}onClick={this.pause.bind(this)}>Pause</button>
+                    <button className={'btn btn-danger'}onClick={this.endGame.bind(this)}>End Game</button>
+                </div>
+                <div className={'container grid row col-md-12'}>
+                    {this.state.grid.map((cell) => <button className={'cell'} onClick={() => this.seed(cell)} id={`${cell.isAlive}`}></button>)}
+                </div>
+
             </div>
         )
     }
 
 }
-// ========================================
+// =======================================================================================================================================================================================================================================
 
 ReactDOM.render(
     <GameOfLife />,
