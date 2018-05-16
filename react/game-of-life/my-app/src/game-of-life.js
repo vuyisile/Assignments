@@ -70,14 +70,6 @@ function createNewGeneration(board, theGrid) {
     return theGrid
 }
 
-//var initialAliveCells = [{ 'x': 0, 'y': 1, isAlive: true }, { 'x': 1, 'y': 1, isAlive: true }, { 'x': 2, 'y': 1, isAlive: true }]
-// function start(arg) {
-//     var grid = setInitialGeneration(arg)
-//     var neigbourHood = getNeighbours(grid);
-//     var newAliveCells = createNewGeneration(neigbourHood, grid);
-//     var onlyTrue = newAliveCells.filter(function (c) { return c.isAlive === true });
 
-//     return { nextGenOfAllive: onlyTrue, nextGrid: newAliveCells }
-// }
 
 module.exports = { setInitialGeneration, getNeighbours, createNewGeneration,createGrid}  
