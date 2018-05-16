@@ -27,10 +27,13 @@ class GameOfLife extends React.Component {
     }
 
     play() {
-        this.setState({ gameOn: setInterval(() => { this.start(this.state.currentGen) }, 1000) });
+        this.setState({ gameOn: setInterval(() => { 
+          
+            this.start(this.state.currentGen) 
+        }, 1000) });
     }
 
-    endGame() {
+    clearBoard() {
         this.setState({ currentGen: [], grid: createGrid(), gameOn: clearInterval(this.state.gameOn) });
     }
 
@@ -55,10 +58,10 @@ class GameOfLife extends React.Component {
                 <div className={'row col-md-12'}>
                     <button className={'btn btn-success'}onClick={this.play.bind(this)}>Play</button>
                     <button className={'btn btn-primary'}onClick={this.pause.bind(this)}>Pause</button>
-                    <button className={'btn btn-danger'}onClick={this.endGame.bind(this)}>End Game</button>
+                    <button className={'btn btn-danger'}onClick={this.clearBoard.bind(this)}>Clear</button>
                 </div>
                 <div className={'container grid row col-md-12'}>
-                    {this.state.grid.map((cell) => <button className={'cell'} onClick={() => this.seed(cell)} id={`${cell.isAlive}`}></button>)}
+                    {this.state.grid.map((cell) => <button className={`cell ${cell.isAlive}`} onClick={() => this.seed(cell)} key={`${cell.x},${cell.y}`}></button>)}
                 </div>
 
             </div>

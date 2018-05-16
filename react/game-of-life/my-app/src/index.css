@@ -30,10 +30,10 @@ h1{
   position:fixed;
 }
 
-#false{
+.cell.false{
   background-color:#7280c9 ;
 }
-#true{
+.cell.true{
   background-color: hsl(120, 70%, 62%);
 
 }
