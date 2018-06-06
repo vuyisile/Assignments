@@ -1,17 +1,17 @@
 
 
-function createGrid(axis) {
+function createGrid(highestVal) {
     var grid = []
-    for (var x = -axis; x <=axis; x++) {
-        for (var y = -axis; y <= axis; y++) {
+    for (var x = -highestVal; x <=highestVal; x++) {
+        for (var y = -highestVal; y <= highestVal; y++) {
             grid.push({ 'x': x, 'y': y, isAlive: false })
         }
     }
     return grid;
 }
 
-function setInitialGeneration(cells,aliveCells) {
-    var grid = createGrid(cells);
+function setInitialGeneration(highestVal,aliveCells) {
+    var grid = createGrid(highestVal);
     for (var i = 0; i < grid.length; i++) {
         for (var cell of aliveCells) {
             if (grid[i].x === cell.x && grid[i].y === cell.y) {
@@ -25,7 +25,6 @@ function setInitialGeneration(cells,aliveCells) {
 function getNeighbours(board) {
     var interections = [];
     for (var i = 0; i < board.length; i++) {
-
         var p1 = board.find((cell) => cell.x === board[i].x && cell.y === board[i].y + 1)
         var p2 = board.find((cell) => cell.x === board[i].x && cell.y === board[i].y - 1);
         var p3 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y);
@@ -34,7 +33,6 @@ function getNeighbours(board) {
         var p8 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y + 1);
         var p5 = board.find((cell) => cell.x === board[i].x - 1 && cell.y === board[i].y - 1);
         var p6 = board.find((cell) => cell.x === board[i].x + 1 && cell.y === board[i].y - 1);
-
         var ni = [p1, p2, p3, p4, p7, p8, p5, p6].filter((cell) => cell !== undefined);
 
         var newNi = ni.filter((cell) => cell.isAlive === true);
@@ -50,16 +48,12 @@ function createNewGeneration(board, theGrid) {
     for (var i in board) {
         if (board[i].len === 2 && board[i].cell.isAlive === true || board[i].len === 3 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = true;
-
         }
         else if (board[i].len < 2 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = false;
-
         }
-
         else if (board[i].len > 3 && board[i].cell.isAlive === true) {
             theGrid[i].isAlive = false;
-
         }
         else if (board[i].len === 3 && board[i].cell.isAlive === false) {
             theGrid[i].isAlive = true;

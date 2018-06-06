@@ -74,8 +74,11 @@ class GameOfLife extends React.Component {
 
     seed(id) {
         var listOfIds = this.state.currentGen;
-        id.isAlive = true;
-        listOfIds.push(id);
+        if(id.isAlive === false){
+            id.isAlive = true;
+            listOfIds.push(id);
+        }
+        
         this.setState({ currentGen: listOfIds})
 
         if(this.state.generationCount === 0){
