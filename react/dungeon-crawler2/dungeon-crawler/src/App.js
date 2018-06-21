@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import { createBoard, placeEnemy, placeLifePill, placePlayer } from './game/game-builders'
+import { createBoard, placeEnemy, placeLifePill, placePlayer, placeAll, resetDungeon } from './game/game-builders'
 import { pathOne } from './game/dungeon-one'
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     super(props)
     this.state = {
       board: createBoard(),
-      path: placeLifePill(placeEnemy(placePlayer(pathOne))),
+      path: placeAll(pathOne, 'devil-fork'),
       playerPosition: null,
       XP: 0,
       ENEMY_HEALTH: 100,
@@ -64,7 +64,7 @@ class App extends Component {
     var newBoard = this.state.board;
     var oldLocationCell = newBoard.find(element => element.x === oldLoc.x && element.y === oldLoc.y && element.isType === "PATH");
     var newPlayerCell = newBoard.find(element => element.x === newPos.x && element.y === newPos.y && element.isType === "PATH");
-  
+
 
     if (newPlayerCell === undefined) {
       newPlayerCell = oldLocationCell;
@@ -74,16 +74,28 @@ class App extends Component {
       this.setState({ PLAYER_HEALTH: health + 100 })
 
     }
+    if (newPlayerCell.occupiedBy === 'WEAPON') {
+      this.setState({ weapon: newPlayerCell.weapon })
+    }
     if (newPlayerCell.occupiedBy === 'ENEMY') {
       this.setState({ PLAYER_HEALTH: health - newPlayerCell.impact })
-      newPlayerCell.life -= 25
+      if (this.state.weapon === 'stick') newPlayerCell.life -= 20;
+      if (this.state.weapon === 'axe') newPlayerCell.life -= 35;
+      if (this.state.weapon === 'devil-fork') newPlayerCell.life -= 75;
       if (newPlayerCell.life > 0) {
-        console.log('Enemy life', newPlayerCell.life)
-        this.setState({ XP: xp + 25 })
+        this.setState({ XP: xp + 7 })
         newPlayerCell = oldLocationCell;
       }
     }
-console.log('pos',newBoard.indexOf(newPlayerCell))
+    if (this.state.PLAYER_HEALTH === 0) {
+      alert('you are dead!!')
+      var thePath = this.state.path;
+      var newPath = resetDungeon(thePath)
+      var newGame = setTimeout(placeAll(newPath, 'axe'), 1000);
+      this.setState({ path: newGame, PLAYER_HEALTH: 100, weapon: 'stick', dungeon: 1, XP: 0 })
+    }
+    console.log('nps', newPlayerCell)
+    console.log('pos', newBoard.indexOf(newPlayerCell))
     newBoard[newBoard.indexOf(newPlayerCell)] = { ...newPlayerCell, occupiedBy: "PLAYER", life: this.state.PLAYER_HEALTH }
     newBoard[newBoard.indexOf(oldLocationCell)] = { ...oldLocationCell, occupiedBy: "NONE", life: this.state.PLAYER_HEALTH }
 
