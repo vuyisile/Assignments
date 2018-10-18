@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Units extends Component {
     constructor() {
         super();
         this.state = {
-            blocks: ['b1','b2','b3'],
+            blocks: ['b1', 'b2', 'b3'],
             unitLocation: '',
             unitName: '',
             unitType: '',
@@ -19,7 +20,10 @@ class Units extends Component {
         change[e.target.name] = e.target.value;
         this.setState(change);
     }
-    
+    submitData() {
+        axios.post('http://localhost:3001/unit-details', this.state)
+    }
+
     render() {
         return (<div className={'color form-pos'}>
             <table>
@@ -38,7 +42,7 @@ class Units extends Component {
                         <td>Block Name </td>
                         <td>
                             <select>
-                            <option value={'select-block'}>select block</option>
+                                <option value={'select-block'}>select block</option>
                                 {this.state.blocks.map((block) => <option value={block}>{block}</option>)}
                             </select>
                         </td>

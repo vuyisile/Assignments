@@ -10,8 +10,8 @@ function createBoard() {
 
 function placeWeapon(path, weapon) {
     for (var i = 0; i < 1; i++) {
-        if (path[i].occupiedBy === 'NONE') {
-            var index = Math.floor(Math.random() * (path.length))
+        var index = Math.floor(Math.random() * (path.length))
+        if (path[index].occupiedBy === 'NONE') {
             path[index].occupiedBy = 'WEAPON';
             path[index].weapon = weapon
         }
@@ -22,8 +22,8 @@ function placeWeapon(path, weapon) {
 
 function placeEnemy(path) {
     for (var i = 0; i < 15; i++) {
-        if (path[i].occupiedBy === 'NONE') {
-            var index = Math.floor(Math.random() * (path.length))
+        var index = Math.floor(Math.random() * (path.length))
+        if (path[index].occupiedBy === 'NONE') {
             path[index].occupiedBy = 'ENEMY';
             path[index].life = 100
             path[index].impact = 25
@@ -34,8 +34,8 @@ function placeEnemy(path) {
 
 function placeLifePill(path) {
     for (var i = 0; i < 15; i++) {
-        if (path[i].occupiedBy === 'NONE') {
-            var index = Math.floor(Math.random() * (path.length))
+        var index = Math.floor(Math.random() * (path.length))
+        if (path[index].occupiedBy === 'NONE') {
             path[index].occupiedBy = 'LIFE-PILL'
         }
     }
@@ -48,23 +48,33 @@ function resetDungeon(path) {
     }
     return path
 }
-
+function placeDoor(path) {
+    var index = Math.floor(Math.random() * (path.length))
+    if (path[index].occupiedBy === 'NONE') {
+        path[index].occupiedBy = 'DOOR';
+    }
+    return path
+}
 function placePlayer(path) {
-    var index = 221
-    path[index].occupiedBy = 'PLAYER';
-    path[index].life = 100
-    path[index].impact = 25
-    path[index].xp = 0;
-    path[index].weapon = 'stick';
+    var index = Math.floor(Math.random() * (path.length))
+    if (path[index].occupiedBy === 'NONE') {
+        path[index].occupiedBy = 'PLAYER';
+        path[index].life = 100
+        path[index].impact = 25
+        path[index].xp = 0;
+        path[index].weapon = 'stick';
+    }
     return path
 }
 
-function placeAll(path, weapon) {
-    var one = placePlayer(path);
-    var two = placeEnemy(one);
-    var three = placeLifePill(two);
-    var four = placeWeapon(three, weapon);
-    return four
+function placeAll(dungeon, weapon) {
+    var path = dungeon;
+    var one = placeEnemy(path);
+    var two = placeLifePill(one);
+    var three = placeWeapon(two, weapon);
+    var four = placePlayer(three);
+    var five = placeDoor(four);
+    return five
 }
 
 

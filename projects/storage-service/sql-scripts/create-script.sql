@@ -1,11 +1,15 @@
 CREATE TABLE IF NOT EXISTS unit_providers (
     id serial PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    contact_person_name VARCHAR NOT NULL,
     telephone_number VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL
 );CREATE TABLE IF NOT EXISTS unit_locations (
     id serial PRIMARY KEY,
-    address VARCHAR(255) NOT NULL,   
+    address_line1 VARCHAR(255) NOT NULL,
+    address_line2 VARCHAR(255) NOT NULL,
+    city/town VARCHAR(255) NOT NULL,
+    zip_code VARCHAR(255) NOT NULL, 
     provider_id INT REFERENCES unit_providers(id) NOT NULL
 );CREATE TABLE IF NOT EXISTS unit_blocks (
     id serial PRIMARY KEY,

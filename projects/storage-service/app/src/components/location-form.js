@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class BusinessForm extends Component {
+class RegisterLocation extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      companyName: '',
-      contactPersonName:'',
-      telephone: ''
+      addressLine1: '',
+      addressLine2: '',
+      zipCode:'',
+      cityOrTown: ''
     }
     this.gotoNext = this.gotoNext.bind(this)
     this.handleInput = this.handleInput.bind(this)
@@ -26,47 +26,53 @@ class BusinessForm extends Component {
   gotoNext(e) {
         // window.location.set('/register-blocks')
   }
+//   id serial PRIMARY KEY,
+//   address_line1 VARCHAR(255) NOT NULL,
+//   address_line2 VARCHAR(255) NOT NULL,
+//   city/town VARCHAR(255) NOT NULL,
+//   zip_code VARCHAR(255) NOT NULL, 
+//   provider_id INT REFERENCES unit_providers(id) NOT NULL
   render() {
     return (<div className={'color form-pos'}>
       <table>
         <thead>
           <tr>
             <td>
-              <h3>Unit Provider Details</h3>
+              <h3>Location</h3>
             </td>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              Company Name
+              Address Line 1
             </td>
             <td>
-              <input type='text' name='companyName' onChange={this.handleInput} value={this.state.companyName} />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Contact Person Name
-            </td>
-            <td>
-              <input type='text' name='contactPersonName' onChange={this.handleInput} value={this.state.contactPersonName} />
+              <input type='text' name='addressLine1' onChange={this.handleInput} value={this.state.addressLine1} />
             </td>
           </tr>
           <tr>
             <td>
-              Telephone
+            Address Line 2
             </td>
             <td>
-              <input type='telephone' name='telephone' onChange={this.handleInput} value={this.state.telephone} />
+              <input type='text' name='addressLine2' onChange={this.handleInput} value={this.state.addressLine2} />
             </td>
           </tr>
           <tr>
             <td>
-              Email
+              City/Town
             </td>
             <td>
-              <input type='email' name='email' onChange={this.handleInput} value={this.state.email} />
+              <input type='telephone' name='cityOrTown' onChange={this.handleInput} value={this.state.cityOrTown} />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Zip Code
+            </td>
+            <td>
+              <input type='email' name='zipCode' onChange={this.handleInput} value={this.state.zipCode} />
             </td>
           </tr>
           <tr>
@@ -84,4 +90,4 @@ class BusinessForm extends Component {
   }
 }
 
-export default BusinessForm;
+export default RegisterLocation;

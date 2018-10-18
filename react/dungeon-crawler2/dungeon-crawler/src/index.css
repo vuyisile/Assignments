@@ -3,7 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+.txt-color{
+  color: black;
+}
+span{
+  margin-right: 20px;
+  margin-left: 20px;
+}
 /* button{
   padding-top: 10px;
   width: 0.5px;
@@ -15,9 +21,9 @@ button{
   height: 25px;
 }
 .board-container{
+  position: fixed;
   margin-top:30px;
   margin-left:5px; 
-  position: fixed;
   width: 680px;
   height:500px;
 }
@@ -48,9 +54,13 @@ button{
 }
 
 .WEAPON{
-  background-color: rgb(136, 142, 146);
+  background-color: black;
+}
+.DOOR{
+  background-color: brown;
 }
 
 a{
-  margin: 35px;
+  margin-right: 50px;
+  margin-left: 10px;
 }

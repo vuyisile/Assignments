@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Blocks extends Component {
     constructor() {
@@ -15,8 +16,11 @@ class Blocks extends Component {
         change[e.target.name] = e.target.value;
         this.setState(change);
     }
-    gotoNext(){
+    gotoNext() {
         window.location.set('register-units');
+    }
+    submitData() {
+        axios.post('http://localhost:3001/block-details', this.state)
     }
     render() {
         return (<div className={'color form-pos'}>
@@ -46,7 +50,7 @@ class Blocks extends Component {
                             <button style={{ marginTop: 7 + 'em' }}>Cancel</button>
                         </td>
                         <td className={'row'}>
-                            <button className={'col-md-4'} style={{ marginLeft: 10 + 'em', marginTop: 7 + 'em'  }} onClick={this.gotoNext}>Next</button>
+                            <button className={'col-md-4'} style={{ marginLeft: 10 + 'em', marginTop: 7 + 'em' }} onClick={this.gotoNext}>Next</button>
                         </td>
                     </tr>
                 </tbody>

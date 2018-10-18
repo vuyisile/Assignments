@@ -3,6 +3,8 @@ import './App.css';
 import BusinessForm from './components/business-form'
 import Units from './components/unit-form'
 import Blocks from './components/blocks-form'
+import RegisterLocation from './components/location-form'
+
 
 class App extends Component {
   managePaths(){
@@ -17,6 +19,9 @@ class App extends Component {
 
       case '/register-blocks':
       return <Blocks/>;
+
+      case '/register-location':
+      return <RegisterLocation/>;
     }
   }
   render() {
