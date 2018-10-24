@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS unit_providers (
     id serial PRIMARY KEY,
     address_line1 VARCHAR(255) NOT NULL,
     address_line2 VARCHAR(255) NOT NULL,
-    city/town VARCHAR(255) NOT NULL,
+    city_or_town VARCHAR(255) NOT NULL,
     zip_code VARCHAR(255) NOT NULL, 
     provider_id INT REFERENCES unit_providers(id) NOT NULL
 );CREATE TABLE IF NOT EXISTS unit_blocks (

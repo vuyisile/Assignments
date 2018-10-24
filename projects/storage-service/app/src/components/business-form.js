@@ -8,7 +8,7 @@ class BusinessForm extends Component {
     this.state = {
       email: '',
       companyName: '',
-      contactPersonName:'',
+      contactPersonName: '',
       telephone: ''
     }
     this.gotoNext = this.gotoNext.bind(this)
@@ -20,11 +20,19 @@ class BusinessForm extends Component {
     change[e.target.name] = e.target.value;
     this.setState(change);
   }
-  submitData(){
-    axios.post('http://localhost:3001/business-details',this.state)
+  submitData() {
+    axios.post('http://localhost:3001/business-details', this.state);
+    setTimeout(() => {
+      this.setState({
+        email: '',
+        companyName: '',
+        contactPersonName: '',
+        telephone: ''
+      })
+    }, 1000);
   }
   gotoNext(e) {
-        // window.location.set('/register-blocks')
+    // window.location.set('/register-blocks')
   }
   render() {
     return (<div className={'color form-pos'}>

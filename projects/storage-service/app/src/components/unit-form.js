@@ -6,7 +6,6 @@ class Units extends Component {
         super();
         this.state = {
             blocks: ['b1', 'b2', 'b3'],
-            unitLocation: '',
             unitName: '',
             unitType: '',
             length: '',
