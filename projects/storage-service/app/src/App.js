@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import BusinessForm from './components/business-form'
 import Units from './components/unit-form'
+import TypesOfUnits from './components/unit-type-form'
 import Blocks from './components/blocks-form'
 import RegisterLocation from './components/location-form'
 
@@ -16,6 +17,9 @@ class App extends Component {
       
       case '/register-units':
       return <Units/>;
+
+      case '/register-types-of-units':
+      return <TypesOfUnits/>;
 
       case '/register-blocks':
       return <Blocks/>;

@@ -18,14 +18,14 @@ CREATE TABLE IF NOT EXISTS unit_providers (
 );CREATE TABLE IF NOT EXISTS units (
     id serial PRIMARY KEY,
     name VARCHAR(225) NOT NULL,
+    block_id INT REFERENCES unit_blocks(id),
     type_id INT REFERENCES unit_types(id)
 );CREATE TABLE IF NOT EXISTS unit_types (
     id serial PRIMARY KEY,
     type varchar(225) NOT NULL,
     unit_length INT NOT NULL,
     unit_width INT NOT NULL ,
-    unit_height INT NOT NULL,
-    block_id INT REFERENCES unit_blocks(id)
+    unit_height INT NOT NULL
 );CREATE TABLE IF NOT EXISTS customers (
     id serial PRIMARY KEY,
     first_name VARCHAR(100),
