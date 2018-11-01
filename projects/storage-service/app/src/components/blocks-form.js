@@ -34,13 +34,7 @@ class Blocks extends Component {
         window.location.set('register-units');
     }
     submitData() {
-        axios.post('http://localhost:3001/block-details', {
-            blockName: this.state.blockName,
-            location: this.state.location
-        });
-        // setTimeout(() => {
-        //     this.setState({ blockName: '' })
-        // }, 1000);
+        axios.post('http://localhost:3001/block-details',this.state);
     }
     render() {
         console.log(this.state);

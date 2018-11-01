@@ -5,14 +5,25 @@ class Units extends Component {
     constructor() {
         super();
         this.state = {
-            blocks: ['b1', 'b2', 'b3'],
+            blocks: [],
             unitName: '',
             unitType: '',
             length: '',
             height: '',
-            width: ''
+            width: '',
+            block:''
         }
         this.handleInput = this.handleInput.bind(this)
+        this.submitData = this.submitData.bind(this) 
+    }   
+    async componentDidMount() {
+        var blocks = await axios.get('http://localhost:3001/blocks');
+        var arrBlocks = [];
+        blocks.data.forEach(item => arrBlocks.push([item.id, item.block_name]))
+        this.setState({ blocks: arrBlocks })
+    }
+    handleSelect(val) {
+        this.setState({ block: val })
     }
     handleInput(e) {
         let change = {};
@@ -42,36 +53,36 @@ class Units extends Component {
                         <td>
                             <select>
                                 <option value={'select-block'}>select block</option>
-                                {this.state.blocks.map((block) => <option value={block}>{block}</option>)}
+                                {this.state.blocks.map((block, i = 0) => <option  key={block + i++} value={block} onClick={()=>this.handleSelect(block)}>{`${block[0]}. ${block[1]}`}</option>)}
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td>Unit Name </td>
                         <td>
-                            <input type='text' name='location' onChange={this.handleInput} value={this.state.telephone} />
+                            <input type='text' name='unitName' onChange={this.handleInput} value={this.state.telephone} />
                         </td>
                     </tr>
                     <tr>
                         <td>Unit type</td>
                         <td>
-                            <input type='text' name='type' onChange={this.handleInput} value={this.state.email} />
+                            <input type='text' name='unitType' onChange={this.handleInput} value={this.state.email} />
                         </td>
                     </tr>
                     <tr>
-                        <td>Unit Length</td>
+                        <td>Unit Length (metres)</td>
                         <td>
                             <input type='text' name='length' onChange={this.handleInput} value={this.state.email} />
                         </td>
                     </tr>
                     <tr>
-                        <td>Unit Width</td>
+                        <td>Unit Width (metres)</td>
                         <td>
                             <input type='text' name='width' onChange={this.handleInput} value={this.state.email} />
                         </td>
                     </tr>
                     <tr>
-                        <td>Unit Height</td>
+                        <td>Unit Height (metres)</td>
                         <td>
                             <input type='text' name='height' onChange={this.handleInput} value={this.state.email} />
                         </td>
@@ -81,7 +92,7 @@ class Units extends Component {
                             <button className={'btn-margin'}>Cancel</button>
                         </td>
                         <td>
-                            <button className={'btn-margin '}>Add</button>
+                            <button className={'btn-margin '} onClick = {this.submitData}>Add</button>
                         </td>
 
                     </tr>

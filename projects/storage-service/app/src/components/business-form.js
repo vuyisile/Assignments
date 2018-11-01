@@ -21,15 +21,22 @@ class BusinessForm extends Component {
     this.setState(change);
   }
   submitData() {
-    axios.post('http://localhost:3001/business-details', this.state);
-    setTimeout(() => {
-      this.setState({
-        email: '',
-        companyName: '',
-        contactPersonName: '',
-        telephone: ''
-      })
-    }, 1000);
+    var email = this.state.email;
+    var companyName = this.state.companyName;
+    var contactPersonName = this.state.contactPersonName;
+    var telephone = this.state.telephone;
+    if (email.length > 0 && companyName.length > 0 && contactPersonName.length > 0 && telephone.length > 0) {
+      axios.post('http://localhost:3001/business-details', this.state);
+      setTimeout(() => {
+        this.setState({
+          email: '',
+          companyName: '',
+          contactPersonName: '',
+          telephone: ''
+        })
+      }, 1000);
+    }
+    
   }
   gotoNext(e) {
     // window.location.set('/register-blocks')
