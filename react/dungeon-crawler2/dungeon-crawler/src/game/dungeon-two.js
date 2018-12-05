@@ -6,7 +6,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -15,7 +16,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -24,7 +26,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -33,7 +36,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -42,7 +46,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -51,7 +56,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -60,7 +66,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -69,7 +76,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -78,7 +86,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -87,7 +96,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -96,7 +106,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -105,7 +116,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -114,7 +126,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -123,7 +136,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -132,7 +146,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -141,7 +156,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -150,7 +166,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -159,7 +176,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -168,7 +186,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -177,7 +196,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -186,7 +206,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -195,7 +216,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -204,7 +226,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -213,7 +236,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -222,7 +246,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -231,7 +256,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -240,7 +266,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -249,7 +276,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -258,7 +286,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -267,7 +296,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -276,7 +306,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -285,7 +316,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -294,7 +326,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -303,7 +336,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -312,7 +346,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -321,7 +356,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -330,7 +366,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -339,7 +376,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -348,7 +386,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -357,7 +396,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -366,7 +406,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -375,7 +416,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -384,7 +426,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -393,7 +436,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -402,7 +446,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -411,7 +456,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -420,7 +466,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -429,7 +476,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -438,7 +486,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -447,7 +496,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -456,7 +506,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -465,7 +516,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -474,7 +526,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -483,7 +536,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -492,7 +546,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -501,7 +556,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -510,7 +566,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -519,7 +576,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -528,7 +586,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -537,7 +596,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -546,7 +606,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -555,7 +616,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -564,7 +626,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -573,7 +636,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -582,7 +646,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -591,7 +656,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -600,7 +666,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -609,7 +676,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -618,7 +686,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -627,7 +696,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -636,7 +706,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -645,7 +716,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -654,7 +726,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -663,7 +736,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -672,7 +746,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -681,7 +756,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -690,7 +766,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -699,7 +776,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -708,7 +786,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -717,7 +796,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -726,7 +806,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -735,7 +816,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -744,7 +826,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -753,7 +836,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -762,7 +846,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -771,7 +856,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -780,7 +866,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -789,7 +876,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -798,7 +886,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -807,7 +896,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -816,7 +906,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -825,7 +916,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -834,7 +926,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -843,7 +936,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -852,7 +946,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -861,7 +956,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -870,7 +966,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -879,7 +976,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -888,7 +986,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -897,7 +996,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -906,7 +1006,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -915,7 +1016,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -924,7 +1026,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -933,7 +1036,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -942,7 +1046,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -951,7 +1056,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -960,7 +1066,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -969,7 +1076,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -978,7 +1086,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -987,7 +1096,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -996,7 +1106,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1005,7 +1116,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1014,7 +1126,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1023,7 +1136,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1032,7 +1146,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1041,7 +1156,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1050,7 +1166,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1059,7 +1176,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1068,7 +1186,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1077,7 +1196,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -1086,7 +1206,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1095,7 +1216,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1104,7 +1226,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1113,7 +1236,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1122,7 +1246,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1131,7 +1256,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1140,7 +1266,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1149,7 +1276,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1158,7 +1286,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1167,7 +1296,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1176,7 +1306,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1185,7 +1316,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1194,7 +1326,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1203,7 +1336,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1212,7 +1346,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1221,7 +1356,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1230,7 +1366,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1239,7 +1376,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1248,7 +1386,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -1257,7 +1396,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -1266,7 +1406,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1275,7 +1416,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1284,7 +1426,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1293,7 +1436,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1302,7 +1446,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1311,7 +1456,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1320,7 +1466,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1329,7 +1476,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1338,7 +1486,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1347,7 +1496,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1356,7 +1506,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1365,7 +1516,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1374,7 +1526,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1383,7 +1536,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1392,7 +1546,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1401,7 +1556,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1410,7 +1566,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1419,7 +1576,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1428,7 +1586,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1437,7 +1596,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -1446,7 +1606,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1455,7 +1616,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1464,7 +1626,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -1473,7 +1636,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1482,7 +1646,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1491,7 +1656,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1500,7 +1666,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1509,7 +1676,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1518,7 +1686,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1527,7 +1696,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1536,7 +1706,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1545,7 +1716,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1554,7 +1726,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1563,7 +1736,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1572,7 +1746,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -1581,7 +1756,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1590,7 +1766,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1599,7 +1776,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1608,7 +1786,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1617,7 +1796,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -1626,7 +1806,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1635,7 +1816,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1644,7 +1826,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1653,7 +1836,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1662,7 +1846,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1671,7 +1856,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1680,7 +1866,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1689,7 +1876,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -2,
@@ -1698,7 +1886,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1707,7 +1896,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1716,7 +1906,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1725,7 +1916,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -1734,7 +1926,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -1743,7 +1936,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1752,7 +1946,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1761,7 +1956,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1770,7 +1966,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1779,7 +1976,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1788,7 +1986,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1797,7 +1996,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1806,7 +2006,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -1815,7 +2016,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 2,
@@ -1824,7 +2026,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -1833,7 +2036,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1842,7 +2046,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -1851,7 +2056,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -1860,7 +2066,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -1869,7 +2076,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -1878,7 +2086,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -1887,7 +2096,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -1896,7 +2106,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -1905,7 +2116,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -1914,7 +2126,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -1923,7 +2136,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -1932,7 +2146,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -1941,7 +2156,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -1950,7 +2166,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -1959,7 +2176,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -1968,7 +2186,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -1977,7 +2196,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -1986,7 +2206,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -1995,7 +2216,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -2004,7 +2226,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -2013,7 +2236,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -2022,7 +2246,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -2031,7 +2256,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -2040,7 +2266,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -2049,7 +2276,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -2058,7 +2286,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -2067,7 +2296,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -2076,7 +2306,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -2085,7 +2316,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -2094,7 +2326,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 5,
@@ -2103,7 +2336,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 6,
@@ -2112,7 +2346,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -2121,7 +2356,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -2130,7 +2366,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -2139,7 +2376,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -9,
@@ -2148,7 +2386,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -8,
@@ -2157,7 +2396,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -7,
@@ -2166,7 +2406,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -6,
@@ -2175,7 +2416,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -5,
@@ -2184,7 +2426,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -4,
@@ -2193,7 +2436,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -3,
@@ -2202,7 +2446,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": -1,
@@ -2211,7 +2456,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 0,
@@ -2220,7 +2466,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 1,
@@ -2229,7 +2476,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 3,
@@ -2238,7 +2486,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 4,
@@ -2247,7 +2496,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 7,
@@ -2256,7 +2506,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 8,
@@ -2265,7 +2516,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   },
   {
     "x": 9,
@@ -2274,7 +2526,8 @@ const pathTwo =[
     "occupiedBy": "NONE",
     "life": 0,
     "impact": 0,
-    "weapon": null
+    "weapon": null,
+    "toggleState":"ON"
   }]
   
 
