@@ -21,6 +21,28 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
+//_____________________________________passport-jwt_____________________________
+var JwtStrategy = require('passport-jwt').Strategy;
+var ExtractJwt = require('passport-jwt').ExtractJwt;
+var options = {
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secret: 'secret'
+}
+
+passport.use(new JWTStrategy(options,
+  function (jwtPayload, done) {
+    //find the user in db if needed
+    const user = await client.query(`SELECT email,password FROM customers WHERE email=$1`, [obj.email])
+    .then(user => {
+      return done(null, user, jwtPayload.id);
+    })
+      .catch(err => {
+        return done(err);
+      });
+  }
+));
+
+
 
 // ____________express-code________________________
 
@@ -135,12 +157,12 @@ app.post('/signup', async function (req, res) {
 
 app.post('/login', async function (req, res) {
   var details = req.body;
-  console.log('details',details.password)
+  console.log('details', details.password)
   try {
     var check = await ref.checkIfExits(details);
-    if(check.status === true){
-      var verification = await crypto.verifyPassword(details.password,check.pswd)
-      if(verification === true){
+    if (check.status === true) {
+      var verification = await crypto.verifyPassword(details.password, check.pswd)
+      if (verification === true) {
         console.log('You are now logged-In')
       }
     }

@@ -98,20 +98,8 @@ async function checkIfExits(obj) {
         status = false;
     }
     console.log('user matching status',status,'\n user', {status, })
-    return {status, pswd:finder.rows[0].password}
+    return {status, pswd:finder.rows[0].password, user:finder.rows[0]}
 }
-
-async function matchUser(obj) {
-    var string = await hashingHelper.verifyPassword(obj.password,)
-    // var status = true;
-    const finder = await client.query(`SELECT email,password FROM customers WHERE email=$1 AND password=$1`, [obj.username, string]);
-    // if (finder.rows.length === 0) {
-    //     status = false;
-    // }
-    return status
-}
-
-
 
 module.exports = {
     fetchLocationId,
@@ -127,6 +115,5 @@ module.exports = {
     getBusinessId,
     saveCustomer,
     checkIfExits,
-    matchUser
 
 }
