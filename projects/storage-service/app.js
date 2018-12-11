@@ -6,10 +6,12 @@ var pg = require('pg')
 const ref = require("./ref-functions/functions");
 const hash = require('js-sha512');
 const crypto = require('./ref-functions/crypto')
+const jwt = require('./jwt');
+require('dotenv').config();
 
 
 
-const connectionString = "postgres://skywalker:max121xam@localhost:5432/storage_service"
+const connectionString = process.env.DATABASE_URL;
 
 const client = new pg.Client(connectionString);
 client.connect();
@@ -22,25 +24,35 @@ app.use(bodyParser.json())
 
 
 //_____________________________________passport-jwt_____________________________
-var JwtStrategy = require('passport-jwt').Strategy;
-var ExtractJwt = require('passport-jwt').ExtractJwt;
-var options = {
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secret: 'secret'
-}
+const passport = require('passport');
+const passportJWT = require('passport-jwt')
+const LocalStrategy = require('passport-local').Strategy;
+// const jwt = require('jsonwebtoken');
+const JWTStrategy = passportJWT.Strategy;
+const ExtractJWT = passportJWT.ExtractJwt;
 
-passport.use(new JWTStrategy(options,
-  function (jwtPayload, done) {
-    //find the user in db if needed
-    const user = await client.query(`SELECT email,password FROM customers WHERE email=$1`, [obj.email])
-    .then(user => {
-      return done(null, user, jwtPayload.id);
-    })
-      .catch(err => {
-        return done(err);
-      });
+app.use(passport.initialize());
+passport.use(new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password'
+}, async (email, password, done) => {
+  try {
+    var check = await ref.checkIfExits(email);
+    if (check.status === true) {
+      var verification = await crypto.verifyPassword(password, check.user.password)
+      if (verification === true) {
+        console.log('You are now logged-In')
+        return done(null, check, { message: 'You are now logged-In' });
+      }
+    } else {
+      return done(null, false, { message: "Incorrect Email or Password" })
+    }
+  } catch (error) {
+    console.log('error :', error);
+    return done(err)
   }
-));
+}
+))
 
 
 
@@ -144,11 +156,12 @@ app.post('/signup', async function (req, res) {
   var details = req.body;
   try {
     var check = await ref.checkIfExits(details);
+    console.log({ check })
     if (check.status === false) {
       await ref.saveCustomer(details);
       res.sendStatus(201).end()
     }
-    res.json({ message: 'email already in use' })
+    res.sendStatus(200)
   } catch (error) {
     console.log('error', error)
     res.sendStatus(500)
@@ -158,17 +171,28 @@ app.post('/signup', async function (req, res) {
 app.post('/login', async function (req, res) {
   var details = req.body;
   console.log('details', details.password)
-  try {
-    var check = await ref.checkIfExits(details);
-    if (check.status === true) {
-      var verification = await crypto.verifyPassword(details.password, check.pswd)
-      if (verification === true) {
-        console.log('You are now logged-In')
-      }
+
+  passport.authenticate('local', (err, data, info) => {
+    console.log("data(passport):", data);
+    if (data === false) {
+      res.status(204).end();
+    } else if (err) {
+      res.status(204).end();
     }
-  } catch (error) {
-    console.log('error :', error);
-  }
+    req.login(data, { session: true }, (err) => {
+      if (err) {
+        res.send(err).status(204).end();
+      }
+      var userDetails = {
+        UserName: data.user.name,
+        email: data.user.email,
+        telephone: data.user.telephone
+      }
+      const token = jwt.generateToken(userDetails);
+      console.log('token :', token);
+      // res.json({ info, token }).status(202).end();
+    });
+  })(req, res);
 })
 
 app.listen(3001)

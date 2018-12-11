@@ -5,7 +5,6 @@ async function hashPassword(password) {
   var theSalt = await bcrypt.genSalt(saltRounds)
   var hash = await bcrypt.hash(password, theSalt);
   var code = { hash: hash, salt: theSalt }
-  console.log('code :', code);
   return code;
 }
 

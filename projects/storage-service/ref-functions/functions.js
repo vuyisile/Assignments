@@ -91,14 +91,14 @@ async function saveCustomer(details) {
 
 }
 
-async function checkIfExits(obj) {
+async function checkIfExits(email) {
     var status = true;
-    const finder = await client.query(`SELECT email,password FROM customers WHERE email=$1`, [obj.email]);
+    const finder = await client.query(`SELECT * FROM customers WHERE email=$1`, [email]);
     if (finder.rows.length === 0) {
         status = false;
+        return {status}
     }
-    console.log('user matching status',status,'\n user', {status, })
-    return {status, pswd:finder.rows[0].password, user:finder.rows[0]}
+    return {status, user:finder.rows[0]}
 }
 
 module.exports = {
