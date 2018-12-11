@@ -42,14 +42,14 @@ passport.use(new LocalStrategy({
       var verification = await crypto.verifyPassword(password, check.user.password)
       if (verification === true) {
         console.log('You are now logged-In')
-        return done(null, check, { message: 'You are now logged-In' });
+        return done(null, check,  'You are now logged-In' );
       }
     } else {
-      return done(null, false, { message: "Incorrect Email or Password" })
+      return done(null, false, "Incorrect Email or Password" )
     }
   } catch (error) {
     console.log('error :', error);
-    return done(err)
+    return done(error)
   }
 }
 ))
@@ -155,7 +155,7 @@ app.post('/unit', async function (req, res) {
 app.post('/signup', async function (req, res) {
   var details = req.body;
   try {
-    var check = await ref.checkIfExits(details);
+    var check = await ref.checkIfExits(details.email);
     console.log({ check })
     if (check.status === false) {
       await ref.saveCustomer(details);
@@ -169,28 +169,18 @@ app.post('/signup', async function (req, res) {
 })
 
 app.post('/login', async function (req, res) {
-  var details = req.body;
-  console.log('details', details.password)
-
-  passport.authenticate('local', (err, data, info) => {
+  passport.authenticate('local', (err, data, message) => {
     console.log("data(passport):", data);
     if (data === false) {
       res.status(204).end();
     } else if (err) {
       res.status(204).end();
     }
-    req.login(data, { session: true }, (err) => {
-      if (err) {
-        res.send(err).status(204).end();
-      }
-      var userDetails = {
-        UserName: data.user.name,
-        email: data.user.email,
-        telephone: data.user.telephone
-      }
+    req.login(data, () => {
+      var userDetails = { userName: data.user.name, email: data.user.email, telephone: data.user.telephone }
       const token = jwt.generateToken(userDetails);
       console.log('token :', token);
-      // res.json({ info, token }).status(202).end();
+      res.json({ message, token }).status(202).end();
     });
   })(req, res);
 })

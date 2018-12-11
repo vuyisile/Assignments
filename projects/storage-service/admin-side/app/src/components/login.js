@@ -20,7 +20,7 @@ class Login extends Component {
         this.setState(change);
     }
     submitData() {
-        axios.post('http://localhost:3001/login', this.state);
+        axios.post('http://localhost:3001/login', this.state).then((res)=>console.log('token',res.data));
     }
     render() {
         return (<div className={'color container form-pos'}>
