@@ -16,8 +16,8 @@ class BusinessContainer extends Component {
   }
   getUser(){
     if(this.state.user.userType === 'tanent'){
-      var user = await axios.get('http://localhost:3001/units')
-
+      var user = axios.get('http://localhost:3001/units')
+      console.log('user :', user);
     }
   }
   componentDidMount() {
@@ -26,8 +26,6 @@ class BusinessContainer extends Component {
       var user = jwt.decode(auth.token);
       this.setState({ user:user })
     }
-
-    console.log('bsc', user)
   }
   handleInput(e) {
     let change = {};
@@ -35,9 +33,7 @@ class BusinessContainer extends Component {
     this.setState(change);
   }
   gotoNext() {
-    if (window.location.pathname === '/') {
       window.location.pathname = '/location';
-    }
   }
   submitData() { axios.post('http://localhost:3001/business', this.state); }
 
@@ -64,6 +60,8 @@ class BusinessContainer extends Component {
             </ul>
           </div>
         </nav>
+
+        {this.state.user.userType === 'business'?<a href='/location'>Register Unit(s)</a>:<a href='/location'>My Unit(s)</a>}
       </div >
     );
   }

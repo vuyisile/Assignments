@@ -107,6 +107,13 @@ async function checkIfExits(email) {
     }
     return { status, user: finder.rows[0] }
 }
+async function getAllUnits() {
+    const query = await client.query(`SELECT * FROM units`, [unitName, blockId, typeId]);
+    return query;
+}
+async function combineAllTables() {
+
+}
 
 module.exports = {
     fetchLocationId,
@@ -122,5 +129,6 @@ module.exports = {
     getBusinessId,
     saveCustomer,
     checkIfExits,
+    getAllUnits
 
 }
