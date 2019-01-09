@@ -8,7 +8,7 @@ const hashingHelper = require('./crypto')
 //__________________________________ business __________________________________:
 async function saveBusiness(details) {
     const query = await client.query(`INSERT INTO unit_providers (company_name,contact_person_name,telephone_number,email) 
-    VALUES ('${details.companyName}','${details.contactPersonName}','${details.telephone}','${details.email}')`);
+    VALUES ('${details.business}','${details.username}','${details.telephone}','${details.email}')`);
     return query;
 }
 
@@ -81,8 +81,15 @@ async function saveCustomer(details) {
     try {
         var encrypt = await hashingHelper.hashPassword(password)
         console.log('pswd:', encrypt);
-        query = await client.query(`INSERT INTO customers (name, password, email, telephone) 
-        VALUES ('${details.username}','${encrypt.hash}','${details.email}','${details.telephone}')`);
+        query = await client.query(`INSERT INTO customers (name, password, email, telephone,role) 
+        VALUES ('${details.username}','${encrypt.hash}','${details.email}','${details.telephone}','${details.role}')`);
+        if (details.role === 'business') {
+            await saveBusiness(details)
+        } else if (details.role === 'tenant') {
+            await client.query(`INSERT INTO tenants (name, email, telephone)
+            VALUES ('${details.username}','${details.email}','${details.telephone}')`);
+
+        }
     } catch (error) {
         console.log('error!!', error)
     }
@@ -96,9 +103,9 @@ async function checkIfExits(email) {
     const finder = await client.query(`SELECT * FROM customers WHERE email=$1`, [email]);
     if (finder.rows.length === 0) {
         status = false;
-        return {status}
+        return { status }
     }
-    return {status, user:finder.rows[0]}
+    return { status, user: finder.rows[0] }
 }
 
 module.exports = {

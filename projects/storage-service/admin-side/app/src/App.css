@@ -94,13 +94,13 @@
   border-right-color: transparent;
   border-top-color: transparent;
  }
- .container{
+ /* .container{
   display: grid;
   grid-template-columns: repeat(1, 90%);
   grid-template-rows: repeat(3, 20%);
   grid-gap: 8px;
   grid-column-gap: 10%;
- }
+ } */
  .container > h3{
    text-align: center;
  }
@@ -138,16 +138,17 @@
 }
 .container > form{
   display: grid;
-  grid-template-columns: repeat(2, 45%);
+  grid-template-columns: repeat(1, 45%);
   grid-gap: 8px;
   grid-column-gap: 10%;
  }
- .container > .btn-setting{
+ /* .container > .btn-setting{
   display: grid;
   grid-template-columns: repeat(2, 45%);
   grid-gap: 8px;
   grid-column-gap: 10%;
- }
+ } */
+
  
 .form-pos{
   font-family:Tahoma, Geneva, sans-serif;

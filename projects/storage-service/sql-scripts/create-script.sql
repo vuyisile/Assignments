@@ -36,6 +36,12 @@ CREATE TABLE IF NOT EXISTS unit_providers (
     name VARCHAR(100),
     password VARCHAR(100),
     email VARCHAR(100),
+    telephone VARCHAR(100),
+    role VARCHAR(10)
+);CREATE TABLE IF NOT EXISTS tenants (
+    id serial PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
     telephone VARCHAR(100)
 );
 
