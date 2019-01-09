@@ -154,6 +154,15 @@ app.post('/unit', jwt.verifyJWT_MW,async function (req, res) {
   }
 });
 
+app.get('/units',jwt.verifyJWT_MW, async function (req, res) {
+  var allUnits = await ref.getAllUnits();
+  if (allUnits) {
+    res.send(allUnits).status(201).end();
+  } else {
+    res.statusStatus(500).end();
+  }
+});
+
 app.post('/signup',async function (req, res) {
   var details = req.body;
   try {
