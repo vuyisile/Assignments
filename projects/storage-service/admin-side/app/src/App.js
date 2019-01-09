@@ -51,17 +51,17 @@ class App extends Component {
     this.setHeaders();
     const pathName = window.location.pathname;
     switch (pathName) {
-      case 'unit':
+      case '/unit':
         return <Units />;
 
-      case 'type':
+      case '/type':
         return <TypesOfUnits />
 
 
-      case 'block':
+      case '/block':
         return <Blocks />
 
-      case 'location':
+      case '/location':
         return <RegisterLocation />
 
 
@@ -71,8 +71,6 @@ class App extends Component {
 
       case '/login':
         return <Login />
-
-
 
       case '/availableUnits':
         return <AvailableUnits />
