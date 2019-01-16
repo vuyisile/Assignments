@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import BusinessContainer from './components/business-container'
 import Units from './components/unit-form'
 import TypesOfUnits from './components/unit-type-form'
 import Blocks from './components/blocks-form'
@@ -9,7 +8,7 @@ import SignUp from './components/signup'
 import Login from './components/login'
 import Welcome from './components/welcome-page'
 import UserChoice from './components/user-choice'
-import AvailableUnits from './components/units'
+import MyUnits from './components/units'
 import axios from "axios";
 import jwt from "jsonwebtoken"
 
@@ -28,7 +27,7 @@ class App extends Component {
     } else {
       axios.defaults.headers.common['Auth'] = auth.token
       var user = jwt.decode(auth.token);
-      var interval = setInterval(()=>{
+      var interval = setInterval(() => {
         var exp = user.exp;
         var time = new Date().getTime() / 1000
         if (time >= exp) {
@@ -41,7 +40,7 @@ class App extends Component {
           console.log({ exp, time })
           return { exp, time }
         }
-      },10000)
+      }, (60000))
     }
 
 
@@ -72,11 +71,8 @@ class App extends Component {
       case '/login':
         return <Login />
 
-      case '/availableUnits':
-        return <AvailableUnits />
-
-      case '/acc/user':
-        return <BusinessContainer />
+      case '/myunits':
+        return <MyUnits />
 
       default:
       case '/':

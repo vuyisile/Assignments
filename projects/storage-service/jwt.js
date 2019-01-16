@@ -3,7 +3,7 @@ require('dotenv').config();
 
 function generateToken(userDetails) {
   return token = jwt.sign(userDetails, process.env.JWT_SECRET, {
-    expiresIn: 60*2 //* 60 * 2 expires in 2 hours
+    expiresIn: 60 * 60 * 2 //expires in 2 hours
   });
 }
 

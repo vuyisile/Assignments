@@ -1,34 +1,80 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../App.css'
+import '../App.css';
+import BusinessNavbar from './business-navbar'
+import CustomerNavbar from './customer-navbar'
+import jwt from "jsonwebtoken"
+
 // import { connect } from 'react-redux';
 
-class AvailableUnits extends Component {
+class MyUnits extends Component {
     constructor() {
         super();
         this.state = {
-            units: []          
+            units: [],
+            user: {}
         }
     }
-    async componentDidMount(){
-        try {
+    async componentDidMount() {
+        await this.getAllUnits()
+        var auth = JSON.parse(sessionStorage.getItem('auth'))
+        if (auth !== null) {
+            var user = jwt.decode(auth.token);
+            this.setState({ user: user })
+        }
+
+    }
+    async getAllUnits() {
         var units = await axios.get('http://localhost:3001/units');
-        console.log('units',units);
-        } catch (error) {
-        console.log('error',error)    
-        }
+        this.setState({ units: units.data });
+        console.log('units :', units); 
+        return units
     }
-    // submitData() {
-    //     axios.post('http://localhost:3001/login', this.state);
-    // }
+    updateUnit = id => {
+        axios.post('http://localhost:3001/updateUnitStatus', { id: id })
+            .then(res => {
+                console.log(res)
+                this.getAllUnits()
+            })
+            .catch(err => console.error(err))
+    }
+
+    changeStatus(currentStatus) {
+        var unit = this.state.units
+        if (currentStatus === 'available') {
+            currentStatus = 'rented'
+        }
+        console.log('curState', currentStatus);
+        // axios.post('http://localhost:3001/unit', data)
+    }
     render() {
-        return (<div className={'color container form-pos'}>
-            <h3 style={{ marginRight: 5.3 + 'em' }}>Units</h3>
-            
-                <div>
-                    
+        return (<div>
+            {this.state.user.userType === 'business' ? <BusinessNavbar /> : <CustomerNavbar />}
+
+            <div className={'color my-container container'}>
+                <center>
+                    <h3>Units</h3>
+                </center>
+                <div className={'tbl units-display'}>
+                    {this.state.units.map((unit, i) => <div
+                        key={i}
+                        style={{ backgroundColor: '#ccc' }} >
+                        <span style={{ marginLeft: 10 + '%' }}>
+                            <p>name :{unit.name}</p>
+                            <p>type :{unit.type}</p>
+                            <p>length :{unit.unit_length + 'm'}</p>
+                            <p>width :{unit.unit_width + 'm'}</p>
+                            <p>height :{unit.unit_height + 'm'}</p>
+                            <p>city :{unit.city_or_town}</p>
+                        </span>
+                        <button
+
+                            disabled={unit.status === 'available' ? false : true}
+                            onClick={() => this.updateUnit(unit.id)} style={{ width: 10 + 'em' }} className={'btn btn-default'}>rent</button>
+                    </div>)}
                 </div>
-        
+            </div>
+
         </div>
         );
     }
@@ -36,4 +82,4 @@ class AvailableUnits extends Component {
 
 
 
-export default AvailableUnits /*connect(mapStateToProps, mapDispatchToProps)*/;
+export default MyUnits /*connect(mapStateToProps, mapDispatchToProps)*/;

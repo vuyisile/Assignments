@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../App.css'
 import { connect } from 'react-redux';
 import { addInput } from '../actions/block-action'
+import BusinessNavbar from './business-navbar'
+
 
 class Blocks extends Component {
     constructor() {
@@ -56,26 +58,29 @@ class Blocks extends Component {
     render() {
         console.log("jihijhihj", this.props);
 
-        return (<div className={'color container form-pos'}>
+        return (<div>
+            <BusinessNavbar />
+            <div className={'color my-containe form-pos'}>
 
-            <h3 style={{ marginRight: 5.3 + 'em' }}>Block</h3>
-            <form className={'block-form'}>
-                <label>Location</label>
-                <select>
-                    <div id='error'></div>
-                    <option value={'select-location'}>select location</option>
-                    {this.state.locations.map((location, i = 1) => <option value={this.state.location} key={'address' + i++} onClick={() => this.handleSelect(location)}>{location}</option>)}
-                </select>
+                <h3 style={{ marginRight: 5.3 + 'em' }}>Block</h3>
+                <form className={'block-form'}>
+                    <label>Location</label>
+                    <select>
+                        <div id='error'></div>
+                        <option value={'select-location'}>select location</option>
+                        {this.state.locations.map((location, i = 1) => <option value={this.state.location} key={'address' + i++} onClick={() => this.handleSelect(location)}>{location}</option>)}
+                    </select>
 
-                <label>Block Name</label>
-                <div>
-                    <input placeholder={'Block Name'} type='text' name='block-name' onChange={this.handleInput} value={this.state.name} /><br />
-                    <button onClick={this.submitData}>+Add</button>
+                    <label>Block Name</label>
+                    <div>
+                        <input placeholder={'Block Name'} type='text' name='block-name' onChange={this.handleInput} value={this.state.name} /><br />
+                        <button onClick={this.submitData}>+Add</button>
+                    </div>
+                </form>
+                <div className='block-form' style={{ marginTop: 10 + '%' }}>
+                    <button >Cancel</button>
+                    <button className={''} onClick={this.gotoNext}>Next</button>
                 </div>
-            </form>
-            <div className='block-form' style={{ marginTop: 10 + '%' }}>
-                <button >Cancel</button>
-                <button className={''} onClick={this.gotoNext}>Next</button>
             </div>
         </div>
         );

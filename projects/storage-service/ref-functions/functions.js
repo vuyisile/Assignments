@@ -26,7 +26,7 @@ async function getBusinessId(details) {
 async function saveLocation(details, businessId) {
     const query = await client.query(`INSERT INTO unit_locations (address_line1, address_line2, city_or_town, zip_code, provider_id) 
         VALUES ('${details.addressLine1}','${details.addressLine2}','${details.cityOrTown}','${details.zipCode}','${businessId}')`);
-    return query;
+    return details;
 }
 async function getAllLocations() {
     var locations = await client.query(`SELECT * FROM unit_locations;`);
@@ -59,7 +59,6 @@ async function saveTypes(unitType, length, height, width) {
 }
 
 async function getAllTypesOfUnits() {
-
     const unitTypes = await client.query(`SELECT * FROM unit_types;`);
     return unitTypes.rows;
 }
@@ -67,8 +66,8 @@ async function getAllTypesOfUnits() {
 // ___________________________________ Units ________________________________________:
 async function saveUnits(unitName, blockId, typeId) {
 
-    const query = await client.query(`INSERT INTO units ( name,block_id,type_id) 
-    VALUES ($1,$2,$3)`, [unitName, blockId, typeId]);
+    const query = await client.query(`INSERT INTO units ( name,block_id,type_id,status) 
+    VALUES ($1,$2,$3,$4)`, [unitName, blockId, typeId,'available']);
     return query;
 }
 function cb(response) {
@@ -108,11 +107,43 @@ async function checkIfExits(email) {
     return { status, user: finder.rows[0] }
 }
 async function getAllUnits() {
-    const query = await client.query(`SELECT * FROM units`, [unitName, blockId, typeId]);
+    const query = await client.query(`SELECT * FROM units`);
     return query;
 }
-async function combineAllTables() {
+async function getBusinessData(email) {
+    console.log('typeof email :', typeof email);
+    const query = await client.query(`SELECT unit_providers.id,unit_locations.address_line1,unit_locations.address_line2, unit_locations.city_or_town,
+    unit_locations.zip_code, units.id, units.name, units.status, unit_types.type, unit_types.unit_length, 
+    unit_types.unit_width, unit_types.unit_height, unit_blocks.block_name
+    FROM public.unit_providers, public.unit_locations,public.unit_types, public.units, public.unit_blocks
+    WHERE unit_providers.email = $1 AND unit_locations.provider_id=unit_providers.id AND units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id`,[email])
+    return query;
+}
 
+async function combineAllTables() {
+    const query = client.query(`SELECT units.id, units.name, units.status, unit_types.type, unit_types.unit_length, 
+        unit_types.unit_width, unit_types.unit_height, unit_blocks.block_name,
+         unit_locations.address_line1,unit_locations.address_line2, unit_locations.city_or_town,
+         unit_locations.zip_code 
+        FROM public.unit_types, public.units, public.unit_blocks, public.unit_locations
+        WHERE units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id
+    
+    `);
+    return query
+}
+
+async function getMyUnits(email){
+    
+}
+
+async function updateUnit(id,user) {
+    const query = client.query(`UPDATE public.units
+    SET status='rented'
+    WHERE id=${id.id};
+    `).then(res => console.log(res))
+    .catch(e => console.log(e))
+    var userId = await client.query(`SELECT customers.id WHERE email=$1`,[user.email])
+    client.query(`INSERT INTO customer_units (unit.id,customer_id) VALUES  ('${id}','${userId}')`) 
 }
 
 module.exports = {
@@ -129,6 +160,8 @@ module.exports = {
     getBusinessId,
     saveCustomer,
     checkIfExits,
-    getAllUnits
-
+    getAllUnits,
+    combineAllTables,
+    updateUnit,
+    getBusinessData
 }

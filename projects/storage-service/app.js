@@ -7,6 +7,7 @@ const ref = require("./ref-functions/functions");
 const hash = require('js-sha512');
 const crypto = require('./ref-functions/crypto')
 const jwt = require('./jwt');
+var jsonwebtoken = require("jsonwebtoken");
 require('dotenv').config();
 
 
@@ -42,10 +43,10 @@ passport.use(new LocalStrategy({
       var verification = await crypto.verifyPassword(password, check.user.password)
       if (verification === true) {
         console.log('You are now logged-In')
-        return done(null, check,  'You are now logged-In' );
+        return done(null, check, 'You are now logged-In');
       }
     } else {
-      return done(null, false, "Incorrect Email or Password" )
+      return done(null, false, "Incorrect Email or Password")
     }
   } catch (error) {
     console.log('error :', error);
@@ -60,7 +61,7 @@ passport.use(new LocalStrategy({
 
 
 
-app.post('/business',jwt.verifyJWT_MW, async function (req, res) {
+app.post('/business', jwt.verifyJWT_MW, async function (req, res) {
   try {
     await ref.saveBusiness(req.body);
     res.sendStatus(201).end()
@@ -69,7 +70,7 @@ app.post('/business',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.get('/businesses',jwt.verifyJWT_MW, async function (req, res) {
+app.get('/businesses', jwt.verifyJWT_MW, async function (req, res) {
   var businesses = await ref.getAllBusinesses();
   if (businesses) {
     res.send(businesses.rows).status(201).end();
@@ -78,11 +79,12 @@ app.get('/businesses',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.post('/location',jwt.verifyJWT_MW, async function (req, res) {
+app.post('/location', jwt.verifyJWT_MW, async function (req, res) {
   try {
     businessId = await ref.getBusinessId(req.body);
-    console.log('req',req.body)
-    await ref.saveLocation(req.body, businessId);
+    console.log('req', req.body)
+    var save = await ref.saveLocation(req.body, businessId);
+    // console.log('save :', save);
     res.sendStatus(201).end()
   } catch (error) {
     console.log('error', error)
@@ -90,7 +92,7 @@ app.post('/location',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.get('/locations',jwt.verifyJWT_MW, async function (req, res) {
+app.get('/locations', jwt.verifyJWT_MW, async function (req, res) {
   const locations = await ref.getAllLocations();
   if (locations) {
     res.send(locations.rows).status(201).end();
@@ -99,7 +101,7 @@ app.get('/locations',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.post('/block',jwt.verifyJWT_MW, async function (req, res) {
+app.post('/block', jwt.verifyJWT_MW, async function (req, res) {
   var details = req.body;
   try {
     const locationId = await ref.fetchLocationId(details);
@@ -110,7 +112,7 @@ app.post('/block',jwt.verifyJWT_MW, async function (req, res) {
     res.sendStatus(500)
   }
 });
-app.get('/blocks',jwt.verifyJWT_MW, async function (req, res) {
+app.get('/blocks', jwt.verifyJWT_MW, async function (req, res) {
   var blocks = await ref.getAllBlocks();
   if (blocks) {
     res.send(blocks).status(201).end();
@@ -119,9 +121,9 @@ app.get('/blocks',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.post('/type', jwt.verifyJWT_MW,async function (req, res) {
-  console.log('headers',req)
+app.post('/type', jwt.verifyJWT_MW, async function (req, res) {
   var details = req.body;
+  console.log('details :', details);
   try {
     await ref.saveTypes(details.unitType, details.length, details.height, details.width)
     res.sendStatus(201).end()
@@ -132,7 +134,7 @@ app.post('/type', jwt.verifyJWT_MW,async function (req, res) {
 
 });
 
-app.get('/types',jwt.verifyJWT_MW, async function (req, res) {
+app.get('/types', jwt.verifyJWT_MW, async function (req, res) {
   var allTypesOfUnits = await ref.getAllTypesOfUnits();
   if (allTypesOfUnits) {
     res.send(allTypesOfUnits).status(201).end();
@@ -141,7 +143,7 @@ app.get('/types',jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.post('/unit', jwt.verifyJWT_MW,async function (req, res) {
+app.post('/unit', jwt.verifyJWT_MW, async function (req, res) {
   var details = req.body;
   try {
     console.log('helper function', ref.saveUnits(details.unitName, details.block[0], details.unitType[0]));
@@ -154,17 +156,56 @@ app.post('/unit', jwt.verifyJWT_MW,async function (req, res) {
   }
 });
 
-app.get('/units',jwt.verifyJWT_MW, async function (req, res) {
-  var allUnits = await ref.getAllUnits();
-  if (allUnits) {
-    res.send(allUnits).status(201).end();
+app.get('/units', jwt.verifyJWT_MW, async function (req, res) {
+  var user = jsonwebtoken.decode(req.headers['auth'])
+  console.log('userEmails :', user);
+  if (user.userType === 'business') {
+    var userDb = await ref.getBusinessData(user.email)
+    console.log('userDb :', userDb);
+    if (userDb) {
+      res.send(userDb.rows).status(201).end();
+    } else {
+      res.statusStatus(500).end();
+    }
   } else {
-    res.statusStatus(500).end();
+    var allUnits = await ref.combineAllTables();
+    if (allUnits) {
+      res.send(allUnits.rows).status(201).end();
+    } else {
+      res.statusStatus(500).end();
+    }
   }
-});
 
-app.post('/signup',async function (req, res) {
-  var details = req.body;
+    //  var allUnits = await ref.testUnits();
+    // console.log(allUnits.rows)
+    // if (allUnits) {
+    //   res.send(allUnits.rows).status(201).end();
+    // } else {
+    //   res.statusStatus(500).end();
+    // }
+  });
+
+app.post('/updateUnitStatus', jwt.verifyJWT_MW, async (req, res) => {
+
+  let unit_id = req.body;
+  var user = jsonwebtoken.decode(req.headers['auth'])
+  console.log('unit',unit_id)
+  // await ref.updateUnit(unit_id).then(res.status(200).send({message:'Update Successful'}))
+  // .catch(err => res.status(402).send({error}))\
+  try {
+    await ref.updateUnit(unit_id,userEmail)
+    res.sendStatus(201).end()
+  } catch (error) {
+    console.log('error', error)
+    res.sendStatus(500)
+  }
+
+
+})
+
+
+app.post('/signup', async function (req, res) {
+  var details = req.body
   try {
     var check = await ref.checkIfExits(details.email);
     console.log({ check })
@@ -187,7 +228,7 @@ app.post('/login', async function (req, res) {
       res.status(204).end();
     }
     req.login(data, () => {
-      var userDetails = { userName: data.user.name, email: data.user.email, telephone: data.user.telephone , userType:data.user.role}
+      var userDetails = { userName: data.user.name, email: data.user.email, telephone: data.user.telephone, userType: data.user.role }
       const token = jwt.generateToken(userDetails);
       // console.log('token :', token);
       res.json({ message, token }).status(202).end();

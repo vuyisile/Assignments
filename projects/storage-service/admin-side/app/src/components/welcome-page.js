@@ -11,7 +11,7 @@ class Welcome extends Component {
         window.location.pathname = newPathname;
     }
     render() {
-        return (<div className={'color container form-pos'}>
+        return (<div className={'color my-containe form-pos'}>
             <h1 style={{ marginRight: 5.3 + 'em' }}>GetStore</h1>
             <br/>
             <h2>Want put your warehouse,garage/store-room on the market, we got you!!</h2>

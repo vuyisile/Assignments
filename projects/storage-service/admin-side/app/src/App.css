@@ -49,9 +49,10 @@
 
 .unit-type{
   display: grid;
-  grid-template-columns: repeat(2, 40%);
+  grid-template-columns: repeat(2, 15%);
   grid-gap: 8px;
-  grid-column-gap: 10%;  
+  grid-column-gap: 15%; 
+  margin-left: 35%;
 }
 .unit-type > div >input{
   margin-bottom: 2px;
@@ -64,15 +65,38 @@
 }
 .unit-type > input{
   margin-bottom: 2px;
-  width:190px; 
+  width:100%; 
   border-bottom:3px solid;
   border-bottom-color: #535353;
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-color: transparent;
 }
-.unit-type > div >button{
-  margin-left: 119px;
+.signup-form{
+  margin-left:35%;
+}
+.tbl{
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-gap: 8px;
+  grid-column-gap: 3%;
+}
+.units-display{
+  margin-left:10%;
+}
+.btn-setting{
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-gap: 8px;
+  grid-column-gap: 20%;
+}
+.btn-setting>button{
+  width:100%;
+
+}
+.unit-type > .btn-add{
+  margin-left: 80%;
+  margin-bottom: 10%;
 }
 .business-form > input{
   border-bottom:3px solid;
@@ -85,7 +109,8 @@
   display: grid;
   grid-template-columns: repeat(2, 40%);
   grid-gap: 8px;
-  grid-column-gap: 10%;   
+  grid-column-gap: 10%; 
+  margin-left:35%;  
  }
  .location-form>input{
   border-bottom:3px solid;
@@ -94,14 +119,20 @@
   border-right-color: transparent;
   border-top-color: transparent;
  }
- /* .container{
+ .location-form>div{
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-gap: 8px;
+  grid-column-gap: 20%;
+ }
+ /* .my-container{
   display: grid;
   grid-template-columns: repeat(1, 90%);
   grid-template-rows: repeat(3, 20%);
   grid-gap: 8px;
   grid-column-gap: 10%;
  } */
- .container > h3{
+ .my-container > h3{
    text-align: center;
  }
 .title{
@@ -136,13 +167,14 @@
   margin-top: 30%;
   width:100%;
 }
-.container > form{
+.my-container > form{
   display: grid;
   grid-template-columns: repeat(1, 45%);
   grid-gap: 8px;
   grid-column-gap: 10%;
  }
- /* .container > .btn-setting{
+
+ /* .my-container > .btn-setting{
   display: grid;
   grid-template-columns: repeat(2, 45%);
   grid-gap: 8px;
@@ -152,9 +184,8 @@
  
 .form-pos{
   font-family:Tahoma, Geneva, sans-serif;
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-top: 3%;
+  width: 60%;
 }
 
 @keyframes App-logo-spin {

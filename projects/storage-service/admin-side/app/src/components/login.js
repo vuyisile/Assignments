@@ -24,22 +24,22 @@ class Login extends Component {
         console.log({token:res.data.token});    
         sessionStorage.setItem('auth', JSON.stringify({token:res.data.token}))
         setTimeout(() => {
-            window.location.pathname = '/acc/user'
+            window.location.pathname = '/myunits'
         }, 3000);
     });
     }
     render() {
         return (
         <div style={{ marginTop: 5.3 + 'em' }} className={'color container'}>
-            <h3 >Login</h3>
             <center>
+            <h3 >Login</h3>
             <form>
                 <div>
                     <input style={{ marginTop: 1 + 'em' }} placeholder={'email'} type='text' name='email' onChange={this.handleInput} value={this.state.username} /><br />
                     <input style={{ marginTop: 1 + 'em' }}placeholder={'password'} type='text' name='password' onChange={this.handleInput} value={this.state.password} /><br />
                 </div>
             </form>
-            <button style={{ marginTop: 2.3 + 'em', width:20+'%' }} onClick={this.submitData}>Login</button>
+            <button className={'btn btn-primary'}style={{ marginTop: 2.3 + 'em', width:19+'%' }} onClick={this.submitData}>Login</button>
             </center>
         </div>
         );

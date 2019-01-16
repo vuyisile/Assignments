@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS unit_providers (
 );CREATE TABLE IF NOT EXISTS units (
     id serial PRIMARY KEY,
     name VARCHAR(225) NOT NULL,
+    status VARCHAR(10) NOT NULL,
     block_id INT REFERENCES unit_blocks(id),
     type_id INT REFERENCES unit_types(id)
 );CREATE TABLE IF NOT EXISTS unit_types (
@@ -26,11 +27,10 @@ CREATE TABLE IF NOT EXISTS unit_providers (
     unit_length INT NOT NULL,
     unit_width INT NOT NULL ,
     unit_height INT NOT NULL
-);CREATE TABLE IF NOT EXISTS customer_unit_providers (
+);CREATE TABLE IF NOT EXISTS customer_units (
     id serial PRIMARY KEY,
     customer_id INT REFERENCES customers(id) NOT NULL,
     unit_id INT REFERENCES units(id) NOT NULL,
-    unit_provider_id INT REFERENCES unit_providers(id) NOT NULL
 );CREATE TABLE IF NOT EXISTS customers (
     id serial PRIMARY KEY,
     name VARCHAR(100),

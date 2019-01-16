@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken"
 
 
 
-class BusinessContainer extends Component {
+class BusinessNavbar extends Component {
   constructor() {
     super();
     this.state = { user: {} }
@@ -14,8 +14,8 @@ class BusinessContainer extends Component {
     this.handleInput = this.handleInput.bind(this)
     this.submitData = this.submitData.bind(this)
   }
-  getUser(){
-    if(this.state.user.userType === 'tanent'){
+  getUser() {
+    if (this.state.user.userType === 'tanent') {
       var user = axios.get('http://localhost:3001/units')
       console.log('user :', user);
     }
@@ -24,7 +24,7 @@ class BusinessContainer extends Component {
     var auth = JSON.parse(sessionStorage.getItem('auth'))
     if (auth !== null) {
       var user = jwt.decode(auth.token);
-      this.setState({ user:user })
+      this.setState({ user: user })
     }
   }
   handleInput(e) {
@@ -33,16 +33,15 @@ class BusinessContainer extends Component {
     this.setState(change);
   }
   gotoNext() {
-      window.location.pathname = '/location';
+    window.location.pathname = '/location';
   }
   submitData() { axios.post('http://localhost:3001/business', this.state); }
 
   render() {
     return (
       < div >
-        {/* {console.log(this.props.userInfo())} */}
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">{this.state.user.userName}</a>
+          <button className="navbar-brand btn btn-success" href="#">{this.state.user.userName===null?'':this.state.user.userName}</button>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -50,6 +49,9 @@ class BusinessContainer extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a className="nav-link" href="#">Profile</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href='/location'>Register Unit(s)</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Account</a>
@@ -60,11 +62,9 @@ class BusinessContainer extends Component {
             </ul>
           </div>
         </nav>
-
-        {this.state.user.userType === 'business'?<a href='/location'>Register Unit(s)</a>:<a href='/location'>My Unit(s)</a>}
       </div >
     );
   }
 }
 
-export default BusinessContainer;
+export default BusinessNavbar;

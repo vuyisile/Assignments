@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+/bootstrap-4.0.0
 # testing
 /coverage
 
