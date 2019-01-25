@@ -156,9 +156,18 @@ app.post('/unit', jwt.verifyJWT_MW, async function (req, res) {
   }
 });
 
-app.get('/units', jwt.verifyJWT_MW, async function (req, res) {
+app.get('/availableUnits', jwt.verifyJWT_MW, async function (req, res) {
   var user = jsonwebtoken.decode(req.headers['auth'])
-  console.log('userEmails :', user);
+  var allUnits = await ref.combineAllTables();
+  if (allUnits) {
+    res.send(allUnits.rows).status(201).end();
+  } else {
+    res.statusStatus(500).end();
+  }
+});
+
+app.get('/myUnits', jwt.verifyJWT_MW, async function (req, res) {
+  var user = jsonwebtoken.decode(req.headers['auth'])
   if (user.userType === 'business') {
     var userDb = await ref.getBusinessData(user.email)
     console.log('userDb :', userDb);
@@ -168,39 +177,26 @@ app.get('/units', jwt.verifyJWT_MW, async function (req, res) {
       res.statusStatus(500).end();
     }
   } else {
-    var allUnits = await ref.combineAllTables();
+    var allUnits = await ref.getMyUnits(user);
+    console.log('allUnits :', allUnits);
     if (allUnits) {
-      res.send(allUnits.rows).status(201).end();
+      res.send(allUnits).status(201).end();
     } else {
       res.statusStatus(500).end();
     }
   }
-
-    //  var allUnits = await ref.testUnits();
-    // console.log(allUnits.rows)
-    // if (allUnits) {
-    //   res.send(allUnits.rows).status(201).end();
-    // } else {
-    //   res.statusStatus(500).end();
-    // }
-  });
+});
 
 app.post('/updateUnitStatus', jwt.verifyJWT_MW, async (req, res) => {
-
   let unit_id = req.body;
   var user = jsonwebtoken.decode(req.headers['auth'])
-  console.log('unit',unit_id)
-  // await ref.updateUnit(unit_id).then(res.status(200).send({message:'Update Successful'}))
-  // .catch(err => res.status(402).send({error}))\
   try {
-    await ref.updateUnit(unit_id,userEmail)
+    await ref.updateUnit(unit_id, user)
     res.sendStatus(201).end()
   } catch (error) {
     console.log('error', error)
     res.sendStatus(500)
   }
-
-
 })
 
 
@@ -236,6 +232,11 @@ app.post('/login', async function (req, res) {
   })(req, res);
 })
 
+app.get('/logout', function (req, res) {
+  console.log('req.user :', req.user);
+  req.logout()
+  res.redirect('/')
+})
 
 
 app.listen(3001)

@@ -56,30 +56,26 @@ class Blocks extends Component {
         }
     }
     render() {
-        console.log("jihijhihj", this.props);
-
         return (<div>
             <BusinessNavbar />
-            <div className={'color my-containe form-pos'}>
-
-                <h3 style={{ marginRight: 5.3 + 'em' }}>Block</h3>
+            <div style={{ marginLeft: 40 + '%' }} className={'my-container container form-pos'}>
                 <form className={'block-form'}>
                     <label>Location</label>
-                    <select>
+                    <select className=''>
                         <div id='error'></div>
                         <option value={'select-location'}>select location</option>
                         {this.state.locations.map((location, i = 1) => <option value={this.state.location} key={'address' + i++} onClick={() => this.handleSelect(location)}>{location}</option>)}
                     </select>
 
                     <label>Block Name</label>
-                    <div>
-                        <input placeholder={'Block Name'} type='text' name='block-name' onChange={this.handleInput} value={this.state.name} /><br />
-                        <button onClick={this.submitData}>+Add</button>
+                    <div className={'block-setting'}>
+                        <input placeholder={'Block Name'} type='text' name='block-name' onChange={this.handleInput} value={this.state.name} />
+                        <button className='btn btn-default' onClick={this.submitData}>+Add</button>
                     </div>
                 </form>
-                <div className='block-form' style={{ marginTop: 10 + '%' }}>
-                    <button >Cancel</button>
-                    <button className={''} onClick={this.gotoNext}>Next</button>
+                <div className={'block-btn-setting'}>
+                    <button className='btn btn-default' >Cancel</button>
+                    <button className='btn btn-default' onClick={this.gotoNext}>Next</button>
                 </div>
             </div>
         </div>

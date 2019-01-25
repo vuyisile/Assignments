@@ -9,6 +9,7 @@ import Login from './components/login'
 import Welcome from './components/welcome-page'
 import UserChoice from './components/user-choice'
 import MyUnits from './components/units'
+import AvailableUnits from './components/available-units'
 import axios from "axios";
 import jwt from "jsonwebtoken"
 
@@ -46,39 +47,85 @@ class App extends Component {
 
     return auth
   }
+
   managePaths() {
-    this.setHeaders();
+    var newHeaders = this.setHeaders();
     const pathName = window.location.pathname;
-    switch (pathName) {
-      case '/unit':
-        return <Units />;
+    if (newHeaders === null) {
+      while (newHeaders) {
+        pathName=""
+        break
+      };
+      switch (pathName) {
+        case '/signup':
+          return <SignUp />
 
-      case '/type':
-        return <TypesOfUnits />
+        case '/login':
+          return <Login />
+
+        default:
+        case '/':
+          return <UserChoice />
+      }
+    } else {
+      switch (pathName) {
+        case '/unit':
+          return <Units />;
+
+        case '/type':
+          return <TypesOfUnits />
 
 
-      case '/block':
-        return <Blocks />
+        case '/block':
+          return <Blocks />
 
-      case '/location':
-        return <RegisterLocation />
-
-
-      case '/signup':
-        return <SignUp />
+        case '/location':
+          return <RegisterLocation />
 
 
-      case '/login':
-        return <Login />
+        case '/myUnits':
+          return <MyUnits />
 
-      case '/myunits':
-        return <MyUnits />
+        case '/availableUnits':
+          return <AvailableUnits />
 
-      default:
-      case '/':
-        return <UserChoice />
+
+
+      }
 
     }
+
+    // switch (pathName) {
+    //   case '/unit':
+    //     return <Units />;
+
+    //   case '/type':
+    //     return <TypesOfUnits />
+
+
+    //   case '/block':
+    //     return <Blocks />
+
+    //   case '/location':
+    //     return <RegisterLocation />
+
+    //   case '/signup':
+    //     return <SignUp />
+
+    //   case '/login':
+    //     return <Login />
+
+    //   case '/myUnits':
+    //     return <MyUnits />
+
+    //   case '/availableUnits':
+    //     return <AvailableUnits />
+
+    //   default:
+    //   case '/':
+    //     return <UserChoice />
+
+    // }
   }
   render() {
     return (

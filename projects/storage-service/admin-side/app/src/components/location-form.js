@@ -89,8 +89,8 @@ class RegisterLocation extends Component {
 
           <input type='text' name='zipCode' onChange={this.handleInput} value={this.state.zipCode} />
 <div className={''}>
-          <button className={'btn-margin'}>Cancel</button>
-          <button className={'btn-margin pos'} onClick={this.submitData}>Next</button>
+          <button className={'btn-margin btn btn-default'}>Cancel</button>
+          <button className={'btn-margin pos btn btn-default'} onClick={this.submitData}>Next</button>
 </div>
 
         </form>

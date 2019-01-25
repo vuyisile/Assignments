@@ -24,7 +24,7 @@ class Login extends Component {
         console.log({token:res.data.token});    
         sessionStorage.setItem('auth', JSON.stringify({token:res.data.token}))
         setTimeout(() => {
-            window.location.pathname = '/myunits'
+            window.location.pathname = '/myUnits'
         }, 3000);
     });
     }
@@ -36,7 +36,7 @@ class Login extends Component {
             <form>
                 <div>
                     <input style={{ marginTop: 1 + 'em' }} placeholder={'email'} type='text' name='email' onChange={this.handleInput} value={this.state.username} /><br />
-                    <input style={{ marginTop: 1 + 'em' }}placeholder={'password'} type='text' name='password' onChange={this.handleInput} value={this.state.password} /><br />
+                    <input style={{ marginTop: 1 + 'em' }}placeholder={'password'} type='password' name='password' onChange={this.handleInput} value={this.state.password} /><br />
                 </div>
             </form>
             <button className={'btn btn-primary'}style={{ marginTop: 2.3 + 'em', width:19+'%' }} onClick={this.submitData}>Login</button>

@@ -67,7 +67,7 @@ async function getAllTypesOfUnits() {
 async function saveUnits(unitName, blockId, typeId) {
 
     const query = await client.query(`INSERT INTO units ( name,block_id,type_id,status) 
-    VALUES ($1,$2,$3,$4)`, [unitName, blockId, typeId,'available']);
+    VALUES ($1,$2,$3,$4)`, [unitName, blockId, typeId, 'available']);
     return query;
 }
 function cb(response) {
@@ -116,7 +116,7 @@ async function getBusinessData(email) {
     unit_locations.zip_code, units.id, units.name, units.status, unit_types.type, unit_types.unit_length, 
     unit_types.unit_width, unit_types.unit_height, unit_blocks.block_name
     FROM public.unit_providers, public.unit_locations,public.unit_types, public.units, public.unit_blocks
-    WHERE unit_providers.email = $1 AND unit_locations.provider_id=unit_providers.id AND units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id`,[email])
+    WHERE unit_providers.email = $1 AND unit_locations.provider_id=unit_providers.id AND units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id`, [email])
     return query;
 }
 
@@ -126,24 +126,45 @@ async function combineAllTables() {
          unit_locations.address_line1,unit_locations.address_line2, unit_locations.city_or_town,
          unit_locations.zip_code 
         FROM public.unit_types, public.units, public.unit_blocks, public.unit_locations
-        WHERE units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id
+        WHERE units.status='available' AND units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id
     
     `);
     return query
 }
 
-async function getMyUnits(email){
-    
+async function getMyUnits(user) {
+    console.log('user :', user);
+
+    try {
+        var userId = await client.query(`SELECT customers.id FROM customers WHERE email=$1`, [user.email]);
+        console.log('userId :', userId.rows[0].id);
+        var unitId = await client.query(`SELECT * FROM public.customer_units WHERE customer_id=${userId.rows[0].id}`);
+        console.log('unitId :', unitId.rows);
+    } catch (error) {
+        console.log('error :', error);
+    }
+    var units = []
+  
+    for (const index in unitId.rows) {
+        const query = await client.query(`SELECT unit_providers.id,unit_locations.address_line1,unit_locations.address_line2, unit_locations.city_or_town,
+        unit_locations.zip_code, units.id, units.name, units.status, unit_types.type, unit_types.unit_length, 
+        unit_types.unit_width, unit_types.unit_height, unit_blocks.block_name
+        FROM public.unit_providers, public.unit_locations,public.unit_types, public.units, public.unit_blocks
+        WHERE units.id = $1 AND unit_locations.provider_id=unit_providers.id AND units.type_id = unit_types.id AND units.block_id = unit_blocks.id AND unit_blocks.location_id=unit_locations.id`,[unitId.rows[index].id])   
+        units.push(query.rows[0])
+    }
+    console.log('units :', units);
+    return units;
 }
 
-async function updateUnit(id,user) {
+async function updateUnit(id, user) {
     const query = client.query(`UPDATE public.units
     SET status='rented'
     WHERE id=${id.id};
     `).then(res => console.log(res))
-    .catch(e => console.log(e))
-    var userId = await client.query(`SELECT customers.id WHERE email=$1`,[user.email])
-    client.query(`INSERT INTO customer_units (unit.id,customer_id) VALUES  ('${id}','${userId}')`) 
+        .catch(e => console.log(e))
+    var userId = await client.query(`SELECT customers.id FROM customers WHERE email=$1`, [user.email]);
+    client.query(`INSERT INTO customer_units (unit_id,customer_id) VALUES  ('${id.id}','${userId.rows[0].id}')`)
 }
 
 module.exports = {
@@ -163,5 +184,6 @@ module.exports = {
     getAllUnits,
     combineAllTables,
     updateUnit,
-    getBusinessData
+    getBusinessData,
+    getMyUnits
 }

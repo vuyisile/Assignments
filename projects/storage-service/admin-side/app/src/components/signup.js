@@ -92,12 +92,12 @@ class SignUp extends Component {
         <label>
           password
          </label>
-        <input placeholder="password" type='text' name='password' onChange={this.handleInput} value={this.state.password} />
+        <input placeholder="password" type='password' name='password' onChange={this.handleInput} value={this.state.password} />
 
         <label>
           confirm password
          </label>
-        <input placeholder="confirm password" type='text' name='confirmPassword' onChange={this.handleInput} value={this.state.confirmPassword} />
+        <input placeholder="confirm password" type='password' name='confirmPassword' onChange={this.handleInput} value={this.state.confirmPassword} />
 
         {this.state.role === 'business'? <div style={{width:30+'%'}}><label>Business Name</label><input placeholder='enter business name' type='text' name='business' onChange={this.handleInput} value={this.state.business} /></div>:null }
       <div className={'btn-setting'}>

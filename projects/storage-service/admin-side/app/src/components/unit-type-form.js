@@ -59,13 +59,13 @@ class TypesOfUnits extends Component {
                     <label>Unit Height (metres)</label>
 
                     <input placeholder={'Height'} type='text' name='height' onChange={this.handleInput} value={this.state.email} /><br />
-                    <button className={'btn-add'} onClick={this.submitData}>Add</button>
+                    <button className={'btn btn-default btn-add'} onClick={this.submitData}>Add</button>
 
 
                 </form>
                 <div className={'unit-type'}>
-                    <button>Cancel</button>
-                    <button onClick={() => this.gotoNext()}>Next</button>
+                    <button className='btn btn-default'>Cancel</button>
+                    <button className='btn btn-default' onClick={() => this.gotoNext()}>Next</button>
                 </div>
             </div>
         </div>

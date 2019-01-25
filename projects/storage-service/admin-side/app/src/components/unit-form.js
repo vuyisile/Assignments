@@ -53,33 +53,38 @@ class Units extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (<div>
             <BusinessNavbar />
-            <div className={'color my-containe'}>
-                <h3>Unit Details</h3>
-                <form className={'unit-form'}>
-                    <label>Block Name </label>
-                    <select>
-                        <option value={'select-block'}>select block</option>
-                        {this.state.blocks.map((block, i = 0) => <option key={block + i++} value={block} onClick={() => this.handleSelect('block', block)}>{`${block[0]}. ${block[1]}`}</option>)}
-                    </select>
+            <div className={'container'}>
 
-                    <label>Unit type</label>
-                    <select>
-                        <option value={'select-block'}>select unit-type</option>
-                        {this.state.unitTypes.map((unitType, i = 0) => <option key={unitType + i++} value={unitType} onClick={() => this.handleSelect('unitType', unitType)}>{`${unitType[0]}. ${unitType[1]}${unitType[2]}`}</option>)}
-                    </select>
+                <center>
+                    <h3>Unit Details</h3>
+                </center>
+                <div style={{ marginLeft: 35 + '%' }} className={'my-container form-pos container'}>
 
-                    <label>Unit Name </label>
-                    <div>
-                        <input placeholder="Unit Name" type='text' name='unitName' onChange={this.handleInput} value={this.state.telephone} /><br />
-                        <button onClick={this.submitData}>Add</button>
+                    <form className={'unit-form container'}>
+                        <label>Block Name </label>
+                        <select>
+                            <option value={'select block'}>select block</option>
+                            {this.state.blocks.map((block, i = 0) => <option key={block + i++} value={block} onClick={() => this.handleSelect('block', block)}>{`${block[0]}. ${block[1]}`}</option>)}
+                        </select>
+
+                        <label>Unit type</label>
+                        <select>
+                            <option value={'select unit-type'}>select unit-type</option>
+                            {this.state.unitTypes.map((unitType, i = 0) => <option key={unitType + i++} value={unitType} onClick={() => this.handleSelect('unitType', unitType)}>{`${unitType[0]}. ${unitType[1]}${unitType[2]}`}</option>)}
+                        </select>
+
+                        <label>Unit Name </label>
+                        <div  className={'block-setting'}>
+                            <input placeholder="Unit Name" type='text' name='unitName' onChange={this.handleInput} value={this.state.telephone} />
+                            <button style={{width:45+'%'}}className={'btn btn-default'} onClick={this.submitData}>Add</button>
+                        </div>
+                    </form>
+                    <div style={{ marginLeft: 4 + '%' }} className={'block-btn-setting'}>
+                        <button className={'btn btn-default'} >Cancel</button>
+                        <button className={'btn btn-default'} >Done</button>
                     </div>
-                </form>
-                <div className={'unit-form'}>
-                    <button>Cancel</button>
-                    <button>Done</button>
                 </div>
             </div>
         </div>

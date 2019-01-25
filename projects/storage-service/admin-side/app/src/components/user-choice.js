@@ -11,7 +11,7 @@ class UserChoice extends Component {
         window.location.pathname = newPathname;
     }
     render() {
-        return (<div className={'color form-pos'}>
+        return (<div className={'color form-pos container'}>
             <h1 style={{ marginRight: 5.3 + 'em' }}>GetStore</h1>
             <br/>
             <h3>Click the sign-up button if you've never created an account with us</h3>

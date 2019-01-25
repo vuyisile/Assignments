@@ -17,6 +17,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 #error{
   color: red;
   font-size:65%; 
@@ -75,6 +76,23 @@
 .signup-form{
   margin-left:35%;
 }
+.tbl-container{
+margin-left: 5%;
+width: 90%;
+font-size: 90%
+}
+.btn-logout{
+  background-color: #0c6b6e;
+  color:white;
+}
+
+.tbl-container > tbody > td{
+ border: 3px solid #0c6b6e
+}
+.tbl-container > thead > th{
+  border: 3px solid #0c6b6e
+ }
+
 .tbl{
   display: grid;
   grid-template-columns: repeat(4, 20%);
@@ -90,13 +108,50 @@
   grid-gap: 8px;
   grid-column-gap: 20%;
 }
+.block-btn-setting{
+  display: grid;
+  grid-template-columns: repeat(2, 13%);
+  grid-gap: 8px;
+  grid-column-gap: 20%;
+  margin-top:10%;
+}
+.block-setting{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 8px;
+  margin-top:1%;
+
+}
+.block-form>.block-btn-setting{
+  left: 0%;
+}
+.user-name{
+  border:#0c6b6e solid 3px;
+  border-radius: 2px;
+  width: 6%;
+  text-align: center;
+}
+.btn{
+   border:#0c6b6e solid 3px;
+  border-radius: 2px;
+  text-align: center;
+
+}
 .btn-setting>button{
   width:100%;
 
 }
+select{
+  background-color:#dbdedf;
+  border:solid 2px #0c6b6e;
+  border-radius: 2px; 
+  width:105%;
+  height: 120%;
+}
 .unit-type > .btn-add{
-  margin-left: 80%;
+  margin-left: 70%;
   margin-bottom: 10%;
+  width:30%;
 }
 .business-form > input{
   border-bottom:3px solid;
@@ -125,13 +180,7 @@
   grid-gap: 8px;
   grid-column-gap: 20%;
  }
- /* .my-container{
-  display: grid;
-  grid-template-columns: repeat(1, 90%);
-  grid-template-rows: repeat(3, 20%);
-  grid-gap: 8px;
-  grid-column-gap: 10%;
- } */
+
  .my-container > h3{
    text-align: center;
  }
@@ -173,13 +222,6 @@
   grid-gap: 8px;
   grid-column-gap: 10%;
  }
-
- /* .my-container > .btn-setting{
-  display: grid;
-  grid-template-columns: repeat(2, 45%);
-  grid-gap: 8px;
-  grid-column-gap: 10%;
- } */
 
  
 .form-pos{
