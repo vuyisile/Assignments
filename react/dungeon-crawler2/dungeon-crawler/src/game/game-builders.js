@@ -82,6 +82,31 @@ function initiateState(dungeon, weapon) {
     return five
 }
 
+function toggleField(theBoard, player) {
+    theBoard.forEach((block) => block.toggleState === "OFF");
+    var p1 = theBoard.find((cell) => cell.x === player.x && cell.y === player.y + 1)
+    var p2 = theBoard.find((cell) => cell.x === player.x && cell.y === player.y - 1);
+    var p3 = theBoard.find((cell) => cell.x === player.x + 1 && cell.y === player.y);
+    var p4 = theBoard.find((cell) => cell.x === player.x - 1 && cell.y === player.y);
+    var p7 = theBoard.find((cell) => cell.x === player.x - 1 && cell.y === player.y + 1);
+    var p8 = theBoard.find((cell) => cell.x === player.x + 1 && cell.y === player.y + 1);
+    var p5 = theBoard.find((cell) => cell.x === player.x - 1 && cell.y === player.y - 1);
+    var p6 = theBoard.find((cell) => cell.x === player.x + 1 && cell.y === player.y - 1);
+    var cells = [p1, p2, p3, p4, p5, p6, p7, p8]
+
+    for (var cell of theBoard) {
+        if (cell !== cells[0] && cell !== cells[1] && cell !== cells[2] && cell !== cells[3] && cell !== cells[4] && cell !== cells[5] && cell !== cells[6] && cell !== cells[7]) {
+            cell.toggleState = "OFF"
+        }
+        else {
+            cell.toggleState = "ON"
+        }
+        player.toggleState = "ON";
+
+    }
+
+    return { board: theBoard, playerPosition: player }
+}
 
 
-module.exports = { createBoard, placeEnemy, placeLifePill, placePlayer, initiateState, placeDoor, placeDoor }
+module.exports = { toggleField, createBoard, placeEnemy, placeLifePill, placePlayer, initiateState, placeDoor, placeDoor }

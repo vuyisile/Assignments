@@ -3,12 +3,18 @@ import './index.css';
 import { createBoard, initiateState, placeEnemy, placeLifePill, placePlayer, placeDoor, placeWeapon } from './game/game-builders'
 import { pathOne } from './game/dungeon-one'
 import { pathTwo } from './game/dungeon-two'
+import { pathThree } from './game/dungeon-three'
+import Stage1 from './stages/stage1'
+import Stage2 from './stages/stage2'
+import Stage3 from './stages/stage3'
+
+
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      board: createBoard(),
+      board: [],
       path: [],
       playerPosition: null,
       XP: 0,
@@ -17,50 +23,14 @@ class App extends Component {
       PLAYER_HEALTH: 100,
       dungeon: 1,
       weapon: 'stick',
-      allPaths: [pathOne, pathTwo, pathOne],
+      allPaths: [pathOne, pathTwo, pathThree],
       indexOfPath: 0,
-      toggleState: false
+      toggleState: false,
+      passage:''
+
     }
-    this.toggleField = this.toggleField.bind(this)
-    this.runKey = this.runKey.bind(this)
+    this.updateBoard = this.updateBoard.bind(this)
   }
-
-  componentDidMount() {
-    var currentBoard = this.state.board;
-    var path = initiateState(pathOne, 'devil-fork');
-    for (var i in currentBoard) {
-      for (var j in path) {
-        if (currentBoard[i].x === path[j].x && currentBoard[i].y === path[j].y) {
-          currentBoard[i] = path[j];
-          continue
-        }
-      }
-    }
-
-    if (this.state.playerPosition === null) {
-      var playerPos = currentBoard.find((cell) => cell.occupiedBy === 'PLAYER');
-      this.setState({ playerPosition: playerPos });
-    }
-    this.setState({ board: currentBoard, path: path })
-
-    document.onkeydown = this.runKey;
-  }
-  returnNonWalls(path) {
-    var room = this.state.path;
-    path.isType = 'PATH';
-    room.push(path);
-    this.setState({ path: room })
-  }
-
-
-  changeLevel() {
-    var level = this.state.LEVEL;
-    var xp = this.state.XP;
-    if (xp >= 75) {
-      this.setState({ LEVEL: level + 1, XP: 0 })
-    }
-  }
-
   toggleField(player) {
     var theBoard = this.state.board;
     theBoard.forEach((block) => block.toggleState === "OFF");
@@ -88,58 +58,6 @@ class App extends Component {
     this.setState({ board: theBoard, playerPosition: player })
   }
 
-  switchToggleState(state) {
-    if (state === true) {
-      state = false
-    } else {
-      state = true
-    }
-    this.setState({ toggleState: state })
-    return state;
-  }
-
-  changeToggleState() {
-    var toggleState = this.switchToggleState(this.state.toggleState);
-    var theBoard = this.state.board;
-    if (toggleState === true) {
-      for (var block of theBoard) {
-        block.toggleState = "OFF";
-      }
-      this.toggleField(this.state.playerPosition);
-      this.setState({ board: theBoard })
-    } else if (toggleState === false) {
-      for (var cell of theBoard) {
-        cell.toggleState = "ON";
-      }
-    }
-  }
-
-  changeDungeon() {
-    var indexOfPath = this.state.indexOfPath;
-    var newPath = this.state.allPaths[indexOfPath+1];
-    var boardWithNoPath = createBoard();
-
-    var weapon = () => ['axe', 'devil-fork', 'stick'][Math.floor(Math.random() * 3)];
-    var challenge = initiateState(newPath, weapon)
-    var oldPlayer = challenge.find((cell) => cell.x === this.state.playerPosition.x && cell.y === this.state.playerPosition.y);
-    if (oldPlayer) {
-      oldPlayer.occupiedBy = "NONE"
-    }
-    var newPlayerCell = challenge.find((cell) => cell.occupiedBy === 'PLAYER');
-    this.setState({ path: challenge, playerPosition: newPlayerCell });
-
-
-    for (var i in boardWithNoPath) {
-      for (var j in challenge) {
-        if (boardWithNoPath[i].x === challenge[j].x && boardWithNoPath[i].y === challenge[j].y) {
-          boardWithNoPath[i] = challenge[j];
-        }
-      }
-    }
-    var newBoard = boardWithNoPath;
-    return newBoard
-  }
-
   movePlayer(event,pos){
     if (event.key === "ArrowUp") {
       pos.y -= 1;
@@ -154,7 +72,6 @@ class App extends Component {
   }
 
   runKey(event) {
-    this.changeLevel();
     var newBoard = this.state.board;
     var xp = this.state.XP;
     var oldLoc = { ...this.state.playerPosition };
@@ -168,48 +85,9 @@ class App extends Component {
       newPlayerCell = oldLocationCell;
     }
 
-    var health = this.state.PLAYER_HEALTH
-    var weapons = ['stick', 'devil-fork', 'axe'];
-    switch (newPlayerCell.occupiedBy) {
-      case 'LIFE-PILL':
-        this.setState({ PLAYER_HEALTH: health + 100 })
-        break;
-      case 'WEAPON':
-        this.setState({ weapon: weapons[Math.floor(Math.random() * (weapons.length))] })
-        break;
-      case 'DOOR':
-        newBoard = this.changeDungeon();
-        newPlayerCell = newBoard.find(element => element.x === this.state.playerPosition.x && element.y === this.state.playerPosition.y);
-        break;
-      case 'PLAYER':
-        newPlayerCell = newBoard.find(obj => obj.occupiedBy === "PLAYER");
-        break;
-      case undefined:
-        newPlayerCell = newBoard.find(element => element.x === this.state.playerPosition.x && element.y === this.state.playerPosition.y);
-        break;
-    }
-    if (this.state.toggleState === true) {
-      this.toggleField(newPlayerCell);
-    }
-
-    if (newPlayerCell.occupiedBy === 'ENEMY') {
-      this.setState({ PLAYER_HEALTH: health - newPlayerCell.impact })
-      if (this.state.weapon === 'stick') newPlayerCell.life -= 20;
-      if (this.state.weapon === 'axe') newPlayerCell.life -= 35;
-      if (this.state.weapon === 'devil-fork') newPlayerCell.life -= 75;
-      if (newPlayerCell.life > 0) {
-        this.setState({ XP: xp + 12 })
-        newPlayerCell = oldLocationCell;
-      }
-    }
-
-    if (this.state.PLAYER_HEALTH === 0) {
-      alert('you are dead!!')
-      window.location.reload()
-      this.setState({ PLAYER_HEALTH: 100, weapon: 'stick', dungeon: 1, XP: 0 })
-    }
-
-
+    // var health = this.state.PLAYER_HEALTH
+    // var weapons = ['stick', 'devil-fork', 'axe'];
+    
     newBoard[newBoard.indexOf(newPlayerCell)] = { ...newPlayerCell, occupiedBy: "PLAYER", life: this.state.PLAYER_HEALTH }
     newBoard[newBoard.indexOf(oldLocationCell)] = { ...oldLocationCell, occupiedBy: "NONE", life: this.state.PLAYER_HEALTH }
 
@@ -217,22 +95,13 @@ class App extends Component {
     return newPos;
   }
 
-
+updateBoard(currentBoard,path){
+  this.setState({board:currentBoard,path})
+}
   render() {
     return (
       <div className='row txt-color'>
-        <div style={{}} className="col-md-12 stats-area">
-          <span>HEALTH: {this.state.PLAYER_HEALTH}</span>
-          <span>DUNGEON:{this.state.dungeon}</span>
-          <span>WEAPON:{this.state.weapon}</span>
-          <span>XP:{this.state.XP}</span>
-          <span>LEVEL:{this.state.LEVEL}</span>
-          <a className="toggle-btn" onClick={() => this.changeToggleState()}>toggle</a>
-        </div>
-
-        <div className="col-md-8" >
-          <center>{this.state.board.map(block => <button onClick={() => this.returnNonWalls(block)} className={`${block.occupiedBy} ${block.isType} ${block.toggleState} grid-item`}>{`${block.x}:${block.y}`}</button>)}</center>
-        </div>
+        <Stage3 updateBoard={this.updateBoard} runKey={this.runKey}/>
       </div>
     );
   }
