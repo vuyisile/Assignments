@@ -21,6 +21,7 @@ class RegisterLocation extends Component {
   }
   async componentDidMount() {
     var businesses = await axios.get('http://localhost:3001/businesses');
+    console.log('businesses :', businesses);
     this.setState({ selectCompany: businesses.data })
   }
   handleInput(e) {

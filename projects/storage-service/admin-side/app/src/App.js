@@ -53,7 +53,7 @@ class App extends Component {
     const pathName = window.location.pathname;
     if (newHeaders === null) {
       while (newHeaders) {
-        pathName=""
+        pathName = ""
         break
       };
       switch (pathName) {
@@ -66,6 +66,7 @@ class App extends Component {
         default:
         case '/':
           return <UserChoice />
+
       }
     } else {
       switch (pathName) {
@@ -88,8 +89,6 @@ class App extends Component {
 
         case '/availableUnits':
           return <AvailableUnits />
-
-
 
       }
 

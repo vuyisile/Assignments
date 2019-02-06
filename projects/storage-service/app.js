@@ -71,7 +71,9 @@ app.post('/business', jwt.verifyJWT_MW, async function (req, res) {
 });
 
 app.get('/businesses', jwt.verifyJWT_MW, async function (req, res) {
-  var businesses = await ref.getAllBusinesses();
+  var user = jsonwebtoken.decode(req.headers['auth'])
+  console.log('user :', user);
+  var businesses = await ref.getAllBusinesses(user.email);
   if (businesses) {
     res.send(businesses.rows).status(201).end();
   } else {
@@ -93,7 +95,8 @@ app.post('/location', jwt.verifyJWT_MW, async function (req, res) {
 });
 
 app.get('/locations', jwt.verifyJWT_MW, async function (req, res) {
-  const locations = await ref.getAllLocations();
+  var user = jsonwebtoken.decode(req.headers['auth'])
+  const locations = await ref.getAllLocations(user.email);
   if (locations) {
     res.send(locations.rows).status(201).end();
   } else {

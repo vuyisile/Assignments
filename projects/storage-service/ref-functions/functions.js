@@ -12,8 +12,8 @@ async function saveBusiness(details) {
     return query;
 }
 
-async function getAllBusinesses() {
-    const businesses = await client.query(`SELECT company_name FROM unit_providers;`);
+async function getAllBusinesses(provider) {
+    const businesses = await client.query(`SELECT company_name FROM unit_providers WHERE email=$1`,[provider]);
     return businesses;
 }
 async function getBusinessId(details) {
@@ -28,8 +28,9 @@ async function saveLocation(details, businessId) {
         VALUES ('${details.addressLine1}','${details.addressLine2}','${details.cityOrTown}','${details.zipCode}','${businessId}')`);
     return details;
 }
-async function getAllLocations() {
-    var locations = await client.query(`SELECT * FROM unit_locations;`);
+async function getAllLocations(provider) {
+    var providerId =  await client.query(`SELECT id FROM unit_providers WHERE email=$1;`,[provider]);
+    var locations = await client.query(`SELECT * FROM unit_locations WHERE provider_id=$1`,[providerId.rows[0].id]);
     return locations;
 }
 async function fetchLocationId(details) {
